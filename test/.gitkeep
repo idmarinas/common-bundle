@@ -1,0 +1,4 @@
+
+PHP Warning: include(D:\Users\idmar\Documents\Proyectos_Web\Dragon_Verde\LoTGD-Core\migrating\vendor\symfony\maker-bundle\src\Resources\skeleton): failed to open stream: Permission denied in D:\Users\idmar\Documents\Proyectos_Web\Dragon_Verde\LoTGD-Core\migrating\vendor\symfony\maker-bundle\src\FileManager.php on line 61
+
+PHP Warning: include(): Failed opening 'D:\Users\idmar\Documents\Proyectos_Web\Dragon_Verde\LoTGD-Core\migrating\vendor\symfony\maker-bundle\src/Resources/skeleton/' for inclusion (include_path='.;C:\php\pear') in D:\Users\idmar\Documents\Proyectos_Web\Dragon_Verde\LoTGD-Core\migrating\vendor\symfony\maker-bundle\src\FileManager.php on line 61

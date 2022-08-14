@@ -1,0 +1,39 @@
+<?php
+
+/**
+ * This file is part of Bundle "IdmCommonBundle".
+ *
+ * @see https://github.com/idmarinas/common-bundle/
+ *
+ * @license https://github.com/idmarinas/common-bundle/blob/master/LICENSE.txt
+ *
+ * @since 1.0.0
+ */
+
+namespace Idm\Bundle\Common\Pattern\Entity;
+
+use Doctrine\ORM\Mapping as ORM;
+
+trait IdTrait
+{
+    /**
+     * @var int
+     *
+     * @ORM\Column(type="integer", options={"unsigned": true})
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="IDENTITY")
+     */
+    protected $id;
+
+    public function setId(?int $id)
+    {
+        $this->id = $id;
+
+        return $this;
+    }
+
+    public function getId(): ?int
+    {
+        return $this->id;
+    }
+}
