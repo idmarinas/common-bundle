@@ -19,7 +19,7 @@ return static function (RectorConfig $rectorConfig): void
 
     $rectorConfig->phpVersion(PhpVersion::PHP_74);
     $rectorConfig->importNames(true, false);
-    $rectorConfig->symfonyContainerXml(__DIR__.'/var/cache/dev/App_KernelDevDebugContainer.xml');
+    // $rectorConfig->symfonyContainerXml(__DIR__.'/var/cache/dev/App_KernelDevDebugContainer.xml');
 
     $rectorConfig->import(SetList::DEAD_CODE);
     $rectorConfig->import(SetList::CODE_QUALITY);
