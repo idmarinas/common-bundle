@@ -12,6 +12,7 @@
 
 namespace Idm\Bundle\Common\Tests\Validator;
 
+use Throwable;
 use Idm\Bundle\Common\Validator\Constraints\IsEven;
 use Idm\Bundle\Common\Validator\Constraints\IsEvenValidator;
 use Idm\Bundle\Common\Validator\Constraints\IsOdd;
@@ -40,7 +41,7 @@ class ContainsIsEvenValidatorTest extends ConstraintValidatorTestCase
             $this->validator->validate(5, new IsOdd());
             $this->assertFalse(true, 'Fail expect a exception for argument of Constrait not is correct');
         }
-        catch (\Throwable $th)
+        catch (Throwable $th)
         {
             // -- Expected argument of type "Idm\Bundle\Common\Validator\Constraints\IsEven", "Idm\Bundle\Common\Validator\Constraints\IsOdd" given
             $this->assertNoViolation();
@@ -54,7 +55,7 @@ class ContainsIsEvenValidatorTest extends ConstraintValidatorTestCase
             $this->validator->validate('rr', new IsEven());
             $this->assertFalse(true, 'Fail expect a exception for argument of type "int|float"');
         }
-        catch (\Throwable $th)
+        catch (Throwable $th)
         {
             // -- Expected argument of type "int|float", "string" given
             $this->assertNoViolation();
