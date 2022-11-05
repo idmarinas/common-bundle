@@ -1,0 +1,3 @@
+idm.common:
+    is_odd: The value {{ number }} is not an odd number.
+    is_even: The value {{ number }} is not an even number.
