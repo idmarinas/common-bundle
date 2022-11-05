@@ -1,7 +1,6 @@
 {
     "name": "idmarinas/common-bundle",
     "description": "",
-    "version": "1.0.0",
     "type": "symfony-bundle",
     "license": "BSD-3-Clause",
     "keywords": [],
@@ -22,7 +21,8 @@
         "php": "^7.4 | ^8.0 | ^8.1",
         "ramsey/uuid-doctrine": "^1.8",
         "symfony/config": "^4.4 | ^5.4",
-        "symfony/dependency-injection": "^4.4 | ^5.4"
+        "symfony/dependency-injection": "^4.4 | ^5.4",
+        "symfony/validator": "^4.4 | ^5.4"
     },
     "require-dev": {
         "matthiasnoback/symfony-config-test": "^4.2",
