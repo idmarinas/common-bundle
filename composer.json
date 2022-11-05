@@ -20,6 +20,7 @@
     "prefer-stable": true,
     "require": {
         "php": "^7.4 | ^8.0 | ^8.1",
+        "ramsey/uuid-doctrine": "^1.8",
         "symfony/config": "^4.4 | ^5.4",
         "symfony/dependency-injection": "^4.4 | ^5.4"
     },
