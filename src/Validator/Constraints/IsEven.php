@@ -12,6 +12,7 @@
 
 namespace Idm\Bundle\Common\Validator\Constraints;
 
+use Attribute;
 use Symfony\Component\Validator\Constraint;
 
 /**
@@ -19,7 +20,7 @@ use Symfony\Component\Validator\Constraint;
  *
  * @Annotation
  */
-#[\Attribute]
+#[Attribute]
 class IsEven extends Constraint
 {
     public $message = 'idm.common.is_even';
