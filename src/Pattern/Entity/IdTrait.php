@@ -23,6 +23,9 @@ trait IdTrait
      * @ORM\Id
      * @ORM\GeneratedValue(strategy="IDENTITY")
      */
+    #[ORM\Id]
+    #[ORM\GeneratedValue(strategy: 'IDENTITY')]
+    #[ORM\Column(type: 'integer', options: ['unsigned' => true])]
     protected $id;
 
     public function setId(?int $id)

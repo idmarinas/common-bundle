@@ -24,6 +24,10 @@ trait UuidTrait
      * @ORM\Column(type="uuid", unique=true)
      * @ORM\CustomIdGenerator(class=UuidGenerator::class)
      */
+    #[ORM\Id]
+    #[ORM\GeneratedValue(strategy: 'CUSTOM')]
+    #[ORM\Column(type: 'uuid', unique: true)]
+    #[ORM\CustomIdGenerator(class: UuidGenerator::class)]
     private ?UuidInterface $uuid = null;
 
     public function getUuid(): ?UuidInterface
