@@ -19,10 +19,8 @@ jobs:
         exclude:
           - php: '7.4'
             symfony: '6.2.*'
-            dependency: ''
           - php: '8.0'
             symfony: '6.2.*'
-            dependency: ''
 
     steps:
       - uses: actions/checkout@master
