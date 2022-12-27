@@ -11,38 +11,49 @@
  * @since 0.1.0
  */
 
-namespace Idm\Bundle\AdvertisingBundle\Tests;
-
+use Symfony\Bundle\FrameworkBundle\Test\KernelTestCase;
+use Nyholm\BundleTest\TestKernel;
 use Idm\Bundle\Common\IdmCommonBundle;
-use Nyholm\BundleTest\BaseBundleTestCase;
+use Symfony\Component\HttpKernel\KernelInterface;
 
-/**
- * @internal
- */
-class BundleInitializationTest extends BaseBundleTestCase
+class BundleInitializationTest extends KernelTestCase
 {
-    public function testInitBundle()
+    protected static function getKernelClass(): string
     {
-        // Create a new Kernel
-        // $kernel = $this->createKernel();
+        return TestKernel::class;
+    }
 
-        // Add some configuration
-        // $kernel->addConfigFile(__DIR__.'/config/idm_advertising.yaml');
+    protected static function createKernel(array $options = []): KernelInterface
+    {
+        /**
+         * @var TestKernel $kernel
+         */
+        $kernel = parent::createKernel($options);
+        $kernel->addTestBundle(IdmCommonBundle::class);
+        $kernel->handleOptions($options);
 
+        return $kernel;
+    }
+
+    public function testInitBundle(): void
+    {
         // Boot the kernel.
-        $this->bootKernel();
+        self::bootKernel();
 
-        // Get the container
-        // $container = $this->getContainer();
-
-        // Test if you services exists
-        // $this->assertTrue($container->has('idm_advertising.networks.registry'));
-        // $this->assertInstanceOf(NetworkRegistry::class, $container->get('idm_advertising.networks.registry'));
         $this->assertTrue(true);
     }
 
-    protected function getBundleClass()
-    {
-        return IdmCommonBundle::class;
-    }
+    // public function testBundleWithDifferentConfiguration(): void
+    // {
+    //     // Boot the kernel with a config closure, the handleOptions call in createKernel is important for that to work
+    //     $kernel = self::bootKernel(['config' => static function(TestKernel $kernel){
+    //         // Add some other bundles we depend on
+    //         $kernel->addTestBundle(OtherBundle::class);
+
+    //         // Add some configuration
+    //         $kernel->addTestConfig(__DIR__.'/config.yml');
+    //     }]);
+
+    //     // ...
+    // }
 }
