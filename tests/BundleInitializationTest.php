@@ -11,6 +11,8 @@
  * @since 0.1.0
  */
 
+namespace Idm\Bundle\Common\Tests;
+
 use Symfony\Bundle\FrameworkBundle\Test\KernelTestCase;
 use Nyholm\BundleTest\TestKernel;
 use Idm\Bundle\Common\IdmCommonBundle;
