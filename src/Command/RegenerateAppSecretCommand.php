@@ -52,7 +52,7 @@ class RegenerateAppSecretCommand extends Command
         {
             $io->success("New {$key} was generated: {$secret}");
 
-            return Command::SUCCESS;
+            return 0;
         }
 
         $file = '.env';
@@ -78,11 +78,11 @@ class RegenerateAppSecretCommand extends Command
                 $io->warning("Not find {$key} in file '{$file}'");
             }
 
-            return Command::SUCCESS;
+            return 0;
         }
 
         $io->warning('Not find file ".env" or not is readable or writable.');
 
-        return Command::SUCCESS;
+        return 0;
     }
 }
