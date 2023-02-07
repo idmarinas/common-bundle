@@ -16,14 +16,9 @@ use Idm\Bundle\Common\Command\RegenerateAppSecretCommand;
 use Symfony\Bundle\FrameworkBundle\Test\KernelTestCase;
 use Symfony\Component\Console\Tester\CommandTester;
 
-/**
- * @internal
- *
- * @coversNothing
- */
 class RegenerateAppSecretCommandTest extends KernelTestCase
 {
-    public function testExecute()
+    public function testExecuteShow()
     {
         $commandTester = new CommandTester(new RegenerateAppSecretCommand());
         $commandTester->execute([
