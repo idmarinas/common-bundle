@@ -65,7 +65,7 @@ class RegenerateAppSecretCommand extends Command
             $pattern = "/^(?<secret>{$key}=.+)$/m";
             preg_match($pattern, $str, $matches);
 
-            if (\is_string($matches['secret']))
+            if (isset($matches['secret']) && \is_string($matches['secret']))
             {
                 $str = \preg_replace("/{$matches['secret']}/", "{$key}={$secret}", $str);
 
