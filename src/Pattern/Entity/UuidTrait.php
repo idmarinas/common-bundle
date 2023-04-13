@@ -16,6 +16,7 @@ use Doctrine\ORM\Mapping as ORM;
 use Ramsey\Uuid\Doctrine\UuidGenerator;
 use Ramsey\Uuid\UuidInterface;
 
+/** @deprecated since 1.5.0 use "Idm\Bundle\Common\Traits\Entity\UuidTrait" instead */
 trait UuidTrait
 {
     /**

@@ -14,6 +14,7 @@ namespace Idm\Bundle\Common\Pattern\Tool;
 
 use vierbergenlars\SemVer\version;
 
+/** @deprecated since 1.5.0 use "Idm\Bundle\Common\Traits\Tool\VersionTrait" instead */
 trait VersionTrait
 {
     /** Conver int version like 100000000 to 1.0.0 */
