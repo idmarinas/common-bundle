@@ -14,6 +14,7 @@ namespace Idm\Bundle\Common\Traits\Tool;
 
 use Faker\Factory;
 use Faker\Generator;
+use LogicException;
 
 trait FakerTrait
 {
@@ -21,6 +22,11 @@ trait FakerTrait
 
     public function faker(): Generator
     {
+        if ( ! class_exists(Factory::class))
+        {
+            throw new LogicException('Faker PHP missing. Try running "composer require --dev fakerphp/faker".');
+        }
+
         if ( ! $this->faker instanceof Generator)
         {
             $this->faker = Factory::create();
