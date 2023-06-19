@@ -10,9 +10,9 @@
  * @since 1.3.0
  */
 
-namespace Idm\Bundle\Common\Tests\Pattern\Tool;
+namespace Idm\Bundle\Common\Tests\Traits\Tool;
 
-use Idm\Bundle\Common\Pattern\Tool\VersionTrait;
+use Idm\Bundle\Common\Traits\Tool\VersionTrait;
 use PHPUnit\Framework\TestCase;
 
 class VersionTraitTest extends TestCase
