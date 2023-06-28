@@ -26,7 +26,7 @@ class RegenerateAppSecretCommand extends Command
     /**
      * {@inheritdoc}
      */
-    protected function configure()
+    protected function configure(): void
     {
         $this
             ->setDescription('Regenerate APP_SECRET for application in .env file')
