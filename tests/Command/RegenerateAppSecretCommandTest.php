@@ -10,7 +10,7 @@
  * @since 1.4.0
  */
 
-namespace App\Tests\Command;
+namespace Idm\Bundle\Common\Tests\Command;
 
 use Idm\Bundle\Common\Command\RegenerateAppSecretCommand;
 use Symfony\Bundle\FrameworkBundle\Test\KernelTestCase;
@@ -69,7 +69,7 @@ class RegenerateAppSecretCommandTest extends KernelTestCase
 
         // the output of the command in the console
         $output = $commandTester->getDisplay();
-        $this->assertStringContainsString("Not find {$this->cKey} in file '{$this->cFile}", $output);
+        $this->assertStringContainsString("Not find $this->cKey in file '$this->cFile", $output);
 
         $fs->remove($this->cFile);
     }
@@ -88,7 +88,7 @@ class RegenerateAppSecretCommandTest extends KernelTestCase
 
         // the output of the command in the console
         $output = $commandTester->getDisplay();
-        $this->assertStringContainsString("New {$this->cKey} was generated: ", $output);
+        $this->assertStringContainsString("New $this->cKey was generated: ", $output);
 
         $fs->remove($this->cFile);
     }
