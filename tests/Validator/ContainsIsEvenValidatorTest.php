@@ -13,6 +13,7 @@
 namespace Idm\Bundle\Common\Tests\Validator;
 
 use Throwable;
+use Symfony\Component\Validator\ConstraintValidatorInterface;
 use Idm\Bundle\Common\Validator\Constraints\IsEven;
 use Idm\Bundle\Common\Validator\Constraints\IsEvenValidator;
 use Idm\Bundle\Common\Validator\Constraints\IsOdd;
@@ -36,13 +37,10 @@ class ContainsIsEvenValidatorTest extends ConstraintValidatorTestCase
 
     public function testConstraintInvalid()
     {
-        try
-        {
+        try {
             $this->validator->validate(5, new IsOdd());
             $this->assertFalse(true, 'Fail expect a exception for argument of Constrait not is correct');
-        }
-        catch (Throwable $th)
-        {
+        } catch (Throwable $th) {
             // -- Expected argument of type "Idm\Bundle\Common\Validator\Constraints\IsEven", "Idm\Bundle\Common\Validator\Constraints\IsOdd" given
             $this->assertNoViolation();
         }
@@ -50,13 +48,10 @@ class ContainsIsEvenValidatorTest extends ConstraintValidatorTestCase
 
     public function testNotValidNumber()
     {
-        try
-        {
+        try {
             $this->validator->validate('rr', new IsEven());
             $this->assertFalse(true, 'Fail expect a exception for argument of type "int|float"');
-        }
-        catch (Throwable $th)
-        {
+        } catch (Throwable $th) {
             // -- Expected argument of type "int|float", "string" given
             $this->assertNoViolation();
         }
@@ -68,8 +63,7 @@ class ContainsIsEvenValidatorTest extends ConstraintValidatorTestCase
 
         $this->buildViolation('idm.common.is_even')
             ->setParameter('{{ number }}', 5)
-            ->assertRaised()
-        ;
+            ->assertRaised();
     }
 
     public function testIsValid()
@@ -79,7 +73,7 @@ class ContainsIsEvenValidatorTest extends ConstraintValidatorTestCase
         $this->assertNoViolation();
     }
 
-    protected function createValidator()
+    protected function createValidator(): ConstraintValidatorInterface
     {
         return new IsEvenValidator();
     }

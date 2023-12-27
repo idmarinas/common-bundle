@@ -13,6 +13,7 @@
 namespace Idm\Bundle\Common\Tests\Validator;
 
 use Throwable;
+use Symfony\Component\Validator\ConstraintValidatorInterface;
 use Idm\Bundle\Common\Validator\Constraints\IsEven;
 use Idm\Bundle\Common\Validator\Constraints\IsOddValidator;
 use Idm\Bundle\Common\Validator\Constraints\IsOdd;
@@ -79,7 +80,7 @@ class ContainsIsOddValidatorTest extends ConstraintValidatorTestCase
         $this->assertNoViolation();
     }
 
-    protected function createValidator()
+    protected function createValidator(): ConstraintValidatorInterface
     {
         return new IsOddValidator();
     }
