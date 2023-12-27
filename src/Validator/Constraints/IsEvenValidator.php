@@ -16,6 +16,7 @@ use Symfony\Component\Validator\Constraint;
 use Symfony\Component\Validator\ConstraintValidator;
 use Symfony\Component\Validator\Exception\UnexpectedTypeException;
 use Symfony\Component\Validator\Exception\UnexpectedValueException;
+use function is_numeric;
 
 /**
  * Check if value is even.
@@ -36,7 +37,7 @@ class IsEvenValidator extends ConstraintValidator
             return;
         }
 
-        if ( ! \is_numeric($value))
+        if ( ! is_numeric($value))
         {
             //-- Tiene que ser un valor entero o decimal
             throw new UnexpectedValueException($value, 'int|float');
