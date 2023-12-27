@@ -40,7 +40,7 @@ class ContainsIsOddValidatorTest extends ConstraintValidatorTestCase
         try
         {
             $this->validator->validate(5, new IsEven());
-            $this->assertFalse(true, 'Fail expect a exception for argument of Constrait not is correct');
+            $this->fail('Fail expect a exception for argument of Constraint not is correct');
         }
         catch (Throwable $th)
         {
@@ -54,7 +54,7 @@ class ContainsIsOddValidatorTest extends ConstraintValidatorTestCase
         try
         {
             $this->validator->validate('rr', new IsOdd());
-            $this->assertFalse(true, 'Fail expect a exception for argument of type "int|float"');
+            $this->fail('Fail expect a exception for argument of type "int|float"');
         }
         catch (Throwable $th)
         {
