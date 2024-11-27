@@ -30,10 +30,14 @@ class OpcacheClearCommand extends Command
     {
         $io = new SymfonyStyle($input, $output);
 
-        if (opcache_reset()) {
-            $io->success('OPcache has been reset.');
+        if (function_exists('opcache_reset')) {
+            if (opcache_reset()) {
+                $io->success('OPcache has been reset.');
+            } else {
+                $io->error('Failed to reset OPcache.');
+            }
         } else {
-            $io->error('Failed to reset OPcache.');
+            $io->error('Function "opcache_reset" not exist.');
         }
 
         return Command::SUCCESS;
