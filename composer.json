@@ -22,20 +22,23 @@
         "symfony/config": "^5.4 | ^6.4 | ^7.0",
         "symfony/console": "^5.4 | ^6.4 | ^7.0",
         "symfony/dependency-injection": "^5.4 | ^6.4 | ^7.0",
-        "symfony/filesystem": "^5.4 | ^6.4 | ^7.0",
-        "symfony/form": "^5.4 | ^6.4 | ^7.0",
-        "symfony/validator": "^5.4 | ^6.4 | ^7.0"
+        "symfony/filesystem": "^5.4 | ^6.4 | ^7.0"
     },
     "require-dev": {
+        "doctrine/orm": "^2.20",
+        "easycorp/easyadmin-bundle": "^4.0",
         "fakerphp/faker": "^1.21",
+        "gedmo/doctrine-extensions": "^3.17",
         "matthiasnoback/symfony-config-test": "^4.2 | ^5.0",
         "matthiasnoback/symfony-dependency-injection-test": "^4.2 | ^5.0 | ^6.0",
         "nyholm/symfony-bundle-test": "^2.0",
         "phpunit/phpunit": "^9.5",
         "rector/rector": "^1.2",
+        "symfony/form": "^5.4 | ^6.4 | ^7.0",
         "symfony/framework-bundle": "^5.4 | ^6.4 | ^7.0",
         "symfony/phpunit-bridge": "^5.4",
-        "symfony/test-pack": "^1.0"
+        "symfony/test-pack": "^1.0",
+        "symfony/validator": "^5.4 | ^6.4 | ^7.0"
     },
     "config": {
         "allow-plugins": {
