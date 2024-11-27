@@ -11,6 +11,10 @@
     <option name="transferred" value="true" />
   </component>
   <component name="PhpIncludePathManager">
+    <exclude_path>
+      <path value="$PROJECT_DIR$/vendor/rector/rector/stubs-rector" />
+      <path value="$PROJECT_DIR$/vendor/symfony/polyfill-php80/Resources/stubs" />
+    </exclude_path>
     <include_path>
       <path value="$PROJECT_DIR$/vendor/brick/math" />
       <path value="$PROJECT_DIR$/vendor/doctrine/dbal" />
