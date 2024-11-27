@@ -1,13 +1,20 @@
 <?php
-
 /**
- * This file is part of Bundle "IdmCommonBundle".
+ * Copyright 2024 (C) IDMarinas - All Rights Reserved
  *
- * @see https://github.com/idmarinas/common-bundle/
+ * Last modified by "IDMarinas" on 27/11/24, 15:43
  *
- * @license https://github.com/idmarinas/common-bundle/blob/master/LICENSE.txt
+ * @project IDMarinas Common Bundle
+ * @see     https://github.com/idmarinas/common-bundle
  *
- * @since 2.2.0
+ * @file    OpcacheClearCommand.php
+ * @date    27/11/2024
+ * @time    15:43
+ *
+ * @author  Iván Diaz Marinas (IDMarinas)
+ * @license BSD 3-Clause License
+ *
+ * @since   2.2.0
  */
 
 namespace Idm\Bundle\Common\Command;
@@ -18,15 +25,10 @@ use Symfony\Component\Console\Input\InputInterface;
 use Symfony\Component\Console\Output\OutputInterface;
 use Symfony\Component\Console\Style\SymfonyStyle;
 
-#[AsCommand(
-    name: 'idm:opcache:reset',
-    description: 'Reset OPCache',
-)]
+#[AsCommand(name: 'idm:opcache:reset', description: 'Reset OPCache',)]
 class OpcacheClearCommand extends Command
 {
-    protected static $defaultName = 'idm:opcache:reset';
-
-    protected function execute(InputInterface $input, OutputInterface $output): int
+    protected function execute (InputInterface $input, OutputInterface $output): int
     {
         $io = new SymfonyStyle($input, $output);
 
