@@ -19,7 +19,7 @@ trait IdTrait
     #[ORM\Id]
     #[ORM\GeneratedValue(strategy: 'IDENTITY')]
     #[ORM\Column(type: 'integer', options: ['unsigned' => true])]
-    protected $id;
+    protected int $id;
 
     public function setId(?int $id)
     {
