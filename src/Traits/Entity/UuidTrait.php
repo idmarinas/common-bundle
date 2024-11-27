@@ -1,13 +1,20 @@
 <?php
-
 /**
- * This file is part of Bundle "IdmCommonBundle".
+ * Copyright 2023-2024 (C) IDMarinas - All Rights Reserved
  *
- * @see https://github.com/idmarinas/common-bundle/
+ * Last modified by "IDMarinas" on 27/11/24, 21:45
  *
- * @license https://github.com/idmarinas/common-bundle/blob/master/LICENSE.txt
+ * @project IDMarinas Common Bundle
+ * @see     https://github.com/idmarinas/common-bundle
  *
- * @since 1.1.0
+ * @file    UuidTrait.php
+ * @date    13/04/2023
+ * @time    16:35
+ *
+ * @author  Iván Diaz Marinas (IDMarinas)
+ * @license BSD 3-Clause License
+ *
+ * @since   1.1.0
  */
 
 namespace Idm\Bundle\Common\Traits\Entity;
@@ -18,19 +25,13 @@ use Ramsey\Uuid\UuidInterface;
 
 trait UuidTrait
 {
-    /**
-     * @ORM\Id
-     * @ORM\GeneratedValue(strategy="CUSTOM")
-     * @ORM\Column(type="uuid", unique=true)
-     * @ORM\CustomIdGenerator(class=UuidGenerator::class)
-     */
     #[ORM\Id]
     #[ORM\GeneratedValue(strategy: 'CUSTOM')]
     #[ORM\Column(type: 'uuid', unique: true)]
     #[ORM\CustomIdGenerator(class: UuidGenerator::class)]
     protected ?UuidInterface $uuid = null;
 
-    public function getUuid(): ?UuidInterface
+    public function getUuid (): ?UuidInterface
     {
         return $this->uuid;
     }
