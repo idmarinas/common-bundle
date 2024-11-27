@@ -1,23 +1,31 @@
 <?php
-
 /**
- * This file is part of Bundle "IdmCommonBundle".
+ * Copyright 2022-2024 (C) IDMarinas - All Rights Reserved
  *
- * @see https://github.com/idmarinas/common-bundle/
+ * Last modified by "IDMarinas" on 27/11/24, 19:14
  *
- * @license https://github.com/idmarinas/common-bundle/blob/master/LICENSE.txt
+ * @project IDMarinas Common Bundle
+ * @see     https://github.com/idmarinas/common-bundle
  *
- * @since 1.0.0
+ * @file    services.php
+ * @date    14/08/2022
+ * @time    18:01
+ *
+ * @author  Iván Diaz Marinas (IDMarinas)
+ * @license BSD 3-Clause License
+ *
+ * @since   1.0.0
  */
 
 namespace Symfony\Component\DependencyInjection\Loader\Configurator;
 
+use Idm\Bundle\Common\Command\OpcacheClearCommand;
 use Idm\Bundle\Common\Command\RegenerateAppSecretCommand;
 
-return static function (ContainerConfigurator $container)
-{
-    $container->services()
+return static function (ContainerConfigurator $container) {
+    $container
+        ->services()
         ->set('idm.common.command.reg_app_secret', RegenerateAppSecretCommand::class)
-            ->tag('console.command')
+        ->set('idm.common.command.opcache_clear', OpcacheClearCommand::class)
     ;
 };
