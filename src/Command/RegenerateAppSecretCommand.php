@@ -1,13 +1,20 @@
 <?php
-
 /**
- * This file is part of Bundle "IdmCommonBundle".
+ * Copyright 2022-2024 (C) IDMarinas - All Rights Reserved
  *
- * @see https://github.com/idmarinas/common-bundle/
+ * Last modified by "IDMarinas" on 27/11/24, 15:49
  *
- * @license https://github.com/idmarinas/common-bundle/blob/master/LICENSE.txt
+ * @project IDMarinas Common Bundle
+ * @see     https://github.com/idmarinas/common-bundle
  *
- * @since 1.4.0
+ * @file    RegenerateAppSecretCommand.php
+ * @date    31/12/2022
+ * @time    16:14
+ *
+ * @author  Iván Diaz Marinas (IDMarinas)
+ * @license BSD 3-Clause License
+ *
+ * @since   1.4.0
  */
 
 namespace Idm\Bundle\Common\Command;
@@ -19,72 +26,70 @@ use Symfony\Component\Console\Input\InputOption;
 use Symfony\Component\Console\Output\OutputInterface;
 use Symfony\Component\Console\Style\SymfonyStyle;
 use Symfony\Component\Filesystem\Filesystem;
+use function bin2hex;
+use function is_file;
+use function is_readable;
+use function is_string;
+use function is_writable;
+use function preg_replace;
+use function random_bytes;
 
-#[AsCommand(name: 'idm:regenerate:app_secret')]
+#[AsCommand(name: 'idm:regenerate:app_secret', description: 'Regenerate APP_SECRET for application in .env file')]
 class RegenerateAppSecretCommand extends Command
 {
-    protected static $defaultName = 'idm:regenerate:app_secret';
-
     /**
      * {@inheritdoc}
      */
-    protected function configure(): void
+    protected function configure (): void
     {
         $this
-            ->setDescription('Regenerate APP_SECRET for application in .env file')
             ->setHelp(
                 <<<'EOT'
                     The <info>%command.name%</info> command regenerate APP_SECRET value of .env file for application.
                     EOT
             )
-
             ->addOption('show', null, InputOption::VALUE_NONE, 'Only display the value without updating the .env file.')
         ;
     }
 
-    protected function execute(InputInterface $input, OutputInterface $output): int
+    protected function execute (InputInterface $input, OutputInterface $output): int
     {
-        $io        = new SymfonyStyle($input, $output);
+        $io = new SymfonyStyle($input, $output);
         $showValue = $input->getOption('show');
-        $key       = 'APP_SECRET';
-        $length    = 16;
-        $secret    = \bin2hex(\random_bytes($length));
+        $key = 'APP_SECRET';
+        $length = 16;
+        $secret = bin2hex(random_bytes($length));
 
-        if ($showValue)
-        {
-            $io->success("New {$key} was generated: {$secret}");
+        if ($showValue) {
+            $io->success("New $key was generated: $secret");
 
-            return 0;
+            return Command::SUCCESS;
         }
 
         $file = '.env';
 
-        if (\is_file($file) && \is_readable($file) && \is_writable($file))
-        {
+        if (is_file($file) && is_readable($file) && is_writable($file)) {
             $str = file_get_contents($file);
-            $fs  = new Filesystem();
+            $fs = new Filesystem();
 
-            $pattern = "/^(?<secret>{$key}=.+)$/m";
+            $pattern = "/^(?<secret>$key=.+)$/m";
             preg_match($pattern, $str, $matches);
 
-            if (isset($matches['secret']) && \is_string($matches['secret']))
-            {
-                $str = \preg_replace("/{$matches['secret']}/", "{$key}={$secret}", $str);
+            if (isset($matches['secret']) && is_string($matches['secret'])) {
+                $str = preg_replace("/{$matches['secret']}/", "{$key}={$secret}", $str);
 
                 $fs->dumpFile($file, $str);
 
                 $io->success("New {$key} was generated: {$secret}");
-            }
-            else
-            {
+            } else {
                 $io->warning("Not find {$key} in file '{$file}'");
             }
 
-            return 0;
+            return Command::SUCCESS;
         }
 
         $io->warning('Not find file ".env" or not is readable or writable.');
 
-        return 0;
+        return Command::SUCCESS;
     }
 }
