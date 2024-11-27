@@ -1,13 +1,20 @@
 <?php
-
 /**
- * This file is part of Bundle "IdmCommonBundle".
+ * Copyright 2023-2024 (C) IDMarinas - All Rights Reserved
  *
- * @see https://github.com/idmarinas/common-bundle/
+ * Last modified by "IDMarinas" on 27/11/24, 20:34
  *
- * @license https://github.com/idmarinas/common-bundle/blob/master/LICENSE.txt
+ * @project IDMarinas Common Bundle
+ * @see     https://github.com/idmarinas/common-bundle
  *
- * @since 1.0.0
+ * @file    IdTrait.php
+ * @date    13/04/2023
+ * @time    16:35
+ *
+ * @author  Iván Diaz Marinas (IDMarinas)
+ * @license BSD 3-Clause License
+ *
+ * @since   1.0.0
  */
 
 namespace Idm\Bundle\Common\Traits\Entity;
@@ -21,16 +28,15 @@ trait IdTrait
     #[ORM\Column(type: 'integer', options: ['unsigned' => true])]
     protected int $id;
 
-    public function setId(?int $id)
+    public function getId (): ?int
+    {
+        return $this->id;
+    }
+
     public function setId (?int $id): static
     {
         $this->id = $id;
 
         return $this;
-    }
-
-    public function getId(): ?int
-    {
-        return $this->id;
     }
 }
