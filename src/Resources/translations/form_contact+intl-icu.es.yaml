@@ -1,0 +1,10 @@
+contact:
+    name: Nombre
+    last_name: Apellidos
+    email: Dirección de correo electrónico
+    comment: Comentarios/Preguntas
+    consent: |
+        La información de identificación personal introducida en este formulario, incluyendo su nombre y dirección de
+        correo electrónico, se puede almacenar indefinidamente. Tiene que aceptar nuestra Política de privacidad
+    button:
+        submit: Enviar
