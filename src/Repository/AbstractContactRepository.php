@@ -38,24 +38,6 @@ abstract class AbstractContactRepository extends ServiceEntityRepository
         parent::__construct($registry, AbstractContact::class);
     }
 
-    public function add (AbstractContact $entity, bool $flush = false): void
-    {
-        $this->getEntityManager()->persist($entity);
-
-        if ($flush) {
-            $this->getEntityManager()->flush();
-        }
-    }
-
-    public function remove (AbstractContact $entity, bool $flush = false): void
-    {
-        $this->getEntityManager()->remove($entity);
-
-        if ($flush) {
-            $this->getEntityManager()->flush();
-        }
-    }
-
     /** Count the number of records that do not have an email address. */
     public function countEmptyEmail (): int
     {
