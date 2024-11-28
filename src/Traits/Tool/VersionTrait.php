@@ -38,9 +38,9 @@ trait VersionTrait
     /** Convert string version like 1.0.0 to 100000000 */
     public function convertVersionToInt (string $version): int
     {
-        $re = '/^(?P<major>0|[1-9]\d*)\.(?P<minor>0|[1-9]\d*)\.(?P<patch>0|[1-9]\d*)(?:-(?P<prerelease>(?:0|[1-9]\d*|\d*[a-zA-Z-][0-9a-zA-Z-]*)(?:\.(?:0|[1-9]\d*|\d*[a-zA-Z-][0-9a-zA-Z-]*))*))?(?:\+(?P<buildmetadata>[0-9a-zA-Z-]+(?:\.[0-9a-zA-Z-]+)*))?$/m';
+        $re = '^(?P<major>0|[1-9]\d*)\.(?P<minor>0|[1-9]\d*)\.(?P<patch>0|[1-9]\d*)(?:-(?P<prerelease>(?:0|[1-9]\d*|\d*[a-zA-Z-][0-9a-zA-Z-]*)(?:\.(?:0|[1-9]\d*|\d*[a-zA-Z-][0-9a-zA-Z-]*))*))?(?:\+(?P<buildmetadata>[0-9a-zA-Z-]+(?:\.[0-9a-zA-Z-]+)*))?$';
 
-        preg_match_all($re, $version, $matches, PREG_SET_ORDER, 0);
+        preg_match_all("/$re/m", $version, $matches, PREG_SET_ORDER, 0);
         $matches = $matches[0];
 
         return (int)(str_pad($matches['major'], 4, 0, STR_PAD_LEFT) . str_pad(
