@@ -35,4 +35,11 @@ trait UuidTrait
     {
         return $this->uuid;
     }
+
+    public function setUuid (?UuidInterface $uuid): static
+    {
+        $this->uuid = $uuid;
+
+        return $this;
+    }
 }
