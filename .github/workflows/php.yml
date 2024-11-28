@@ -44,3 +44,15 @@ jobs:
 
       - name: Run test suite on PHP ${{ matrix.php }} and Symfony ${{ matrix.symfony }}
         run: ./vendor/bin/phpunit
+
+      - name: Fix paths for Sonar
+        if: matrix.php-version == '8.0'
+        working-directory: ./build/reports/
+        run: sed -i 's/\/home\/runner\/work\/common-bundle\/common-bundle\//\/github\/workspace\//g' phpunit.coverage.xml
+
+      - name: SonarCloud Scan
+        if: matrix.php-version == '8.0'
+        uses: SonarSource/sonarcloud-github-action@master
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}  # Needed to get PR information, if any
+          SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
