@@ -4,7 +4,6 @@
 ![GitHub release](https://img.shields.io/github/release/idmarinas/common-bundle.svg)
 ![GitHub Release Date](https://img.shields.io/github/release-date/idmarinas/common-bundle.svg)
 ![GitHub code size in bytes](https://img.shields.io/github/languages/code-size/idmarinas/common-bundle)
-[![Build in PHP](https://img.shields.io/badge/PHP-^7.4-8892BF.svg?logo=php)](http://php.net/)
 [![Build in PHP](https://img.shields.io/badge/PHP-^8.0-8892BF.svg?logo=php)](http://php.net/)
 
 ![GitHub issues](https://img.shields.io/github/issues/idmarinas/common-bundle.svg)
