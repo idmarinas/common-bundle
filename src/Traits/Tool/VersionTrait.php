@@ -36,7 +36,7 @@ trait VersionTrait
     }
 
     /** Convert string version like 1.0.0 to 100000000 */
-    public function convertVersionToInt (string $version)
+    public function convertVersionToInt (string $version): int
     {
         $re = '/^(?P<major>0|[1-9]\d*)\.(?P<minor>0|[1-9]\d*)\.(?P<patch>0|[1-9]\d*)(?:-(?P<prerelease>(?:0|[1-9]\d*|\d*[a-zA-Z-][0-9a-zA-Z-]*)(?:\.(?:0|[1-9]\d*|\d*[a-zA-Z-][0-9a-zA-Z-]*))*))?(?:\+(?P<buildmetadata>[0-9a-zA-Z-]+(?:\.[0-9a-zA-Z-]+)*))?$/m';
 
