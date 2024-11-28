@@ -32,6 +32,7 @@
         "matthiasnoback/symfony-config-test": "^4.2 | ^5.0",
         "matthiasnoback/symfony-dependency-injection-test": "^4.2 | ^5.0 | ^6.0",
         "nyholm/symfony-bundle-test": "^2.0",
+        "php-mock/php-mock-phpunit": "^2.10",
         "phpunit/phpunit": "^9.5",
         "rector/rector": "^1.2",
         "symfony/form": "^5.4 | ^6.4 | ^7.0",
