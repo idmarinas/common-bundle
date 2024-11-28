@@ -1,5 +1,5 @@
 [![Test Suite](https://github.com/idmarinas/common-bundle/actions/workflows/php.yml/badge.svg)](https://github.com/idmarinas/common-bundle/actions/workflows/php.yml)
-[![SonarCloud](https://github.com/idmarinas/common-bundle/actions/workflows/sonar-cloud.yml/badge.svg)](https://github.com/idmarinas/common-bundle/actions/workflows/sonar-cloud.yml)
+[![Quality Gate Status](https://sonarcloud.io/api/project_badges/measure?project=idmarinas_common-bundle&metric=alert_status)](https://sonarcloud.io/summary/new_code?id=idmarinas_common-bundle)
 
 ![GitHub release](https://img.shields.io/github/release/idmarinas/common-bundle.svg)
 ![GitHub Release Date](https://img.shields.io/github/release-date/idmarinas/common-bundle.svg)
