@@ -3,39 +3,39 @@
 /**
  * This file is part of Bundle "IdmCommonBundle".
  *
- * @see https://github.com/idmarinas/common-bundle/
+ * @see     https://github.com/idmarinas/common-bundle/
  *
  * @license https://github.com/idmarinas/common-bundle/blob/master/LICENSE.txt
  *
- * @since 1.1.0
+ * @since   1.1.0
  */
 
 namespace Idm\Bundle\Common\Tests\Validator;
 
-use Throwable;
+use Idm\Bundle\Common\Validator\Constraint\IsEven;
+use Idm\Bundle\Common\Validator\Constraint\IsEvenValidator;
+use Idm\Bundle\Common\Validator\Constraint\IsOdd;
 use Symfony\Component\Validator\ConstraintValidatorInterface;
-use Idm\Bundle\Common\Validator\Constraints\IsEven;
-use Idm\Bundle\Common\Validator\Constraints\IsEvenValidator;
-use Idm\Bundle\Common\Validator\Constraints\IsOdd;
 use Symfony\Component\Validator\Test\ConstraintValidatorTestCase;
+use Throwable;
 
 class ContainsIsEvenValidatorTest extends ConstraintValidatorTestCase
 {
-    public function testNullIsValid()
+    public function testNullIsValid ()
     {
         $this->validator->validate(null, new IsEven());
 
         $this->assertNoViolation();
     }
 
-    public function testEmptyIsValid()
+    public function testEmptyIsValid ()
     {
         $this->validator->validate('', new IsEven());
 
         $this->assertNoViolation();
     }
 
-    public function testConstraintInvalid()
+    public function testConstraintInvalid ()
     {
         try {
             $this->validator->validate(5, new IsOdd());
@@ -46,7 +46,7 @@ class ContainsIsEvenValidatorTest extends ConstraintValidatorTestCase
         }
     }
 
-    public function testNotValidNumber()
+    public function testNotValidNumber ()
     {
         try {
             $this->validator->validate('rr', new IsEven());
@@ -57,23 +57,23 @@ class ContainsIsEvenValidatorTest extends ConstraintValidatorTestCase
         }
     }
 
-    public function testIsInvalid()
+    public function testIsInvalid ()
     {
         $this->validator->validate(5, new IsEven());
 
-        $this->buildViolation('idm.common.is_even')
-            ->setParameter('{{ number }}', 5)
-            ->assertRaised();
+        $this
+            ->buildViolation('idm.common.is_even')->setParameter('{{ number }}', 5)->assertRaised()
+        ;
     }
 
-    public function testIsValid()
+    public function testIsValid ()
     {
         $this->validator->validate(6, new IsEven());
 
         $this->assertNoViolation();
     }
 
-    protected function createValidator(): ConstraintValidatorInterface
+    protected function createValidator (): ConstraintValidatorInterface
     {
         return new IsEvenValidator();
     }
