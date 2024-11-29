@@ -28,3 +28,63 @@
 [![PayPal.Me - The safer, easier way to pay online!](https://img.shields.io/badge/donate-help_my_project-ffaa29.svg?logo=paypal&cacheSeconds=86400)](https://www.paypal.me/idmarinas)
 [![Liberapay - Donate](https://img.shields.io/liberapay/receives/IDMarinas.svg?logo=liberapay&cacheSeconds=86400)](https://liberapay.com/IDMarinas/donate)
 [![Twitter](https://img.shields.io/twitter/url/http/shields.io.svg?style=social&cacheSeconds=86400)](https://twitter.com/idmarinas)
+
+# IDMarinas Common Bundle
+
+> This bundle is intended to group common and often repeated things when creating an APP with Symfony.
+
+## Content
+
+### Command
+
+> Reset cache of OPcache
+
+```bash
+  symfony console idm:opcache:reset
+```
+
+> Regenerate APP_SECRET
+
+```bash
+  # Change var APP_SECRET in .env file
+  symfony console idm:regenerate:app_secret
+    
+  # Only show value WITHOUT update .env file
+  symfony console idm:regenerate:app_secret --show
+```
+
+### Entity
+
+> `AbstractContact`: to create a table with contact messages from the web.
+
+### Form
+
+> `AbstractContactFormType`: to create form for send contact messages.
+
+### Repository
+
+> `AbstractContactRepository`: repository for AbstractContact entity.
+
+### Traits
+
+#### Entity
+
+> `IdTrait`: add a field id in INT format
+
+> `UuidTrait`: add a field uuid in UUID format
+
+#### Tool
+
+> `FakerTrait`: add a Faker method to use in test, fixtures...
+
+> `VersionTrait`: add two methods:
+> 1. **convertVersionToString** converts a version like '100000000' to STRING version like '1.0.0'
+> 2. **convertVersionToInt** converts a version like '1.0.0' to INT version like '100000000'
+
+### Validator
+
+#### Constraint
+
+> `IsEven` check if value is an even value.
+
+> `IsOdd` check if value is an odd value.
