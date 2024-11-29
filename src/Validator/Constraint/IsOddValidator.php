@@ -36,11 +36,11 @@ class IsOddValidator extends ConstraintValidator
         }
 
         if (!is_numeric($value)) {
-            //-- Tiene que ser un valor entero o decimal
+            //-- Must be an integer or decimal value
             throw new UnexpectedValueException($value, 'int|float');
         }
 
-        //-- Check if number is odd, if is even add a violation
+        //-- Check if number is odd, if is even adding a violation
         if ($value % 2 == 0) {
             $this->context
                 ->buildViolation($constraint->message)->setParameter('{{ number }}', $value)->addViolation()

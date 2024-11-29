@@ -36,7 +36,7 @@ class IsEvenValidator extends ConstraintValidator
         }
 
         if (!is_numeric($value)) {
-            //-- Tiene que ser un valor entero o decimal
+            //-- Must be an integer or decimal value
             throw new UnexpectedValueException($value, 'int|float');
         }
 
