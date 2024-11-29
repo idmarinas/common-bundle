@@ -10,18 +10,18 @@
  * @since   1.1.0
  */
 
-namespace Idm\Bundle\Common\Validator\Constraints;
+namespace Idm\Bundle\Common\Validator\Constraint;
 
 use Attribute;
 use Symfony\Component\Validator\Constraint;
 
 /**
- * Check if the value is even.
+ * Check if the value is odd.
  *
  * @Annotation
  */
 #[Attribute]
-class IsEven extends Constraint
+class IsOdd extends Constraint
 {
-    public string $message = 'idm.common.is_even';
+    public string $message = 'idm.common.is_odd';
 }

@@ -10,7 +10,7 @@
  * @since   1.1.0
  */
 
-namespace Idm\Bundle\Common\Validator\Constraints;
+namespace Idm\Bundle\Common\Validator\Constraint;
 
 use Symfony\Component\Validator\Constraint;
 use Symfony\Component\Validator\ConstraintValidator;
@@ -43,9 +43,7 @@ class IsOddValidator extends ConstraintValidator
         //-- Check if number is odd, if is even add a violation
         if ($value % 2 == 0) {
             $this->context
-                ->buildViolation($constraint->message)
-                ->setParameter('{{ number }}', $value)
-                ->addViolation()
+                ->buildViolation($constraint->message)->setParameter('{{ number }}', $value)->addViolation()
             ;
         }
     }
