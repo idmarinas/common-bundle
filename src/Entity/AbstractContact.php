@@ -24,14 +24,12 @@ use Doctrine\DBAL\Types\Types;
 use Doctrine\ORM\Mapping as ORM;
 use Gedmo\Timestampable\Traits\TimestampableEntity;
 use Idm\Bundle\Common\Repository\AbstractContactRepository;
-use Idm\Bundle\Common\Traits\Entity\UuidTrait;
 use Symfony\Component\Validator\Constraints as Assert;
 
 #[ORM\MappedSuperclass(repositoryClass: AbstractContactRepository::class)]
 #[ORM\Table(name: 'idm_common_contact_form')]
 abstract class AbstractContact
 {
-    use UuidTrait;
     use TimestampableEntity;
 
     // -- Contact name.
