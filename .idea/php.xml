@@ -12,6 +12,7 @@
   </component>
   <component name="PhpIncludePathManager">
     <exclude_path>
+      <path value="$PROJECT_DIR$/vendor/phpstan/phpstan/phpstan.phar" />
       <path value="$PROJECT_DIR$/vendor/rector/rector/stubs-rector" />
       <path value="$PROJECT_DIR$/vendor/symfony/polyfill-php80/Resources/stubs" />
     </exclude_path>
