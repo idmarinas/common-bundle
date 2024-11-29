@@ -29,7 +29,8 @@ jobs:
             symfony: '7.1.*'
 
     steps:
-      - uses: actions/checkout@master
+      - name: Checkout
+        uses: actions/checkout@master
         if: matrix.php == '8.0' && matrix.symfony == '5.4.*'
         with:
           fetch-depth: 0  # Shallow clones should be disabled for a better relevancy of analysis
