@@ -31,7 +31,7 @@ jobs:
     steps:
       - uses: actions/checkout@master
         with:
-          fetch-depth: ${{ (matrix.php == '8.0' && matrix.symfony == '5.4.*') && 0 || 1 }} # Shallow clones should be disabled for a better relevancy of analysis
+          fetch-depth: ${{ (matrix.php == '8.0' && matrix.symfony == '5.4.*') && '0' || '1' }} # Shallow clones should be disabled for a better relevancy of analysis
 
       - name: Setup PHP ${{ matrix.php }}
         uses: shivammathur/setup-php@v2
