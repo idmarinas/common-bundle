@@ -43,8 +43,12 @@ trait VersionTrait
         preg_match_all("/$re/m", $version, $matches, PREG_SET_ORDER, 0);
         $matches = $matches[0];
 
-        return (int)(str_pad($matches['major'], 4, 0, STR_PAD_LEFT) . str_pad(
-                $matches['minor'], 4, 0, STR_PAD_LEFT
-            ) . str_pad($matches['patch'], 4, 0, STR_PAD_LEFT));
+        $major = str_pad($matches['major'], 4, 0, STR_PAD_LEFT);
+        $minor = str_pad($matches['minor'], 4, 0, STR_PAD_LEFT);
+        $patch = str_pad($matches['patch'], 4, 0, STR_PAD_LEFT);
+
+        return (int)($major . $minor . $patch);
     }
+
+    // TODO: return a detailed of version: liker major minos patch prerelease and buildmetadata
 }
