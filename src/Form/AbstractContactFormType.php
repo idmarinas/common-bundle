@@ -19,7 +19,6 @@
 
 namespace Idm\Bundle\Common\Form;
 
-use Idm\Bundle\Common\Entity\AbstractContact;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\Extension\Core\Type\CheckboxType;
 use Symfony\Component\Form\Extension\Core\Type\EmailType;
@@ -34,15 +33,12 @@ abstract class AbstractContactFormType extends AbstractType
     public function buildForm (FormBuilderInterface $builder, array $options): void
     {
         $builder
-            ->add('name', TextType::class, [
-                'label' => 'contact.name',
-            ])->add('lastName', TextType::class, [
-                'label' => 'contact.last_name',
-            ])->add('email', EmailType::class, ['label' => 'contact.email'])->add('comment', TextareaType::class, [
-                'label' => 'contact.comment',
-            ])->add('consent', CheckboxType::class, ['label' => 'contact.consent'])->add(
-                'buttonSubmit', SubmitType::class, ['label' => 'contact.button.submit']
-            )
+            ->add('name', TextType::class, ['label' => 'contact.name',])
+            ->add('lastName', TextType::class, ['label' => 'contact.last_name',])
+            ->add('email', EmailType::class, ['label' => 'contact.email'])
+            ->add('comment', TextareaType::class, ['label' => 'contact.comment',])
+            ->add('consent', CheckboxType::class, ['label' => 'contact.consent'])
+            ->add('buttonSubmit', SubmitType::class, ['label' => 'contact.button.submit'])
         ;
     }
 
