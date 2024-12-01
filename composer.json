@@ -25,6 +25,7 @@
         "symfony/filesystem": "^5.4 | ^6.4 | ^7.0"
     },
     "require-dev": {
+        "doctrine/doctrine-bundle": "^2.13",
         "doctrine/orm": "^2.20",
         "easycorp/easyadmin-bundle": "^4.0",
         "fakerphp/faker": "^1.21",
