@@ -21,7 +21,7 @@ namespace Idm\Bundle\Common\Tests\Traits\Entity;
 
 use Idm\Bundle\Common\Traits\Entity\UuidTrait;
 use PHPUnit\Framework\TestCase;
-use Ramsey\Uuid\UuidFactory;
+use Symfony\Component\Uid\Uuid;
 
 class UuidTraitTest extends TestCase
 {
@@ -29,10 +29,10 @@ class UuidTraitTest extends TestCase
     {
         $entity = new UuidTraitCheck();
 
-        $uuid = (new UuidFactory())->uuid4();
-        $entity->setUuid($uuid);
+        $uuid = Uuid::v4();
+        $entity->setId($uuid);
 
-        $this->assertEquals($uuid, $entity->getUuid());
+        $this->assertEquals($uuid, $entity->getId());
     }
 }
 
