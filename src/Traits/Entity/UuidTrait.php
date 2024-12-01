@@ -2,7 +2,7 @@
 /**
  * Copyright 2023-2024 (C) IDMarinas - All Rights Reserved
  *
- * Last modified by "IDMarinas" on 27/11/24, 21:45
+ * Last modified by "IDMarinas" on 1/12/24, 21:33
  *
  * @project IDMarinas Common Bundle
  * @see     https://github.com/idmarinas/common-bundle
@@ -20,25 +20,24 @@
 namespace Idm\Bundle\Common\Traits\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
-use Ramsey\Uuid\Doctrine\UuidGenerator;
-use Ramsey\Uuid\UuidInterface;
+use Symfony\Component\Uid\Uuid;
 
 trait UuidTrait
 {
     #[ORM\Id]
     #[ORM\GeneratedValue(strategy: 'CUSTOM')]
     #[ORM\Column(type: 'uuid', unique: true)]
-    #[ORM\CustomIdGenerator(class: UuidGenerator::class)]
-    protected ?UuidInterface $uuid = null;
+    #[ORM\CustomIdGenerator('doctrine.uuid_generator')]
+    protected ?Uuid $id = null;
 
-    public function getUuid (): ?UuidInterface
+    public function getId (): ?Uuid
     {
-        return $this->uuid;
+        return $this->id;
     }
 
-    public function setUuid (?UuidInterface $uuid): static
+    public function setId (?Uuid $id): static
     {
-        $this->uuid = $uuid;
+        $this->id = $id;
 
         return $this;
     }
