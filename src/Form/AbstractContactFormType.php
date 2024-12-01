@@ -49,7 +49,6 @@ abstract class AbstractContactFormType extends AbstractType
     public function configureOptions (OptionsResolver $resolver): void
     {
         $resolver->setDefaults([
-            'data_class'         => AbstractContact::class,
             'translation_domain' => 'form_contact',
         ]);
     }
