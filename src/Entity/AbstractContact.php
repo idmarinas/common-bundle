@@ -2,7 +2,7 @@
 /**
  * Copyright 2024 (C) IDMarinas - All Rights Reserved
  *
- * Last modified by "IDMarinas" on 27/11/24, 20:31
+ * Last modified by "IDMarinas" on 1/12/24, 21:51
  *
  * @project IDMarinas Common Bundle
  * @see     https://github.com/idmarinas/common-bundle
@@ -23,11 +23,9 @@ use DateTime;
 use Doctrine\DBAL\Types\Types;
 use Doctrine\ORM\Mapping as ORM;
 use Gedmo\Timestampable\Traits\TimestampableEntity;
-use Idm\Bundle\Common\Repository\AbstractContactRepository;
 use Symfony\Component\Validator\Constraints as Assert;
 
-#[ORM\MappedSuperclass(repositoryClass: AbstractContactRepository::class)]
-#[ORM\Table(name: 'idm_common_contact_form')]
+#[ORM\MappedSuperclass]
 abstract class AbstractContact
 {
     use TimestampableEntity;
