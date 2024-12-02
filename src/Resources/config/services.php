@@ -22,7 +22,7 @@ namespace Symfony\Component\DependencyInjection\Loader\Configurator;
 use Idm\Bundle\Common\Command\OpcacheClearCommand;
 use Idm\Bundle\Common\Command\RegenerateAppSecretCommand;
 
-return static function (ContainerConfigurator $container) {
+return static function (ContainerConfigurator $container): void {
     $container
         ->services()
         ->set('idm.common.command.reg_app_secret', RegenerateAppSecretCommand::class)
