@@ -32,7 +32,7 @@ trait VersionTrait
         $version = substr_replace($version, '', -4);
         $major = (int)substr($version, -4);
 
-        return "{$major}.{$minor}.{$path}";
+        return sprintf('%d.%d.%d', $major, $minor, $path);
     }
 
     /** Convert string version like 1.0.0 to 100000000 */
@@ -40,7 +40,7 @@ trait VersionTrait
     {
         $re = '^(?P<major>0|[1-9]\d*)\.(?P<minor>0|[1-9]\d*)\.(?P<patch>0|[1-9]\d*)(?:-(?P<prerelease>(?:0|[1-9]\d*|\d*[a-zA-Z-][0-9a-zA-Z-]*)(?:\.(?:0|[1-9]\d*|\d*[a-zA-Z-][0-9a-zA-Z-]*))*))?(?:\+(?P<buildmetadata>[0-9a-zA-Z-]+(?:\.[0-9a-zA-Z-]+)*))?$';
 
-        preg_match_all("/$re/m", $version, $matches, PREG_SET_ORDER, 0);
+        preg_match_all(sprintf('/%s/m', $re), $version, $matches, PREG_SET_ORDER, 0);
         $matches = $matches[0];
 
         $major = str_pad($matches['major'], 4, 0, STR_PAD_LEFT);

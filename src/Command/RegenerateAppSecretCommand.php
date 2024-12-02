@@ -61,7 +61,7 @@ class RegenerateAppSecretCommand extends Command
         $secret = bin2hex(random_bytes($length));
 
         if ($showValue) {
-            $io->success("New $key was generated: $secret");
+            $io->success(sprintf('New %s was generated: %s', $key, $secret));
 
             return Command::SUCCESS;
         }
@@ -72,17 +72,17 @@ class RegenerateAppSecretCommand extends Command
             $str = file_get_contents($file);
             $fs = new Filesystem();
 
-            $pattern = "/^(?<secret>$key=.+)$/m";
+            $pattern = sprintf('/^(?<secret>%s=.+)$/m', $key);
             preg_match($pattern, $str, $matches);
 
             if (isset($matches['secret']) && is_string($matches['secret'])) {
-                $str = preg_replace("/{$matches['secret']}/", "{$key}={$secret}", $str);
+                $str = preg_replace(sprintf('/%s/', $matches['secret']), sprintf('%s=%s', $key, $secret), $str);
 
                 $fs->dumpFile($file, $str);
 
-                $io->success("New {$key} was generated: {$secret}");
+                $io->success(sprintf('New %s was generated: %s', $key, $secret));
             } else {
-                $io->warning("Not find {$key} in file '{$file}'");
+                $io->warning(sprintf("Not find %s in file '%s'", $key, $file));
             }
 
             return Command::SUCCESS;
