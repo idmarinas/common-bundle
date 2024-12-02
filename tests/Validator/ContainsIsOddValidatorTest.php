@@ -21,43 +21,43 @@ use Throwable;
 
 class ContainsIsOddValidatorTest extends ConstraintValidatorTestCase
 {
-    public function testNullIsValid ()
+    public function testNullIsValid (): void
     {
         $this->validator->validate(null, new IsOdd());
 
         $this->assertNoViolation();
     }
 
-    public function testEmptyIsValid ()
+    public function testEmptyIsValid (): void
     {
         $this->validator->validate('', new IsOdd());
 
         $this->assertNoViolation();
     }
 
-    public function testConstraintInvalid ()
+    public function testConstraintInvalid (): void
     {
         try {
             $this->validator->validate(5, new IsEven());
             $this->fail('Fail expect a exception for argument of Constraint not is correct');
-        } catch (Throwable $th) {
+        } catch (Throwable) {
             // -- Expected argument of type "Idm\Bundle\Common\Validator\Constraints\IsEven", "Idm\Bundle\Common\Validator\Constraints\IsOdd" given
             $this->assertNoViolation();
         }
     }
 
-    public function testNotValidNumber ()
+    public function testNotValidNumber (): void
     {
         try {
             $this->validator->validate('rr', new IsOdd());
             $this->fail('Fail expect a exception for argument of type "int|float"');
-        } catch (Throwable $th) {
+        } catch (Throwable) {
             // -- Expected argument of type "int|float", "string" given
             $this->assertNoViolation();
         }
     }
 
-    public function testIsInvalid ()
+    public function testIsInvalid (): void
     {
         $this->validator->validate(6, new IsOdd());
 
@@ -66,7 +66,7 @@ class ContainsIsOddValidatorTest extends ConstraintValidatorTestCase
         ;
     }
 
-    public function testIsValid ()
+    public function testIsValid (): void
     {
         $this->validator->validate(5, new IsOdd());
 

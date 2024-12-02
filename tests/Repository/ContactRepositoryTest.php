@@ -19,6 +19,7 @@
 
 namespace Idm\Bundle\Common\Tests\Repository;
 
+use Doctrine\ORM\Query\Expr;
 use Doctrine\ORM\EntityManagerInterface;
 use Doctrine\ORM\EntityRepository;
 use Doctrine\ORM\Mapping\ClassMetadata;
@@ -31,14 +32,14 @@ use PHPUnit\Framework\TestCase;
 
 class ContactRepositoryTest extends TestCase
 {
-    public function testCountEntityEmail ()
+    public function testCountEntityEmail (): void
     {
         // Create the mocks
         $classMetadata = $this
             ->getMockBuilder(ClassMetadata::class)->setConstructorArgs([Contact::class])->getMock()
         ;
         $queryBuilder = $this->createMock(QueryBuilder::class);
-        $expr = $this->createMock(Query\Expr::class);
+        $expr = $this->createMock(Expr::class);
         $query = $this->createMock(Query::class);
         $entityManager = $this->createMock(EntityManagerInterface::class);
         $managerRegistry = $this->createMock(ManagerRegistry::class);

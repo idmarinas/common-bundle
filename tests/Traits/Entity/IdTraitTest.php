@@ -27,7 +27,7 @@ class IdTraitTest extends TestCase
 {
     use PHPMock;
 
-    public function testIdTrait ()
+    public function testIdTrait (): void
     {
         $entity = new IdTraitCheck();
         $entity->setId(1);

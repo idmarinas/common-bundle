@@ -28,7 +28,7 @@ class ContactTypeFormTest extends TypeTestCase
 {
     use FakerTrait;
 
-    public function testSubmitValidData ()
+    public function testSubmitValidData (): void
     {
         $formData = [
             'name'     => $this->faker()->name(),

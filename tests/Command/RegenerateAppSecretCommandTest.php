@@ -3,11 +3,11 @@
 /**
  * This file is part of Bundle "IdmCommonBundle".
  *
- * @see https://github.com/idmarinas/common-bundle/
+ * @see     https://github.com/idmarinas/common-bundle/
  *
  * @license https://github.com/idmarinas/common-bundle/blob/master/LICENSE.txt
  *
- * @since 1.4.0
+ * @since   1.4.0
  */
 
 namespace Idm\Bundle\Common\Tests\Command;
@@ -22,7 +22,7 @@ class RegenerateAppSecretCommandTest extends KernelTestCase
     private string $cFile = '.env';
     private string $cKey  = 'APP_SECRET';
 
-    public function testExecuteShow()
+    public function testExecuteShow (): void
     {
         $commandTester = new CommandTester(new RegenerateAppSecretCommand());
         $commandTester->execute([
@@ -40,11 +40,10 @@ class RegenerateAppSecretCommandTest extends KernelTestCase
         // the output of the command in the console
         $output = $commandTester->getDisplay();
         $this->assertStringContainsString('New APP_SECRET', $output);
-
         // ...
     }
 
-    public function testNotFile()
+    public function testNotFile (): void
     {
         $commandTester = new CommandTester(new RegenerateAppSecretCommand());
         $commandTester->execute([
@@ -56,9 +55,9 @@ class RegenerateAppSecretCommandTest extends KernelTestCase
         $this->assertStringContainsString('Not find file ".env" or not is readable or writable.', $output);
     }
 
-    public function testNotSecret()
+    public function testNotSecret (): void
     {
-        $fs            = new Filesystem();
+        $fs = new Filesystem();
         $commandTester = new CommandTester(new RegenerateAppSecretCommand());
 
         $fs->touch($this->cFile);
@@ -69,14 +68,14 @@ class RegenerateAppSecretCommandTest extends KernelTestCase
 
         // the output of the command in the console
         $output = $commandTester->getDisplay();
-        $this->assertStringContainsString("Not find $this->cKey in file '$this->cFile", $output);
+        $this->assertStringContainsString(sprintf("Not find %s in file '%s", $this->cKey, $this->cFile), $output);
 
         $fs->remove($this->cFile);
     }
 
-    public function testSecret()
+    public function testSecret (): void
     {
-        $fs            = new Filesystem();
+        $fs = new Filesystem();
         $commandTester = new CommandTester(new RegenerateAppSecretCommand());
 
         $fs->touch($this->cFile);
@@ -88,7 +87,7 @@ class RegenerateAppSecretCommandTest extends KernelTestCase
 
         // the output of the command in the console
         $output = $commandTester->getDisplay();
-        $this->assertStringContainsString("New $this->cKey was generated: ", $output);
+        $this->assertStringContainsString(sprintf('New %s was generated: ', $this->cKey), $output);
 
         $fs->remove($this->cFile);
     }

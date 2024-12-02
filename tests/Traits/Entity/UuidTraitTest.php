@@ -25,7 +25,7 @@ use Symfony\Component\Uid\Uuid;
 
 class UuidTraitTest extends TestCase
 {
-    public function testUuid ()
+    public function testUuid (): void
     {
         $entity = new UuidTraitCheck();
 

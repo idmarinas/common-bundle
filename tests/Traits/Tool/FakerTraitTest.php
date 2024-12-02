@@ -29,7 +29,7 @@ class FakerTraitTest extends TestCase
 {
     use PHPMock;
 
-    public function testFakerNotInstalled ()
+    public function testFakerNotInstalled (): void
     {
         $this->expectException(LogicException::class);
 

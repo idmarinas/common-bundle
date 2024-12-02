@@ -29,7 +29,7 @@ class OpcacheClearCommandTest extends TestCase
 {
     use PHPMock;
 
-    public function testOpcacheFunctionNotExists ()
+    public function testOpcacheFunctionNotExists (): void
     {
         $mock = $this->getFunctionMock($this->getNameSpaceCommand(), 'function_exists');
         $mock->expects($this->once())->willReturn(false);
@@ -43,7 +43,7 @@ class OpcacheClearCommandTest extends TestCase
         $this->assertStringContainsString('Function "opcache_reset" not exist.', $output);
     }
 
-    public function testOpcacheFunctionExists ()
+    public function testOpcacheFunctionExists (): void
     {
         $mock = $this->getFunctionMock($this->getNameSpaceCommand(), 'function_exists');
         $mock->expects($this->once())->willReturn(true);
@@ -60,7 +60,7 @@ class OpcacheClearCommandTest extends TestCase
         $this->assertStringContainsString('OPcache has been reset.', $output);
     }
 
-    public function testOpcacheFail ()
+    public function testOpcacheFail (): void
     {
         $mock = $this->getFunctionMock($this->getNameSpaceCommand(), 'function_exists');
         $mock->expects($this->once())->willReturn(true);
