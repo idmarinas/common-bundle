@@ -50,7 +50,6 @@ trait FakerTrait
 		$properties = $reflectionClass->getProperties();
 
 		foreach ($properties as $property) {
-			$property->setAccessible(true);
 			$property->setValue($entity, $this->fakerValueFromProperty($property));
 		}
 
