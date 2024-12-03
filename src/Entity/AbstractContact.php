@@ -19,7 +19,6 @@
 
 namespace Idm\Bundle\Common\Entity;
 
-use DateTime;
 use Doctrine\DBAL\Types\Types;
 use Doctrine\ORM\Mapping as ORM;
 use Gedmo\Timestampable\Traits\TimestampableEntity;
@@ -28,96 +27,90 @@ use Symfony\Component\Validator\Constraints as Assert;
 #[ORM\MappedSuperclass]
 abstract class AbstractContact
 {
-    use TimestampableEntity;
+	use TimestampableEntity;
 
-    // -- Contact name.
-    #[ORM\Column(type: Types::STRING, length: 255)]
-    #[Assert\NotBlank]
-    #[Assert\Length(min: 3, max: 255)]
-    private ?string $name = null;
+	// -- Contact name.
+	#[ORM\Column(type: Types::STRING, length: 255)]
+	#[Assert\NotBlank]
+	#[Assert\Length(min: 3, max: 255)]
+	private ?string $name = null;
 
-    // -- Surname of contact.
-    #[ORM\Column(type: Types::STRING, length: 255)]
-    #[Assert\NotBlank]
-    #[Assert\Length(min: 3, max: 255)]
-    private ?string $lastName = null;
+	// -- Surname of contact.
+	#[ORM\Column(type: Types::STRING, length: 255)]
+	#[Assert\NotBlank]
+	#[Assert\Length(min: 3, max: 255)]
+	private ?string $lastName = null;
 
-    // -- Contact email.
-    #[ORM\Column(type: Types::STRING, length: 150)]
-    #[Assert\Email]
-    private ?string $email = null;
+	// -- Contact email.
+	#[ORM\Column(type: Types::STRING, length: 150)]
+	#[Assert\Email]
+	private ?string $email = null;
 
-    // -- Comments/Questions.
-    #[ORM\Column(type: Types::TEXT)]
-    #[Assert\Length(min: 50, max: 65535)]
-    private string $comment = '';
+	// -- Comments/Questions.
+	#[ORM\Column(type: Types::TEXT)]
+	#[Assert\Length(min: 50, max: 65535)]
+	private string $comment = '';
 
-    #[ORM\Column(type: Types::BOOLEAN)]
-    private bool $consent = false;
+	#[ORM\Column(type: Types::BOOLEAN)]
+	private bool $consent = false;
 
-    public function __construct ()
-    {
-        $this->createdAt = new DateTime();
-        $this->updatedAt = new DateTime();
-    }
+	public function getName (): ?string
+	{
+		return $this->name;
+	}
 
-    public function getName (): ?string
-    {
-        return $this->name;
-    }
+	public function setName (string $name): static
+	{
+		$this->name = $name;
 
-    public function setName (string $name): static
-    {
-        $this->name = $name;
+		return $this;
+	}
 
-        return $this;
-    }
+	public function getLastName (): ?string
+	{
+		return $this->lastName;
+	}
 
-    public function getLastName (): ?string
-    {
-        return $this->lastName;
-    }
+	public function setLastName (string $lastName): static
+	{
+		$this->lastName = $lastName;
 
-    public function setLastName (string $lastName): static
-    {
-        $this->lastName = $lastName;
+		return $this;
+	}
 
-        return $this;
-    }
+	public function getEmail (): ?string
+	{
+		return $this->email;
+	}
 
-    public function getEmail (): ?string
-    {
-        return $this->email;
-    }
+	public function setEmail (string $email): static
+	{
+		$this->email = $email;
 
-    public function setEmail (string $email): static
-    {
-        $this->email = $email;
+		return $this;
+	}
 
-        return $this;
-    }
+	public function getComment (): string
+	{
+		return $this->comment;
+	}
 
-    public function getComment (): string
-    {
-        return $this->comment;
-    }
+	public function setComment (string $comment): static
+	{
+		$this->comment = $comment;
 
-    public function setComment (string $comment): static
-    {
-        $this->comment = $comment;
+		return $this;
+	}
 
-        return $this;
-    }
+	public function isConsent (): bool
+	{
+		return $this->consent;
+	}
 
-    public function isConsent (): bool
-    {
-        return $this->consent;
-    }
+	public function setConsent (bool $consent): static
+	{
+		$this->consent = $consent;
 
-    public function setConsent (bool $consent): static
-    {
-        $this->consent = $consent;
-
-        return $this;
-    }
+		return $this;
+	}
 }
