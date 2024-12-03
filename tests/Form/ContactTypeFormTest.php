@@ -26,38 +26,40 @@ use Symfony\Component\Form\Test\TypeTestCase;
 
 class ContactTypeFormTest extends TypeTestCase
 {
-    use FakerTrait;
+	use FakerTrait;
 
-    public function testSubmitValidData (): void
-    {
-        $formData = [
-            'name'     => $this->faker()->name(),
-            'lastName' => $this->faker()->lastName(),
-            'email'    => $this->faker()->email(),
-            'comment'  => $this->faker()->text(),
-            'consent'  => $this->faker()->boolean(),
-        ];
+	public function testSubmitValidData (): void
+	{
+		$formData = [
+			'name'     => $this->faker()->name(),
+			'lastName' => $this->faker()->lastName(),
+			'email'    => $this->faker()->email(),
+			'comment'  => $this->faker()->text(),
+			'consent'  => $this->faker()->boolean(),
+		];
 
-        $model = (new Contact());
-        // $model will retrieve data from the form submission; pass it as the second argument
-        $form = $this->factory->create(ContactFormType::class, $model);
+		$model = (new Contact());
+		// $model will retrieve data from the form submission; pass it as the second argument
+		$form = $this->factory->create(ContactFormType::class, $model);
 
-        $expected = (clone $model)
-            ->setName($formData['name'])->setLastName($formData['lastName'])->setEmail($formData['email'])->setComment(
-                $formData['comment']
-            )->setConsent($formData['consent'])
-        ;
-        // ...populate $expected properties with the data stored in $formData
+		$expected = (clone $model)
+			->setName($formData['name'])
+			->setLastName($formData['lastName'])
+			->setEmail($formData['email'])
+			->setComment($formData['comment'])
+			->setConsent($formData['consent'])
+		;
+		// ...populate $expected properties with the data stored in $formData
 
-        // submit the data to the form directly
-        $form->submit($formData);
+		// submit the data to the form directly
+		$form->submit($formData);
 
-        // This check ensures there are no transformation failures
-        $this->assertTrue($form->isSynchronized());
+		// This check ensures there are no transformation failures
+		$this->assertTrue($form->isSynchronized());
 
-        // check that $model was modified as expected when the form was submitted
-        $this->assertEquals($expected, $model);
-    }
+		// check that $model was modified as expected when the form was submitted
+		$this->assertEquals($expected, $model);
+	}
 }
 
 class Contact extends AbstractContact {}
