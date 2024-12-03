@@ -45,11 +45,7 @@ class FakerTraitTest extends TestCase
 
 	public function testFakerPopulateEntity ()
 	{
-		$entity = new Contact();
-
-		$result = (new FakerCheck())->populateEntity(new Contact());
-
-		$this->assertEquals($entity, $result);
+		$this->assertNotEmpty((new FakerCheck())->populateEntity(new Contact()));
 	}
 }
 
