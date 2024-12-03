@@ -33,26 +33,26 @@ abstract class AbstractContact
 	#[ORM\Column(type: Types::STRING, length: 255)]
 	#[Assert\NotBlank]
 	#[Assert\Length(min: 3, max: 255)]
-	private ?string $name = null;
+	protected ?string $name = null;
 
 	// -- Surname of contact.
 	#[ORM\Column(type: Types::STRING, length: 255)]
 	#[Assert\NotBlank]
 	#[Assert\Length(min: 3, max: 255)]
-	private ?string $lastName = null;
+	protected ?string $lastName = null;
 
 	// -- Contact email.
 	#[ORM\Column(type: Types::STRING, length: 150)]
 	#[Assert\Email]
-	private ?string $email = null;
+	protected ?string $email = null;
 
 	// -- Comments/Questions.
 	#[ORM\Column(type: Types::TEXT)]
 	#[Assert\Length(min: 50, max: 65535)]
-	private string $comment = '';
+	protected string $comment = '';
 
 	#[ORM\Column(type: Types::BOOLEAN)]
-	private bool $consent = false;
+	protected bool $consent = false;
 
 	public function getName (): ?string
 	{
