@@ -2,7 +2,7 @@
 /**
  * Copyright 2023-2024 (C) IDMarinas - All Rights Reserved
  *
- * Last modified by "IDMarinas" on 28/11/24, 13:38
+ * Last modified by "IDMarinas" on 03/12/2024, 21:33
  *
  * @project IDMarinas Common Bundle
  * @see     https://github.com/idmarinas/common-bundle
@@ -75,7 +75,10 @@ trait FakerTrait
 		$attribute = $property->getAttributes(Column::class)[0];
 		$arguments = $attribute->getArguments();
 
-		return match ($arguments['type']) {
+		$type = $arguments['type'] ?? $property->getType()?->getName() ?: $property->getName();
+		$length = ($arguments['length'] ?? 10) - 0.9;
+
+		return match ($type) {
 			'text'                 => $this->faker()->text(),
 			'integer'              => $this->faker()->randomNumber(327539810),
 			'smallint'             => $this->faker()->randomNumber(32760),
@@ -91,7 +94,9 @@ trait FakerTrait
 			'date_inmutable'       => $this->faker()->date(),
 			'time',
 			'time_immutable'       => $this->faker()->time(),
-			'string'               => $this->faker()->text($arguments['length'] * 0.9),
+			'string'               => $this->faker()->text($length),
+			'createdFromIp',
+			'updatedFromIp'        => $this->faker()->ipv4(),
 			default                => $this->faker()->sentence()
 		};
 	}
