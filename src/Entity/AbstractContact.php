@@ -22,6 +22,7 @@ namespace Idm\Bundle\Common\Entity;
 use Doctrine\DBAL\Types\Types;
 use Doctrine\ORM\Mapping as ORM;
 use Gedmo\Timestampable\Traits\TimestampableEntity;
+use Idm\Bundle\Common\Traits\Entity\UuidTrait;
 use Symfony\Component\Validator\Constraints as Assert;
 
 #[ORM\MappedSuperclass]
