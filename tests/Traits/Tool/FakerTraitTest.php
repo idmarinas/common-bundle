@@ -19,6 +19,9 @@
 
 namespace Idm\Bundle\Common\Tests\Traits\Tool;
 
+use Doctrine\DBAL\Types\Types;
+use Doctrine\ORM\Mapping\Column;
+use Idm\Bundle\Common\Entity\AbstractContact;
 use Idm\Bundle\Common\Traits\Tool\FakerTrait;
 use LogicException;
 use phpmock\phpunit\PHPMock;
@@ -27,21 +30,36 @@ use ReflectionClass;
 
 class FakerTraitTest extends TestCase
 {
-    use PHPMock;
+	use PHPMock;
 
-    public function testFakerNotInstalled (): void
-    {
-        $this->expectException(LogicException::class);
+	public function testFakerNotInstalled (): void
+	{
+		$this->expectException(LogicException::class);
 
-        $namespace = (new ReflectionClass(FakerTrait::class))->getNamespaceName();
-        $mock = $this->getFunctionMock($namespace, 'class_exists');
-        $mock->expects($this->once())->willReturn(false);
+		$namespace = (new ReflectionClass(FakerTrait::class))->getNamespaceName();
+		$mock = $this->getFunctionMock($namespace, 'class_exists');
+		$mock->expects($this->once())->willReturn(false);
 
-        (new FakerCheck())->faker();
-    }
+		(new FakerCheck())->faker();
+	}
+
+	public function testFakerPopulateEntity ()
+	{
+		$entity = new Contact();
+
+		$result = (new FakerCheck())->populateEntity(new Contact());
+
+		$this->assertEquals($entity, $result);
+	}
 }
 
 class FakerCheck
 {
-    use FakerTrait;
+	use FakerTrait;
+}
+
+class Contact extends AbstractContact
+{
+	#[Column(type: Types::JSON)]
+	protected array $data = [];
 }
