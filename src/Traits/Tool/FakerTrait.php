@@ -2,7 +2,7 @@
 /**
  * Copyright 2023-2024 (C) IDMarinas - All Rights Reserved
  *
- * Last modified by "IDMarinas" on 03/12/2024, 21:33
+ * Last modified by "IDMarinas" on 04/12/2024, 14:39
  *
  * @project IDMarinas Common Bundle
  * @see     https://github.com/idmarinas/common-bundle
@@ -24,6 +24,7 @@ use Faker\Factory;
 use Faker\Generator;
 use LogicException;
 use ReflectionClass;
+use ReflectionException;
 use ReflectionProperty;
 use Symfony\Component\Uid\Uuid;
 
@@ -56,6 +57,9 @@ trait FakerTrait
 		return $entity;
 	}
 
+	/**
+	 * @throws ReflectionException
+	 */
 	private function fakerValueFromProperty (ReflectionProperty $property): mixed
 	{
 		return match ($property->getName()) {
@@ -70,6 +74,9 @@ trait FakerTrait
 		};
 	}
 
+	/**
+	 * @throws ReflectionException
+	 */
 	private function fakerValueForType (ReflectionProperty $property): mixed
 	{
 		$attribute = $property->getAttributes(Column::class)[0];
@@ -77,6 +84,13 @@ trait FakerTrait
 
 		$type = $arguments['type'] ?? $property->getType()?->getName() ?: $property->getName();
 		$length = ($arguments['length'] ?? 10) - 0.9;
+
+		// Check if is a namespace
+		if (str_contains($type, '\\')) {
+			$ref = new ReflectionClass($type);
+			$type = $ref->isAbstract() ? 'continue' : 'object';
+			$object = $ref->isAbstract() ?: $ref->newInstance();
+		}
 
 		return match ($type) {
 			'text'                 => $this->faker()->text(),
@@ -97,6 +111,8 @@ trait FakerTrait
 			'string'               => $this->faker()->text($length),
 			'createdFromIp',
 			'updatedFromIp'        => $this->faker()->ipv4(),
+			'continue'             => 'continue',
+			'object'               => $this->populateEntity($object),
 			default                => $this->faker()->sentence()
 		};
 	}
