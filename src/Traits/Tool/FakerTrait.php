@@ -2,7 +2,7 @@
 /**
  * Copyright 2023-2024 (C) IDMarinas - All Rights Reserved
  *
- * Last modified by "IDMarinas" on 04/12/2024, 14:39
+ * Last modified by "IDMarinas" on 04/12/2024, 15:23
  *
  * @project IDMarinas Common Bundle
  * @see     https://github.com/idmarinas/common-bundle
@@ -45,13 +45,19 @@ trait FakerTrait
 		return $this->faker;
 	}
 
+	/**
+	 * @throws ReflectionException
+	 */
 	public function populateEntity (object $entity): object
 	{
 		$reflectionClass = new ReflectionClass($entity);
 		$properties = $reflectionClass->getProperties();
 
 		foreach ($properties as $property) {
-			$property->setValue($entity, $this->fakerValueFromProperty($property));
+			$value = $this->fakerValueFromProperty($property);
+			if ($value !== 'continue') {
+				$property->setValue($entity, $value);
+			}
 		}
 
 		return $entity;
@@ -79,8 +85,8 @@ trait FakerTrait
 	 */
 	private function fakerValueForType (ReflectionProperty $property): mixed
 	{
-		$attribute = $property->getAttributes(Column::class)[0];
-		$arguments = $attribute->getArguments();
+		$attribute = $property->getAttributes(Column::class)[0] ?? null;
+		$arguments = $attribute?->getArguments();
 
 		$type = $arguments['type'] ?? $property->getType()?->getName() ?: $property->getName();
 		$length = ($arguments['length'] ?? 10) - 0.9;
