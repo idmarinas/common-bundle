@@ -2,7 +2,7 @@
 /**
  * Copyright 2023-2024 (C) IDMarinas - All Rights Reserved
  *
- * Last modified by "IDMarinas" on 04/12/2024, 15:23
+ * Last modified by "IDMarinas" on 05/12/2024, 14:19
  *
  * @project IDMarinas Common Bundle
  * @see     https://github.com/idmarinas/common-bundle
@@ -100,15 +100,15 @@ trait FakerTrait
 
 		return match ($type) {
 			'text'                 => $this->faker()->text(),
-			'integer'              => $this->faker()->randomNumber(327539810),
-			'smallint'             => $this->faker()->randomNumber(32760),
+			'integer'              => $this->faker()->randomNumber(9),
+			'smallint'             => $this->faker()->randomNumber(4),
 			'datetime',
 			'datetime_immutable',
 			'datetimetz',
 			'datetimetz_immutable' => $this->faker()->dateTime(),
 			'json', 'array'        => $this->faker()->words(),
 			'simple_array'         => implode(',', $this->faker()->words()),
-			'decimal'              => $this->faker()->randomFloat(2),
+			'decimal'              => $this->faker()->randomFloat(2, 0, 30),
 			'uuid'                 => new Uuid($this->faker()->uuid()),
 			'date',
 			'date_inmutable'       => $this->faker()->date(),
