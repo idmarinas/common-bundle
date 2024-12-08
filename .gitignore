@@ -1,7 +1,7 @@
-###> idmarinas/user-bundle ###
+###> idmarinas/common-bundle ###
 /build/
 /vendor/
 /phpunit.xml
 /.phpunit.result.cache
 /composer.lock
-###< idmarinas/user-bundle ###
+###< idmarinas/common-bundle ###
