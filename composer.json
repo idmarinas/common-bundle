@@ -67,6 +67,10 @@
 		{
 			"type": "paypal",
 			"url": "https://www.paypal.me/idmarinas"
+		},
+		{
+			"type": "githubsponsors",
+			"url": "https://github.com/sponsors/idmarinas"
 		}
 	],
 	"scripts": {
