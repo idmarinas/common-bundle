@@ -3,12 +3,12 @@
 	"type": "symfony-bundle",
 	"license": "BSD-3-Clause",
 	"keywords": [],
+	"homepage": "https://github.com/idmarinas/common-bundle",
 	"authors": [
 		{
 			"name": "Iván Diaz Marinas (IDMarinas)",
 			"email": "35842929+idmarinas@users.noreply.github.com",
-			"homepage": "https://github.com/idmarinas/common-bundle",
-			"role": "Developer"
+			"role": "Creator, Developer"
 		}
 	],
 	"support": {
