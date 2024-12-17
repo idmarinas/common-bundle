@@ -2,7 +2,13 @@
 	"name": "idmarinas/common-bundle",
 	"type": "symfony-bundle",
 	"license": "BSD-3-Clause",
-	"keywords": [],
+	"keywords": [
+		"symfony-bundle",
+		"user",
+		"user-bundle",
+		"user-reset-password",
+		"user-verify-email"
+	],
 	"homepage": "https://github.com/idmarinas/common-bundle",
 	"authors": [
 		{
