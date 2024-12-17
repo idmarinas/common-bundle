@@ -72,8 +72,5 @@
 			"type": "githubsponsors",
 			"url": "https://github.com/sponsors/idmarinas"
 		}
-	],
-	"scripts": {
-		"test": "phpunit"
-	}
+	]
 }
