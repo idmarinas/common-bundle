@@ -5,7 +5,7 @@
 
 </div>
 
-> Short description for Project
+> Short description for Bundle
 
 <br />
 
@@ -71,7 +71,7 @@ following command to download the latest stable version of this bundle:
 $ composer require idmarinas/common-bundle
 ```
 
-### Step2️⃣: Enable the Bundle
+### Step 2️⃣: Enable the Bundle
 
 Then, enable the bundle by adding it to the list of registered bundles
 in the `config/bundles.php` file of your project:
