@@ -3,8 +3,7 @@ name: IDMarinas Common Bundle Test Suite
 on:
   pull_request:
   push:
-    branches:
-      - master
+    branches: [ '2.x' ]
     paths-ignore:
       - '.deployer/**'
       - '.docker/**'
