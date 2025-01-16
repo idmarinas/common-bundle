@@ -1,20 +1,20 @@
 <?php
 /**
- * Copyright 2024 (C) IDMarinas - All Rights Reserved
+ * Copyright 2024-2025 (C) IDMarinas - All Rights Reserved
  *
- * Last modified by "IDMarinas" on 03/12/2024, 21:37
+ * Last modified by "IDMarinas" on 16/01/2025, 21:03
  *
  * @project IDMarinas Common Bundle
- * @see     https://github.com/idmarinas/common-bundle
+ * @see https://github.com/idmarinas/idm-template-bundle
  *
- * @file    rector.php
- * @date    03/12/2024
- * @time    21:37
+ * @file rector.php
+ * @date 03/12/2024
+ * @time 21:37
  *
- * @author  Iván Diaz Marinas (IDMarinas)
+ * @author Iván Diaz Marinas (IDMarinas)
  * @license BSD 3-Clause License
  *
- * @since   3.2.0
+ * @since 3.2.0
  */
 
 declare(strict_types=1);
@@ -25,10 +25,13 @@ use Rector\TypeDeclaration\Rector\ClassMethod\AddVoidReturnTypeWhereNoReturnRect
 
 return RectorConfig::configure()
 	->withPaths([
+		__DIR__ . '/app/src',
+		__DIR__ . '/factories',
+		__DIR__ . '/fixtures',
 		__DIR__ . '/src',
 		__DIR__ . '/tests',
 	])
-	->withPhpSets(php81: true)
+	->withPhpSets(php82: true)
 	->withPreparedSets(
 		deadCode           : true,
 		codeQuality        : true,
@@ -41,7 +44,7 @@ return RectorConfig::configure()
 	->withImportNames(removeUnusedImports: true)
 	->withTypeCoverageLevel(0)
 	->withSets([
-		SymfonySetList::SYMFONY_54,
+		SymfonySetList::SYMFONY_64,
 		SymfonySetList::SYMFONY_CONSTRUCTOR_INJECTION,
 	])
 	->withRules([AddVoidReturnTypeWhereNoReturnRector::class])
