@@ -1,11 +1,19 @@
 <?php
 
 /**
- * This file is part of Bundle "IdmCommonBundle".
+ * Copyright 2022-2025 (C) IDMarinas - All Rights Reserved
  *
- * @see     https://github.com/idmarinas/common-bundle/
+ * Last modified by "IDMarinas" on 16/01/2025, 21:32
  *
- * @license https://github.com/idmarinas/common-bundle/blob/master/LICENSE.txt
+ * @project IDMarinas Common Bundle
+ * @see     https://github.com/idmarinas/common-bundle
+ *
+ * @file    IsOdd.php
+ * @date    05/11/2022
+ * @time    17:18
+ *
+ * @author  Iván Diaz Marinas (IDMarinas)
+ * @license BSD 3-Clause License
  *
  * @since   1.1.0
  */
@@ -23,5 +31,5 @@ use Symfony\Component\Validator\Constraint;
 #[Attribute]
 class IsOdd extends Constraint
 {
-    public string $message = 'idm.common.is_odd';
+	public string $message = 'idm.common.is_odd';
 }
