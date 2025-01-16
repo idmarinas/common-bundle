@@ -2,6 +2,9 @@ name: IDMarinas Common Bundle Test Suite
 
 on:
   pull_request:
+    branches: [ '2.x' ]
+    types: [ opened, synchronize, reopened ]
+    tags-ignore: [ dependencies, documentation, meta, 'docker configuration', 'deployer configuration' ]
   push:
     branches: [ '2.x' ]
     paths-ignore:
