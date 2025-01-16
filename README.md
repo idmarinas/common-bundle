@@ -1,90 +1,100 @@
-[![Test Suite](https://github.com/idmarinas/common-bundle/actions/workflows/php.yml/badge.svg)](https://github.com/idmarinas/common-bundle/actions/workflows/php.yml)
-[![Quality Gate Status](https://sonarcloud.io/api/project_badges/measure?project=idmarinas_common-bundle&metric=alert_status)](https://sonarcloud.io/summary/new_code?id=idmarinas_common-bundle)
+<!--suppress HtmlDeprecatedAttribute -->
+<div align="center">
 
-![GitHub release](https://img.shields.io/github/release/idmarinas/common-bundle.svg)
-![GitHub Release Date](https://img.shields.io/github/release-date/idmarinas/common-bundle.svg)
-![GitHub code size in bytes](https://img.shields.io/github/languages/code-size/idmarinas/common-bundle)
-[![Build in PHP](https://img.shields.io/badge/PHP-^8.0-8892BF.svg?logo=php)](http://php.net/)
+# IDMarinas Common Bundle
 
-![GitHub issues](https://img.shields.io/github/issues/idmarinas/common-bundle.svg)
-![GitHub pull requests](https://img.shields.io/github/issues-pr/idmarinas/common-bundle.svg)
-![Github commits (since latest release)](https://img.shields.io/github/commits-since/idmarinas/common-bundle/latest.svg)
-![GitHub commit activity](https://img.shields.io/github/commit-activity/w/idmarinas/common-bundle.svg)
-![GitHub last commit](https://img.shields.io/github/last-commit/idmarinas/common-bundle.svg)
+</div>
 
-![GitHub top language](https://img.shields.io/github/languages/top/idmarinas/common-bundle.svg)
-![GitHub language count](https://img.shields.io/github/languages/count/idmarinas/common-bundle.svg)
+> Short description for Project
+
+<br />
+
+<div align="center">
+
+[![Test Suite](https://img.shields.io/github/actions/workflow/status/idmarinas/common-bundle/php.yml?style=for-the-badge&logo=github&logoColor=white&label=Bundle%20Test%20Suite)](https://github.com/idmarinas/common-bundle/actions/workflows/php.yml)
+[![Quality Gate Status](https://img.shields.io/sonar/quality_gate/idmarinas_common-bundle?server=https%3A%2F%2Fsonarcloud.io&style=for-the-badge&logo=sonarcloud&logoColor=white)](https://sonarcloud.io/summary/new_code?id=idmarinas_common-bundle)
+[![Coverage](https://img.shields.io/sonar/coverage/idmarinas_common-bundle?server=https%3A%2F%2Fsonarcloud.io&style=for-the-badge&logo=sonarcloud&logoColor=white)](https://sonarcloud.io/dashboard?id=idmarinas_common-bundle)
+[![Technical Debt](https://img.shields.io/sonar/tech_debt/idmarinas_common-bundle?server=https%3A%2F%2Fsonarcloud.io&style=for-the-badge&logo=sonarcloud&logoColor=white)](https://sonarcloud.io/dashboard?id=idmarinas_common-bundle)
+
+<br />
+
+![GitHub release](https://img.shields.io/github/release/idmarinas/common-bundle.svg?style=for-the-badge)
+![GitHub Release Date](https://img.shields.io/github/release-date/idmarinas/common-bundle.svg?style=for-the-badge)
+![Github commits (since latest release)](https://img.shields.io/github/commits-since/idmarinas/common-bundle/latest.svg?style=for-the-badge)
+![GitHub commit activity](https://img.shields.io/github/commit-activity/w/idmarinas/common-bundle.svg?style=for-the-badge)
+![GitHub last commit](https://img.shields.io/github/last-commit/idmarinas/common-bundle.svg?style=for-the-badge)
+
+#### Code analysis
 
 [![Reliability Rating](https://sonarcloud.io/api/project_badges/measure?project=idmarinas_common-bundle&metric=reliability_rating)](https://sonarcloud.io/dashboard?id=idmarinas_common-bundle)
 [![Bugs](https://sonarcloud.io/api/project_badges/measure?project=idmarinas_common-bundle&metric=bugs)](https://sonarcloud.io/dashboard?id=idmarinas_common-bundle)
 [![Security Rating](https://sonarcloud.io/api/project_badges/measure?project=idmarinas_common-bundle&metric=security_rating)](https://sonarcloud.io/dashboard?id=idmarinas_common-bundle)
 [![Vulnerabilities](https://sonarcloud.io/api/project_badges/measure?project=idmarinas_common-bundle&metric=vulnerabilities)](https://sonarcloud.io/dashboard?id=idmarinas_common-bundle)
 [![Maintainability Rating](https://sonarcloud.io/api/project_badges/measure?project=idmarinas_common-bundle&metric=sqale_rating)](https://sonarcloud.io/dashboard?id=idmarinas_common-bundle)
-[![Technical Debt](https://sonarcloud.io/api/project_badges/measure?project=idmarinas_common-bundle&metric=sqale_index)](https://sonarcloud.io/dashboard?id=idmarinas_common-bundle)
 [![Code Smells](https://sonarcloud.io/api/project_badges/measure?project=idmarinas_common-bundle&metric=code_smells)](https://sonarcloud.io/dashboard?id=idmarinas_common-bundle)
-[![Coverage](https://sonarcloud.io/api/project_badges/measure?project=idmarinas_common-bundle&metric=coverage)](https://sonarcloud.io/dashboard?id=idmarinas_common-bundle)
 [![Duplicated Lines (%)](https://sonarcloud.io/api/project_badges/measure?project=idmarinas_common-bundle&metric=duplicated_lines_density)](https://sonarcloud.io/dashboard?id=idmarinas_common-bundle)
 
-[![PayPal.Me - The safer, easier way to pay online!](https://img.shields.io/badge/donate-help_my_project-ffaa29.svg?logo=paypal&cacheSeconds=86400)](https://www.paypal.me/idmarinas)
-[![Liberapay - Donate](https://img.shields.io/liberapay/receives/IDMarinas.svg?logo=liberapay&cacheSeconds=86400)](https://liberapay.com/IDMarinas/donate)
-[![Twitter](https://img.shields.io/twitter/url/http/shields.io.svg?style=social&cacheSeconds=86400)](https://twitter.com/idmarinas)
+</div>
 
-# IDMarinas Common Bundle
+> ## 🖖 Support
+>
+> 🩵 If you like this project, give it a 🌟 and share it with your friends!
+>
+> [![PayPal.Me - The safer, easier way to pay online!](https://img.shields.io/badge/donate-help_my_projects-ffaa29.svg?style=for-the-badge&logo=paypal&cacheSeconds=86400)](https://www.paypal.me/idmarinas)
+> [![Liberapay - Donate](https://img.shields.io/liberapay/receives/IDMarinas.svg?style=for-the-badge&logo=liberapay&cacheSeconds=86400)](https://liberapay.com/IDMarinas/donate)
+> [![Static Badge](https://img.shields.io/badge/Sponsor-ea4aaa?style=for-the-badge&logo=github&logoColor=white)](https://github.com/sponsors/idmarinas)
 
-> This bundle is intended to group common and often repeated things when creating an APP with Symfony.
+<br />
 
-## Content
+# 💾 Installation
 
-### Command
+Make sure Composer is installed globally, as explained in the
+[installation chapter](https://getcomposer.org/doc/00-intro.md)
+of the Composer documentation.
 
-> Reset cache of OPcache
+## 💪 Applications that use Symfony Flex
 
-```bash
-  symfony console idm:opcache:reset
+Open a command console, enter your project directory and execute:
+
+```console
+$ composer require idmarinas/common-bundle
 ```
 
-> Regenerate APP_SECRET
+## 🚫 Applications that don't use Symfony Flex
 
-```bash
-  # Change var APP_SECRET in .env file
-  symfony console idm:regenerate:app_secret
-    
-  # Only show value WITHOUT update .env file
-  symfony console idm:regenerate:app_secret --show
+### Step 1️⃣: Download the Bundle
+
+Open a command console, enter your project directory and execute the
+following command to download the latest stable version of this bundle:
+
+```console
+$ composer require idmarinas/common-bundle
 ```
 
-### Entity
+### Step2️⃣: Enable the Bundle
 
-> `AbstractContact`: to create a table with contact messages from the web.
+Then, enable the bundle by adding it to the list of registered bundles
+in the `config/bundles.php` file of your project:
 
-### Form
+```php
+// config/bundles.php
 
-> `AbstractContactFormType`: to create form for send contact messages.
+return [
+    // ...
+    Idm\Bundle\Common\IdmCommonBundle::class => ['all' => true],
+];
+```
 
-### Repository
+## 🖱️ Tech used in code
 
-> `AbstractContactRepository`: repository for AbstractContact entity.
+![GitHub code size in bytes](https://img.shields.io/github/languages/code-size/idmarinas/common-bundle.svg?style=for-the-badge)
+[![PHP](https://img.shields.io/badge/php-%23777BB4.svg?style=for-the-badge&logo=php&logoColor=white)](https://www.php.net)
+[![Doctrine](https://img.shields.io/badge/doctrine-fa6a3c?style=for-the-badge&logo=doctrine&logoColor=white)](https://www.doctrine-project.org)
+[![Symfony](https://img.shields.io/badge/symfony-black.svg?style=for-the-badge&logo=symfony&logoColor=white)](https://www.symfony.com)
 
-### Traits
+## 🛠️ Tools used for create this project
 
-#### Entity
-
-> `IdTrait`: add a field id in INT format
-
-> `UuidTrait`: add a field uuid in UUID format
-
-#### Tool
-
-> `FakerTrait`: add a Faker method to use in test, fixtures...
-
-> `VersionTrait`: add two methods:
-> 1. **convertVersionToString** converts a version like '100000000' to STRING version like '1.0.0'
-> 2. **convertVersionToInt** converts a version like '1.0.0' to INT version like '100000000'
-
-### Validator
-
-#### Constraint
-
-> `IsEven` check if value is an even value.
-
-> `IsOdd` check if value is an odd value.
+![Dependabot](https://img.shields.io/badge/dependabot-025E8C?style=for-the-badge&logo=dependabot&logoColor=white)
+[![GitHub Actions](https://img.shields.io/badge/github%20actions-%232671E5.svg?style=for-the-badge&logo=githubactions&logoColor=white)](https://github.com/features/actions)
+[![Docker](https://img.shields.io/badge/docker-%230db7ed.svg?style=for-the-badge&logo=docker&logoColor=white)](https://www.docker.com)
+[![Composer](https://img.shields.io/badge/composer-%238c5530?style=for-the-badge&logo=composer&logoColor=white)](https://getcomposer.org)
