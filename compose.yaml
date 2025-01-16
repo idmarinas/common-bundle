@@ -1,17 +1,20 @@
+name: common_bundle
+
 services:
   php:
     build:
       context: .docker/php
       target: dev
       args:
-        VERSION: '8.1'
+        VERSION: '8.2'
     environment:
-      SYMFONY_REQUIRE: '5.4.*'
+      SYMFONY_REQUIRE: '6.4.*'
     healthcheck:
       test: php -v || exit 1
     volumes:
       - ./:/var/www/html
       ## PHP Conf
+      - ./.docker/php/conf.d/common.ini:/usr/local/etc/php/conf.d/common.ini
       - ./.docker/php/conf.d/disable_functions.ini:/usr/local/etc/php/conf.d/disable_functions.ini
       ## PHP Conf Dev
       - ./.docker/php/conf.d/dev/php.ini:/usr/local/etc/php/conf.d/php.ini
