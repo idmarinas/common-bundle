@@ -4,10 +4,8 @@
 	"license": "BSD-3-Clause",
 	"keywords": [
 		"symfony-bundle",
-		"user",
-		"user-bundle",
-		"user-reset-password",
-		"user-verify-email"
+		"settings-bundle",
+		"settings"
 	],
 	"homepage": "https://github.com/idmarinas/common-bundle",
 	"authors": [
