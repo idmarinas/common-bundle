@@ -22,9 +22,9 @@
 	"prefer-stable": true,
 	"require": {
 		"symfony/config": "^5.4 | ^6.4 | ^7.0",
-		"symfony/console": "^5.4 | ^6.4 | ^7.0",
 		"symfony/filesystem": "^5.4 | ^6.4 | ^7.0"
 		"php": "^8.2",
+		"symfony/console": "^6.4 | ^7.0",
 		"symfony/dependency-injection": "^6.4 | ^7.0",
 		"symfony/framework-bundle": "^6.4 | ^7.0"
 	},
