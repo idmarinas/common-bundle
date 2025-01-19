@@ -1,8 +1,8 @@
 <?php
 /**
- * Copyright 2024 (C) IDMarinas - All Rights Reserved
+ * Copyright 2024-2025 (C) IDMarinas - All Rights Reserved
  *
- * Last modified by "IDMarinas" on 27/11/24, 15:43
+ * Last modified by "IDMarinas" on 19/01/2025, 21:31
  *
  * @project IDMarinas Common Bundle
  * @see     https://github.com/idmarinas/common-bundle
@@ -26,22 +26,22 @@ use Symfony\Component\Console\Output\OutputInterface;
 use Symfony\Component\Console\Style\SymfonyStyle;
 
 #[AsCommand(name: 'idm:opcache:reset', description: 'Reset OPCache',)]
-class OpcacheClearCommand extends Command
+final class OpcacheClearCommand extends Command
 {
-    protected function execute (InputInterface $input, OutputInterface $output): int
-    {
-        $io = new SymfonyStyle($input, $output);
+	protected function execute (InputInterface $input, OutputInterface $output): int
+	{
+		$io = new SymfonyStyle($input, $output);
 
-        if (function_exists('opcache_reset')) {
-            if (opcache_reset()) {
-                $io->success('OPcache has been reset.');
-            } else {
-                $io->error('Failed to reset OPcache.');
-            }
-        } else {
-            $io->error('Function "opcache_reset" not exist.');
-        }
+		if (function_exists('opcache_reset')) {
+			if (opcache_reset()) {
+				$io->success('OPcache has been reset.');
+			} else {
+				$io->error('Failed to reset OPcache.');
+			}
+		} else {
+			$io->error('Function "opcache_reset" not exist.');
+		}
 
-        return Command::SUCCESS;
-    }
+		return Command::SUCCESS;
+	}
 }
