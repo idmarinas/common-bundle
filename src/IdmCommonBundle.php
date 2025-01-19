@@ -1,8 +1,8 @@
 <?php
 /**
- * Copyright 2022-2024 (C) IDMarinas - All Rights Reserved
+ * Copyright 2022-2025 (C) IDMarinas - All Rights Reserved
  *
- * Last modified by "IDMarinas" on 27/11/24, 14:28
+ * Last modified by "IDMarinas" on 19/01/2025, 19:32
  *
  * @project IDMarinas Common Bundle
  * @see     https://github.com/idmarinas/common-bundle
@@ -19,6 +19,14 @@
 
 namespace Idm\Bundle\Common;
 
-use Symfony\Component\HttpKernel\Bundle\Bundle;
+use Symfony\Component\DependencyInjection\ContainerBuilder;
+use Symfony\Component\DependencyInjection\Loader\Configurator\ContainerConfigurator;
+use Symfony\Component\HttpKernel\Bundle\AbstractBundle;
 
-class IdmCommonBundle extends Bundle {}
+final class IdmCommonBundle extends AbstractBundle
+{
+	public function loadExtension (array $config, ContainerConfigurator $container, ContainerBuilder $builder): void
+	{
+		$container->import(dirname(__DIR__) . '/config/services.php');
+	}
+}
