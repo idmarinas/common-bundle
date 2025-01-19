@@ -51,6 +51,7 @@
 	"config": {
 		"allow-plugins": {
 			"composer/package-versions-deprecated": true,
+			"idmarinas/composer-plugin": false,
 			"symfony/flex": true,
 			"symfony/runtime": true
 		},
@@ -67,7 +68,10 @@
 	},
 	"autoload-dev": {
 		"psr-4": {
-			"Idm\\Bundle\\Common\\Tests\\": "tests/"
+			"App\\": "app/src/",
+			"Idm\\Bundle\\Common\\Tests\\": "tests/",
+			"DataFixtures\\": "fixtures/",
+			"Factory\\": "factories/"
 		}
 	},
 	"scripts": {
