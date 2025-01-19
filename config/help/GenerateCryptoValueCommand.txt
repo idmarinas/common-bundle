@@ -1,0 +1,14 @@
+The <info>%command.name%</info> command generate a new Cryptographically Random Value of 16 bytes for APP_SECRET and
+update "<comment>.env</comment>" file with the new value.
+
+This generates a value and update "<comment>.env</comment>" file with the new value.
+	<info>php %command.full_name%</info>
+
+For change var to update use <comment>--var</comment>
+	<info>php %command.full_name% --var APP_CRYPTO</info>
+
+For change length of value use <comment>--length</comment>
+	<info>php %command.full_name% --length 32</info>
+
+If only want show value use <comment>--show</comment>
+	<info>php %command.full_name% --show</info>
