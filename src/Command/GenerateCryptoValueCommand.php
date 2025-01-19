@@ -2,7 +2,7 @@
 /**
  * Copyright 2022-2025 (C) IDMarinas - All Rights Reserved
  *
- * Last modified by "IDMarinas" on 19/01/2025, 21:23
+ * Last modified by "IDMarinas" on 19/01/2025, 21:31
  *
  * @project IDMarinas Common Bundle
  * @see     https://github.com/idmarinas/common-bundle
@@ -39,7 +39,7 @@ use function random_bytes;
 	name       : 'idm:generate:crypto:value',
 	description: 'Generate a Cryptographically secure random value of 16 bytes.'
 )]
-class GenerateCryptoValueCommand extends Command
+final class GenerateCryptoValueCommand extends Command
 {
 	/**
 	 * {@inheritdoc}
