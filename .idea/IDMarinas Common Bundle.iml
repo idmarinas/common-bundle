@@ -78,6 +78,9 @@
       <excludeFolder url="file://$MODULE_DIR$/vendor/symfony/process" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/symfony/polyfill-uuid" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/symfony/uid" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/php-mock/php-mock" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/php-mock/php-mock-integration" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/php-mock/php-mock-phpunit" />
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />

@@ -6,6 +6,7 @@
         <cache>
           <versions>
             <info id="Local\vendor/autoload.php" version="PHPUnit version can't be detected. Default PHP interpreter is not local" />
+            <info id="interpreter-6ee29e12-f5fd-4bff-bd0a-eba63ea7b33d" version="9.6.22" />
           </versions>
         </cache>
       </tool>
