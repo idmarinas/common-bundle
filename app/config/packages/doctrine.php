@@ -2,7 +2,7 @@
 /**
  * Copyright 2024-2025 (C) IDMarinas - All Rights Reserved
  *
- * Last modified by "IDMarinas" on 16/01/2025, 21:21
+ * Last modified by "IDMarinas" on 22/01/2025, 13:25
  *
  * @project IDMarinas Common Bundle
  * @see     https://github.com/idmarinas/common-bundle
@@ -19,7 +19,10 @@
 
 namespace Symfony\Component\DependencyInjection\Loader\Configurator;
 
+use Idm\Bundle\Common\IdmCommonBundle;
+use ReflectionClass;
 use Symfony\Component\Filesystem\Filesystem;
+use function Symfony\Component\String\u;
 
 return static function (ContainerConfigurator $container) {
 	$getDatabaseCache = function (): string {
@@ -34,10 +37,13 @@ return static function (ContainerConfigurator $container) {
 		return $dir;
 	};
 
+	$dbName = (new ReflectionClass(IdmCommonBundle::class))->getShortName();
+	$dbName = u($dbName)->snake()->toString();
+
 	$container->extension('doctrine', [
 		'dbal' => [
 			'driver'         => 'pdo_sqlite',
-			'url'            => sprintf('sqlite:///%s/idm_user_%s.sqlite', $getDatabaseCache(), $container->env()),
+			'url'            => sprintf('sqlite:///%s/%s_%s.sqlite', $getDatabaseCache(), $dbName, $container->env()),
 			'use_savepoints' => true,
 		],
 		'orm'  => [
