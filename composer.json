@@ -38,6 +38,7 @@
 		"symfony/maker-bundle": "^1.61",
 		"symfony/phpunit-bridge": "^7.2",
 		"symfony/runtime": "^6.4 | ^7.0",
+		"symfony/translation": "^6.4 | ^7.0",
 		"symfony/uid": "^6.4 | ^7.0",
 		"symfony/validator": "^6.4 | ^7.0",
 		"twig/twig": "^3.16",
