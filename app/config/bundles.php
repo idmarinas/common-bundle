@@ -2,7 +2,7 @@
 /**
  * Copyright 2024-2025 (C) IDMarinas - All Rights Reserved
  *
- * Last modified by "IDMarinas" on 19/01/2025, 19:33
+ * Last modified by "IDMarinas" on 22/01/2025, 13:09
  *
  * @project IDMarinas Common Bundle
  * @see     https://github.com/idmarinas/common-bundle
@@ -21,18 +21,20 @@ use DAMA\DoctrineTestBundle\DAMADoctrineTestBundle;
 use Doctrine\Bundle\DoctrineBundle\DoctrineBundle;
 use Doctrine\Bundle\FixturesBundle\DoctrineFixturesBundle;
 use Idm\Bundle\Common\IdmCommonBundle;
+use Stof\DoctrineExtensionsBundle\StofDoctrineExtensionsBundle;
 use Symfony\Bundle\FrameworkBundle\FrameworkBundle;
 use Symfony\Bundle\MakerBundle\MakerBundle;
 use Zenstruck\Foundry\ZenstruckFoundryBundle;
 
 return [
-	FrameworkBundle::class        => ['all' => true],
-	DoctrineBundle::class         => ['all' => true],
-	IdmCommonBundle::class        => ['all' => true],
+	FrameworkBundle::class              => ['all' => true],
+	DoctrineBundle::class               => ['all' => true],
+	IdmCommonBundle::class              => ['all' => true],
+	StofDoctrineExtensionsBundle::class => ['all' => true],
 
 	// Dev-Test Bundles
-	MakerBundle::class            => ['all' => true],
-	DoctrineFixturesBundle::class => ['all' => true],
-	DAMADoctrineTestBundle::class => ['all' => true],
-	ZenstruckFoundryBundle::class => ['all' => true],
+	MakerBundle::class                  => ['all' => true],
+	DoctrineFixturesBundle::class       => ['all' => true],
+	DAMADoctrineTestBundle::class       => ['all' => true],
+	ZenstruckFoundryBundle::class       => ['all' => true],
 ];
