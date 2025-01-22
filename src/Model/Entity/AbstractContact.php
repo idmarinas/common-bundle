@@ -1,8 +1,8 @@
 <?php
 /**
- * Copyright 2024 (C) IDMarinas - All Rights Reserved
+ * Copyright 2024-2025 (C) IDMarinas - All Rights Reserved
  *
- * Last modified by "IDMarinas" on 1/12/24, 21:51
+ * Last modified by "IDMarinas" on 22/01/2025, 12:05
  *
  * @project IDMarinas Common Bundle
  * @see     https://github.com/idmarinas/common-bundle
@@ -17,7 +17,7 @@
  * @since   3.0.0
  */
 
-namespace Idm\Bundle\Common\Entity;
+namespace Idm\Bundle\Common\Model\Entity;
 
 use Doctrine\DBAL\Types\Types;
 use Doctrine\ORM\Mapping as ORM;
