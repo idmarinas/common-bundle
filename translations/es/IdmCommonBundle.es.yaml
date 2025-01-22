@@ -1,11 +1,22 @@
 form:
   contact:
+    title: Contacto
+    your_info:
+      title: Tu información
+      paragraph: '¿Cómo te podemos contactar?'
+    how_we_can_help_you:
+      title: '¿Cómo te podemos ayudar?'
+      paragraph: '¿Tienes alguna pregunta o quieres dejar algún comentario?'
     name: Nombre
     last_name: Apellidos
-    email: Dirección de correo electrónico
+    email:
+      label: Dirección de correo electrónico
+      help: No es necesario, pero es aconsejable si esperas una respuesta por nuestra parte.
     comment: Comentarios/Preguntas
-    consent: |
-      La información de identificación personal introducida en este formulario, incluyendo su nombre y dirección de
-      correo electrónico, se puede almacenar indefinidamente. Tiene que aceptar nuestra Política de privacidad
+    consent: 'La información de identificación personal introducida en este formulario, incluyendo su nombre y dirección de correo electrónico, se puede almacenar indefinidamente. Tiene que aceptar nuestra Política de privacidad'
     button:
       submit: Enviar
+
+flash:
+  contact:
+    success: 'Se han enviado tus comentarios/preguntas correctamente'
