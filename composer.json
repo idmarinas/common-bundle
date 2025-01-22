@@ -4,8 +4,8 @@
 	"license": "BSD-3-Clause",
 	"keywords": [
 		"symfony-bundle",
-		"settings-bundle",
-		"settings"
+		"common-bundle",
+		"common"
 	],
 	"homepage": "https://github.com/idmarinas/common-bundle",
 	"authors": [
@@ -21,32 +21,25 @@
 	"minimum-stability": "stable",
 	"prefer-stable": true,
 	"require": {
-		"symfony/config": "^5.4 | ^6.4 | ^7.0",
 		"php": "^8.2",
 		"symfony/console": "^6.4 | ^7.0",
 		"symfony/dependency-injection": "^6.4 | ^7.0",
 		"symfony/framework-bundle": "^6.4 | ^7.0"
 	},
 	"require-dev": {
-		"doctrine/doctrine-bundle": "^2.13",
-		"doctrine/orm": "^2.20",
-		"easycorp/easyadmin-bundle": "^4.0",
-		"fakerphp/faker": "^1.21",
-		"gedmo/doctrine-extensions": "^3.17",
 		"dama/doctrine-test-bundle": "^8.2",
 		"doctrine/doctrine-fixtures-bundle": "^3.0 | ^4.0",
 		"idmarinas/composer-plugin": "^1.0.0",
 		"php-mock/php-mock-phpunit": "^2.10",
 		"phpunit/phpunit": "^9.6",
 		"rector/rector": "^1.2",
-		"symfony/form": "^5.4 | ^6.4 | ^7.0",
-		"symfony/test-pack": "^1.0",
-		"symfony/validator": "^5.4 | ^6.4 | ^7.0"
-		"symfony/filesystem": "^6.4 | ^7.0",
+		"stof/doctrine-extensions-bundle": "^1.13",
+		"symfony/form": "^6.4 | ^7.0",
 		"symfony/maker-bundle": "^1.61",
 		"symfony/phpunit-bridge": "^7.2",
 		"symfony/runtime": "^6.4 | ^7.0",
 		"symfony/uid": "^6.4 | ^7.0",
+		"symfony/validator": "^6.4 | ^7.0",
 		"twig/twig": "^3.16",
 		"zenstruck/foundry": "^2.3"
 	},
