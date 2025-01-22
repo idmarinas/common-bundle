@@ -1,8 +1,8 @@
 <?php
 /**
- * Copyright 2024 (C) IDMarinas - All Rights Reserved
+ * Copyright 2024-2025 (C) IDMarinas - All Rights Reserved
  *
- * Last modified by "IDMarinas" on 27/11/24, 19:05
+ * Last modified by "IDMarinas" on 22/01/2025, 12:05
  *
  * @project IDMarinas Common Bundle
  * @see     https://github.com/idmarinas/common-bundle
@@ -19,8 +19,8 @@
 
 namespace Idm\Bundle\Common\Tests\Form;
 
-use Idm\Bundle\Common\Entity\AbstractContact;
-use Idm\Bundle\Common\Form\AbstractContactFormType;
+use Idm\Bundle\Common\Model\Entity\AbstractContact;
+use Idm\Bundle\Common\Model\Form\AbstractContactFormType;
 use Idm\Bundle\Common\Traits\Tool\FakerTrait;
 use Symfony\Component\Form\Test\TypeTestCase;
 

@@ -1,8 +1,8 @@
 <?php
 /**
- * Copyright 2024 (C) IDMarinas - All Rights Reserved
+ * Copyright 2024-2025 (C) IDMarinas - All Rights Reserved
  *
- * Last modified by "IDMarinas" on 28/11/24, 19:33
+ * Last modified by "IDMarinas" on 22/01/2025, 12:05
  *
  * @project IDMarinas Common Bundle
  * @see     https://github.com/idmarinas/common-bundle
@@ -21,7 +21,7 @@ namespace Idm\Bundle\Common\Tests\Traits\Tool;
 
 use Doctrine\DBAL\Types\Types;
 use Doctrine\ORM\Mapping\Column;
-use Idm\Bundle\Common\Entity\AbstractContact;
+use Idm\Bundle\Common\Model\Entity\AbstractContact;
 use Idm\Bundle\Common\Traits\Tool\FakerTrait;
 use LogicException;
 use phpmock\phpunit\PHPMock;
