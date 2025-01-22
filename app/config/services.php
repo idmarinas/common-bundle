@@ -2,7 +2,7 @@
 /**
  * Copyright 2024-2025 (C) IDMarinas - All Rights Reserved
  *
- * Last modified by "IDMarinas" on 22/01/2025, 13:10
+ * Last modified by "IDMarinas" on 22/01/2025, 13:14
  *
  * @project IDMarinas Common Bundle
  * @see     https://github.com/idmarinas/common-bundle
@@ -29,6 +29,7 @@ return static function (ContainerConfigurator $container) {
 			->set(ContactRepository::class)
 				->public()
 				->args([service(ManagerRegistry::class)])
+				->tag('doctrine.repository_service')
 
 	;
 	// @formatter:on
