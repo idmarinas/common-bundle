@@ -3,7 +3,7 @@
 /**
  * Copyright 2022-2025 (C) IDMarinas - All Rights Reserved
  *
- * Last modified by "IDMarinas" on 16/01/2025, 21:32
+ * Last modified by "IDMarinas" on 22/01/2025, 19:09
  *
  * @project IDMarinas Common Bundle
  * @see     https://github.com/idmarinas/common-bundle
@@ -31,5 +31,5 @@ use Symfony\Component\Validator\Constraint;
 #[Attribute]
 class IsOdd extends Constraint
 {
-	public string $message = 'idm.common.is_odd';
+	public string $message = 'idm_common_bundle.is_odd';
 }
