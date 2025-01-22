@@ -2,7 +2,7 @@
 /**
  * Copyright 2024-2025 (C) IDMarinas - All Rights Reserved
  *
- * Last modified by "IDMarinas" on 22/01/2025, 12:05
+ * Last modified by "IDMarinas" on 22/01/2025, 13:44
  *
  * @project IDMarinas Common Bundle
  * @see     https://github.com/idmarinas/common-bundle
@@ -19,23 +19,21 @@
 
 namespace Idm\Bundle\Common\Tests\Form;
 
-use Idm\Bundle\Common\Model\Entity\AbstractContact;
+use App\Entity\Contact;
 use Idm\Bundle\Common\Model\Form\AbstractContactFormType;
-use Idm\Bundle\Common\Traits\Tool\FakerTrait;
 use Symfony\Component\Form\Test\TypeTestCase;
+use function Zenstruck\Foundry\faker;
 
 class ContactTypeFormTest extends TypeTestCase
 {
-	use FakerTrait;
-
 	public function testSubmitValidData (): void
 	{
 		$formData = [
-			'name'     => $this->faker()->name(),
-			'lastName' => $this->faker()->lastName(),
-			'email'    => $this->faker()->email(),
-			'comment'  => $this->faker()->text(),
-			'consent'  => $this->faker()->boolean(),
+			'name'     => faker()->name(),
+			'lastName' => faker()->lastName(),
+			'email'    => faker()->email(),
+			'comment'  => faker()->text(),
+			'consent'  => faker()->boolean(),
 		];
 
 		$model = (new Contact());
@@ -61,7 +59,5 @@ class ContactTypeFormTest extends TypeTestCase
 		$this->assertEquals($expected, $model);
 	}
 }
-
-class Contact extends AbstractContact {}
 
 class ContactFormType extends AbstractContactFormType {}
