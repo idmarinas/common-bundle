@@ -2,7 +2,7 @@
 /**
  * Copyright 2025 (C) IDMarinas - All Rights Reserved
  *
- * Last modified by "IDMarinas" on 22/01/2025, 13:35
+ * Last modified by "IDMarinas" on 22/01/2025, 13:38
  *
  * @project IDMarinas Common Bundle
  * @see     https://github.com/idmarinas/common-bundle
@@ -34,8 +34,6 @@ final class ContactFactory extends PersistentProxyObjectFactory
 
 	/**
 	 * @see  https://symfony.com/bundles/ZenstruckFoundryBundle/current/index.html#model-factories
-	 *
-	 * @todo add your default values here
 	 */
 	protected function defaults (): array|callable
 	{
