@@ -2,7 +2,7 @@
 /**
  * Copyright 2024-2025 (C) IDMarinas - All Rights Reserved
  *
- * Last modified by "IDMarinas" on 23/01/2025, 17:50
+ * Last modified by "IDMarinas" on 23/01/2025, 18:36
  *
  * @project IDMarinas Common Bundle
  * @see     https://github.com/idmarinas/common-bundle
@@ -38,6 +38,7 @@ return static function (ContainerConfigurator $container) {
 				->call('setContainer', [service_locator([
 					'form.factory' => service('form.factory'),
 					'twig' => service('twig'),
+					'request_stack' => service('request_stack'),
 				])])
 	;
 	// @formatter:on
