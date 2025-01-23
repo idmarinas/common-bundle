@@ -2,7 +2,7 @@
 /**
  * Copyright 2024-2025 (C) IDMarinas - All Rights Reserved
  *
- * Last modified by "IDMarinas" on 23/01/2025, 17:04
+ * Last modified by "IDMarinas" on 23/01/2025, 18:37
  *
  * @project IDMarinas Common Bundle
  * @see     https://github.com/idmarinas/common-bundle
@@ -142,8 +142,12 @@ final class Kernel extends BaseKernel
 
 		// Load config for Test App
 		$loader->load($this->getTestPackagesConfigDir() . '/framework.php');
+		$loader->load($this->getTestPackagesConfigDir() . '/framework/router.php');
+		$loader->load($this->getTestPackagesConfigDir() . '/framework/session.php');
+		$loader->load($this->getTestPackagesConfigDir() . '/framework/validation.php');
 		$loader->load($this->getTestPackagesConfigDir() . '/doctrine.php');
 		$loader->load($this->getTestPackagesConfigDir() . '/maker.php');
+		$loader->load($this->getTestPackagesConfigDir() . '/stof_doctrine_extensions.php');
 
 		// Load service of Bundle
 		$loader->load($this->getTestConfigDir() . '/services.php');
