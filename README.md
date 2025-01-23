@@ -5,7 +5,7 @@
 
 </div>
 
-> Short description for Bundle
+> This bundle is intended to group common and often repeated things when creating an APP with Symfony.
 
 <br />
 
