@@ -2,7 +2,7 @@
 /**
  * Copyright 2025 (C) IDMarinas - All Rights Reserved
  *
- * Last modified by "IDMarinas" on 23/01/2025, 21:19
+ * Last modified by "IDMarinas" on 23/01/2025, 21:35
  *
  * @project IDMarinas Common Bundle
  * @see     https://github.com/idmarinas/common-bundle
@@ -47,6 +47,16 @@ class VersionTraitTest extends TestCase
 		$this->assertEquals(10_0269_6987, $check->convertVersionToInt('10.269.6987'));
 
 		$this->assertEquals(189_0785, $check->convertVersionToInt('0.189.785'));
+
+		$version = [
+			'major'         => '1',
+			'minor'         => '0',
+			'patch'         => '0',
+			'prerelease'    => 'alpha',
+			'buildmetadata' => 'beta',
+		];
+
+		$this->assertEquals($version, $check->versionDetails('1.0.0-alpha+beta'));
 	}
 
 	// public function testInvalidIntVersion(): void
