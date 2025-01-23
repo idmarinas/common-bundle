@@ -2,7 +2,7 @@
 /**
  * Copyright 2024-2025 (C) IDMarinas - All Rights Reserved
  *
- * Last modified by "IDMarinas" on 16/01/2025, 21:21
+ * Last modified by "IDMarinas" on 23/01/2025, 17:32
  *
  * @project IDMarinas Common Bundle
  * @see     https://github.com/idmarinas/common-bundle
@@ -28,6 +28,6 @@ return static function (ContainerConfigurator $container) {
 		'php_errors'            => [
 			'log' => true,
 		],
-		'form'                  => false,
+		'form'                  => true,
 	]);
 };
