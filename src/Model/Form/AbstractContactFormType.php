@@ -2,7 +2,7 @@
 /**
  * Copyright 2024-2025 (C) IDMarinas - All Rights Reserved
  *
- * Last modified by "IDMarinas" on 23/01/2025, 18:16
+ * Last modified by "IDMarinas" on 23/01/2025, 19:21
  *
  * @project IDMarinas Common Bundle
  * @see     https://github.com/idmarinas/common-bundle
@@ -27,20 +27,38 @@ use Symfony\Component\Form\Extension\Core\Type\TextareaType;
 use Symfony\Component\Form\Extension\Core\Type\TextType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
+use Symfony\Component\Validator\Constraints\IsTrue;
+use Symfony\Component\Validator\Constraints\NoSuspiciousCharacters;
 
 abstract class AbstractContactFormType extends AbstractType
 {
 	public function buildForm (FormBuilderInterface $builder, array $options): void
 	{
 		$builder
-			->add('name', TextType::class, ['label' => 'form.contact.name',])
-			->add('lastName', TextType::class, ['label' => 'form.contact.last_name',])
+			->add('name', TextType::class, [
+				'label'       => 'form.contact.name',
+				'constraints' => [
+					new NoSuspiciousCharacters(),
+				],
+			])
+			->add('lastName', TextType::class, [
+					'label'       => 'form.contact.last_name',
+					'constraints' => [
+						new NoSuspiciousCharacters(),
+					],
+				]
+			)
 			->add('email', EmailType::class, [
 				'label' => 'form.contact.email.label',
 				'help'  => 'form.contact.email.help',
 			])
 			->add('comment', TextareaType::class, ['label' => 'form.contact.comment',])
-			->add('consent', CheckboxType::class, ['label' => 'form.contact.consent'])
+			->add('consent', CheckboxType::class, [
+				'label'       => 'form.contact.consent',
+				'constraints' => [
+					new IsTrue(),
+				],
+			])
 			->add('buttonSubmit', SubmitType::class, ['label' => 'form.contact.button.submit'])
 		;
 	}
