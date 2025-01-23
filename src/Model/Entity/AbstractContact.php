@@ -2,7 +2,7 @@
 /**
  * Copyright 2024-2025 (C) IDMarinas - All Rights Reserved
  *
- * Last modified by "IDMarinas" on 22/01/2025, 12:05
+ * Last modified by "IDMarinas" on 23/01/2025, 18:46
  *
  * @project IDMarinas Common Bundle
  * @see     https://github.com/idmarinas/common-bundle
@@ -44,7 +44,7 @@ abstract class AbstractContact
 	protected ?string $lastName = null;
 
 	// -- Contact email.
-	#[ORM\Column(type: Types::STRING, length: 150)]
+	#[ORM\Column(type: Types::STRING, length: 150, nullable: true)]
 	#[Assert\Email]
 	protected ?string $email = null;
 
