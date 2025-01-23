@@ -3,7 +3,7 @@
 /**
  * Copyright 2022-2025 (C) IDMarinas - All Rights Reserved
  *
- * Last modified by "IDMarinas" on 16/01/2025, 21:36
+ * Last modified by "IDMarinas" on 23/01/2025, 16:17
  *
  * @project IDMarinas Common Bundle
  * @see     https://github.com/idmarinas/common-bundle
@@ -70,7 +70,7 @@ class ContainsIsEvenValidatorTest extends ConstraintValidatorTestCase
 		$this->validator->validate(5, new IsEven());
 
 		$this
-			->buildViolation('idm.common.is_even')->setParameter('{{ number }}', 5)->assertRaised()
+			->buildViolation('idm_common_bundle.is_even')->setParameter('{{ number }}', 5)->assertRaised()
 		;
 	}
 
