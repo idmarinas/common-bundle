@@ -1,8 +1,8 @@
 <?php
 /**
- * Copyright 2023-2024 (C) IDMarinas - All Rights Reserved
+ * Copyright 2023-2025 (C) IDMarinas - All Rights Reserved
  *
- * Last modified by "IDMarinas" on 27/11/24, 17:58
+ * Last modified by "IDMarinas" on 23/01/2025, 21:18
  *
  * @project IDMarinas Common Bundle
  * @see     https://github.com/idmarinas/common-bundle
@@ -21,34 +21,38 @@ namespace Idm\Bundle\Common\Traits\Tool;
 
 trait VersionTrait
 {
-    /** Conver int version like 100000000 to 1.0.0 */
-    public function convertVersionToString (int $version): string
-    {
-        $version = (string)$version;
+	/** Conver int version like 100000000 to 1.0.0 */
+	public function convertVersionToString (int $version): string
+	{
+		$version = (string)$version;
 
-        $path = (int)substr($version, -4);
-        $version = substr_replace($version, '', -4);
-        $minor = (int)substr($version, -4);
-        $version = substr_replace($version, '', -4);
-        $major = (int)substr($version, -4);
+		$path = (int)substr($version, -4);
+		$version = substr_replace($version, '', -4);
+		$minor = (int)substr($version, -4);
+		$version = substr_replace($version, '', -4);
+		$major = (int)substr($version, -4);
 
-        return sprintf('%d.%d.%d', $major, $minor, $path);
-    }
+		return sprintf('%d.%d.%d', $major, $minor, $path);
+	}
 
-    /** Convert string version like 1.0.0 to 100000000 */
-    public function convertVersionToInt (string $version): int
-    {
-        $re = '^(?P<major>0|[1-9]\d*)\.(?P<minor>0|[1-9]\d*)\.(?P<patch>0|[1-9]\d*)(?:-(?P<prerelease>(?:0|[1-9]\d*|\d*[a-zA-Z-][0-9a-zA-Z-]*)(?:\.(?:0|[1-9]\d*|\d*[a-zA-Z-][0-9a-zA-Z-]*))*))?(?:\+(?P<buildmetadata>[0-9a-zA-Z-]+(?:\.[0-9a-zA-Z-]+)*))?$';
+	/** Convert string version like 1.0.0 to 100000000 */
+	public function convertVersionToInt (string $version): int
+	{
+		$matches = $this->versionDetails($version);
 
-        preg_match_all(sprintf('/%s/m', $re), $version, $matches, PREG_SET_ORDER, 0);
-        $matches = $matches[0];
+		$major = str_pad($matches['major'], 4, 0, STR_PAD_LEFT);
+		$minor = str_pad($matches['minor'], 4, 0, STR_PAD_LEFT);
+		$patch = str_pad($matches['patch'], 4, 0, STR_PAD_LEFT);
 
-        $major = str_pad($matches['major'], 4, 0, STR_PAD_LEFT);
-        $minor = str_pad($matches['minor'], 4, 0, STR_PAD_LEFT);
-        $patch = str_pad($matches['patch'], 4, 0, STR_PAD_LEFT);
+		return (int)($major . $minor . $patch);
+	}
 
-        return (int)($major . $minor . $patch);
-    }
+	public function versionDetails (string $version): array
+	{
+		$re = '^(?P<major>0|[1-9]\d*)\.(?P<minor>0|[1-9]\d*)\.(?P<patch>0|[1-9]\d*)(?:-(?P<prerelease>(?:0|[1-9]\d*|\d*[a-zA-Z-][0-9a-zA-Z-]*)(?:\.(?:0|[1-9]\d*|\d*[a-zA-Z-][0-9a-zA-Z-]*))*))?(?:\+(?P<buildmetadata>[0-9a-zA-Z-]+(?:\.[0-9a-zA-Z-]+)*))?$';
 
-    // TODO: return a detailed of version: liker major minos patch prerelease and buildmetadata
+		preg_match_all(sprintf('/%s/m', $re), $version, $matches, PREG_SET_ORDER, 0);
+
+		return $matches[0];
+	}
 }
