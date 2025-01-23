@@ -2,7 +2,7 @@
 /**
  * Copyright 2024-2025 (C) IDMarinas - All Rights Reserved
  *
- * Last modified by "IDMarinas" on 22/01/2025, 12:05
+ * Last modified by "IDMarinas" on 23/01/2025, 21:40
  *
  * @project IDMarinas Common Bundle
  * @see     https://github.com/idmarinas/common-bundle
@@ -58,4 +58,7 @@ class Contact extends AbstractContact
 {
 	#[Column(type: Types::JSON)]
 	protected array $data = [];
+
+	#[Column]
+	protected AbstractContact $entity;
 }
