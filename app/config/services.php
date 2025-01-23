@@ -2,7 +2,7 @@
 /**
  * Copyright 2024-2025 (C) IDMarinas - All Rights Reserved
  *
- * Last modified by "IDMarinas" on 22/01/2025, 13:14
+ * Last modified by "IDMarinas" on 23/01/2025, 17:50
  *
  * @project IDMarinas Common Bundle
  * @see     https://github.com/idmarinas/common-bundle
@@ -19,6 +19,7 @@
 
 namespace Symfony\Component\DependencyInjection\Loader\Configurator;
 
+use App\Controller\ContactController;
 use App\Repository\ContactRepository;
 use Doctrine\Persistence\ManagerRegistry;
 
@@ -31,6 +32,13 @@ return static function (ContainerConfigurator $container) {
 				->args([service(ManagerRegistry::class)])
 				->tag('doctrine.repository_service')
 
+			->set(ContactController::class)
+				->public()
+				->tag('controller.service_arguments')
+				->call('setContainer', [service_locator([
+					'form.factory' => service('form.factory'),
+					'twig' => service('twig'),
+				])])
 	;
 	// @formatter:on
 };
