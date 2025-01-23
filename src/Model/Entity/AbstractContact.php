@@ -2,7 +2,7 @@
 /**
  * Copyright 2024-2025 (C) IDMarinas - All Rights Reserved
  *
- * Last modified by "IDMarinas" on 23/01/2025, 18:46
+ * Last modified by "IDMarinas" on 23/01/2025, 19:20
  *
  * @project IDMarinas Common Bundle
  * @see     https://github.com/idmarinas/common-bundle
@@ -33,13 +33,11 @@ abstract class AbstractContact
 
 	// -- Contact name.
 	#[ORM\Column(type: Types::STRING, length: 255)]
-	#[Assert\NotBlank]
 	#[Assert\Length(min: 3, max: 255)]
 	protected ?string $name = null;
 
 	// -- Surname of contact.
 	#[ORM\Column(type: Types::STRING, length: 255)]
-	#[Assert\NotBlank]
 	#[Assert\Length(min: 3, max: 255)]
 	protected ?string $lastName = null;
 
