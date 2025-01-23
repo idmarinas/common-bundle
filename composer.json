@@ -25,7 +25,9 @@
 		"symfony/console": "^6.4 | ^7.0",
 		"symfony/dependency-injection": "^6.4 | ^7.0",
 		"symfony/form": "^6.4 | ^7.0",
-		"symfony/framework-bundle": "^6.4 | ^7.0"
+		"symfony/framework-bundle": "^6.4 | ^7.0",
+		"symfony/translation": "^6.4 | ^7.0",
+		"symfony/yaml": "^6.4 | ^7.0"
 	},
 	"require-dev": {
 		"dama/doctrine-test-bundle": "^8.2",
@@ -39,11 +41,9 @@
 		"symfony/maker-bundle": "^1.61",
 		"symfony/phpunit-bridge": "^7.2",
 		"symfony/runtime": "^6.4 | ^7.0",
-		"symfony/translation": "^6.4 | ^7.0",
 		"symfony/twig-bundle": "^6.4 | ^7.0",
 		"symfony/uid": "^6.4 | ^7.0",
 		"symfony/validator": "^6.4 | ^7.0",
-		"twig/twig": "^3.16",
 		"zenstruck/foundry": "^2.3"
 	},
 	"config": {
