@@ -1,0 +1,24 @@
+form:
+  contact:
+    title: Contact
+    your_info:
+      title: Your information
+      paragraph: 'How can we contact you?'
+    how_we_can_help_you:
+      title: 'How can we help you?'
+      paragraph: 'Do you have any questions or want to leave a comment?'
+    name: Name
+    last_name: Last name
+    email:
+      label: E-mail address
+      help: It is not necessary, but it is advisable if you expect a response from us.
+    comment: Comments/Questions
+    consent: |
+      Personally identifiable information entered on this form, including your name and e-mail address, may be stored
+      indefinitely. address, may be stored indefinitely. You must agree to our Privacy Policy
+    button:
+      submit: Send comments/questions
+
+flash:
+  contact:
+    success: 'Your comments/questions have been sent successfully.'
