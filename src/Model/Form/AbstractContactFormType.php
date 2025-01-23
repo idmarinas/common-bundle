@@ -2,7 +2,7 @@
 /**
  * Copyright 2024-2025 (C) IDMarinas - All Rights Reserved
  *
- * Last modified by "IDMarinas" on 22/01/2025, 12:05
+ * Last modified by "IDMarinas" on 23/01/2025, 18:16
  *
  * @project IDMarinas Common Bundle
  * @see     https://github.com/idmarinas/common-bundle
@@ -35,7 +35,10 @@ abstract class AbstractContactFormType extends AbstractType
 		$builder
 			->add('name', TextType::class, ['label' => 'form.contact.name',])
 			->add('lastName', TextType::class, ['label' => 'form.contact.last_name',])
-			->add('email', EmailType::class, ['label' => 'form.contact.email'])
+			->add('email', EmailType::class, [
+				'label' => 'form.contact.email.label',
+				'help'  => 'form.contact.email.help',
+			])
 			->add('comment', TextareaType::class, ['label' => 'form.contact.comment',])
 			->add('consent', CheckboxType::class, ['label' => 'form.contact.consent'])
 			->add('buttonSubmit', SubmitType::class, ['label' => 'form.contact.button.submit'])
