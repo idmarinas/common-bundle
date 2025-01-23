@@ -2,7 +2,7 @@
 /**
  * Copyright 2023-2025 (C) IDMarinas - All Rights Reserved
  *
- * Last modified by "IDMarinas" on 23/01/2025, 21:18
+ * Last modified by "IDMarinas" on 23/01/2025, 21:34
  *
  * @project IDMarinas Common Bundle
  * @see     https://github.com/idmarinas/common-bundle
@@ -53,6 +53,6 @@ trait VersionTrait
 
 		preg_match_all(sprintf('/%s/m', $re), $version, $matches, PREG_SET_ORDER, 0);
 
-		return $matches[0];
+		return array_filter($matches[0], fn($k) => !is_numeric($k), ARRAY_FILTER_USE_KEY);
 	}
 }
