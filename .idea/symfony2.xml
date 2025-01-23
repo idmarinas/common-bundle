@@ -6,6 +6,11 @@
     <option name="twigBundleNamespaceSupport" value="true" />
     <option name="dismissEnableNotification" value="true" />
     <option name="profilerCsvPath" value="" />
+    <option name="twigNamespaces">
+      <list>
+        <twig_namespace custom="true" namespace="IdmCommon" namespaceType="ADD_PATH" path="templates" />
+      </list>
+    </option>
     <option name="routingFiles">
       <list>
         <routing_file path="app/cache/dev/appDevUrlGenerator.php" />
