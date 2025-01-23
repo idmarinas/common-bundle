@@ -1,0 +1,28 @@
+{% extends '@IdmCommon/base.html.twig' %}
+
+{% block body %}
+	{{ form_start(form, {attr: { id: form.vars.id }}) }}
+	<div>
+		<h2>{{ 'form.contact.your_info.title'|trans({}, 'IdmCommonBundle') }}</h2>
+		<p>{{ 'form.contact.your_info.paragraph'|trans({}, 'IdmCommonBundle') }}</p>
+	</div>
+
+	{{ form_row(form.name) }}
+
+	{{ form_row(form.lastName) }}
+
+	{{ form_row(form.email) }}
+
+	<div>
+		<h2>{{ 'form.contact.how_we_can_help_you.title'|trans({}, 'IdmCommonBundle') }}</h2>
+		<p>{{ 'form.contact.how_we_can_help_you.paragraph'|trans({}, 'IdmCommonBundle') }}</p>
+	</div>
+
+	{{ form_row(form.comment) }}
+
+	{{ form_row(form.consent) }}
+
+	{{ form_row(form.buttonSubmit) }}
+
+	{{ form_end(form) }}
+{% endblock %}
