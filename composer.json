@@ -27,6 +27,7 @@
 		"symfony/form": "^6.4 | ^7.0",
 		"symfony/framework-bundle": "^6.4 | ^7.0",
 		"symfony/translation": "^6.4 | ^7.0",
+		"symfony/validator": "^6.4 | ^7.0",
 		"symfony/yaml": "^6.4 | ^7.0"
 	},
 	"require-dev": {
@@ -43,7 +44,6 @@
 		"symfony/runtime": "^6.4 | ^7.0",
 		"symfony/twig-bundle": "^6.4 | ^7.0",
 		"symfony/uid": "^6.4 | ^7.0",
-		"symfony/validator": "^6.4 | ^7.0",
 		"zenstruck/foundry": "^2.3"
 	},
 	"config": {
