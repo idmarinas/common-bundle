@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!---
+  - Copyright 2025 (C) IDMarinas - All Rights Reserved
+  -
+  - Last modified by "IDMarinas" on 26/01/2025, 23:53
+  -
+  - @project IDMarinas Common Bundle
+  - @see https://github.com/idmarinas/common-bundle
+  -
+  - @file Contact.topic
+  - @date 26/01/2025
+  - @time 23:54
+  -
+  - @author Iván Diaz Marinas (IDMarinas)
+  - @license BSD 3-Clause License
+  -
+  - @since 3.4.0
+  -->
+
+<!DOCTYPE topic
+	SYSTEM "https://resources.jetbrains.com/writerside/1.0/xhtml-entities.dtd">
+
+<topic
+	id="Contact"
+	title="Contact"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:noNamespaceSchemaLocation="https://resources.jetbrains.com/writerside/1.0/topic.v2.xsd"
+>
+	<card-summary rel="summary" />
+
+	<section-starting-page>
+		<title>Contact section</title>
+		<description id="summary">
+			A simple contact system that you can use on your website. With form and controller.
+		</description>
+
+		<!--    Add up to 2 topics that you want to promote. Use the "type" attribute to select an icon.    -->
+		<spotlight>
+			<a href="Quickstart.md" type="start" />
+		</spotlight>
+	</section-starting-page>
+</topic>
