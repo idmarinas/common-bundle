@@ -3,14 +3,14 @@
 <!---
   - Copyright 2025 (C) IDMarinas - All Rights Reserved
   -
-  - Last modified by "IDMarinas" on 26/01/2025, 22:39
+  - Last modified by "IDMarinas" on 26/01/2025, 23:17
   -
   - @project IDMarinas Common Bundle
   - @see https://github.com/idmarinas/common-bundle
   -
   - @file Commands.topic
   - @date 26/01/2025
-  - @time 22:23
+  - @time 23:21
   -
   - @author Iván Diaz Marinas (IDMarinas)
   - @license BSD 3-Clause License
@@ -26,10 +26,11 @@
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:noNamespaceSchemaLocation="https://resources.jetbrains.com/writerside/1.0/topic.v2.xsd"
 >
+	<card-summary rel="summary" />
 
 	<section-starting-page>
 		<title>List of Symfony Commands</title>
-		<description>
+		<description id="summary">
 			Useful Symfony Commands that can help you avoid having to write them over and over again for each project.
 		</description>
 
@@ -119,5 +120,4 @@
 		<!-- 			</links> -->
 		<!-- 		</misc> -->
 	</section-starting-page>
-
 </topic>

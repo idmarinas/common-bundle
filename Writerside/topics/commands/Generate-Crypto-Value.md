@@ -1,3 +1,5 @@
+<card-summary>This command generates a cryptographically secure random value of 16 bytes</card-summary>
+
 # Generate Crypto Value
 
 <secondary-label ref="1.4" />
