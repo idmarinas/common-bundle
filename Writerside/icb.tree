@@ -17,7 +17,9 @@
 			<toc-element topic="Generate-Crypto-Value.md" />
 			<toc-element topic="Opcache-Clear.md" />
 		</toc-element>
-		<toc-element topic="Contact.topic" />
+		<toc-element topic="Contact.topic">
+			<toc-element topic="Quickstart.md" />
+		</toc-element>
 	</toc-element>
 	<toc-element topic="Changelog.md" />
 	<toc-element topic="Reference.md" />
