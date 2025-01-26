@@ -3,7 +3,7 @@
 <!---
   - Copyright 2025 (C) IDMarinas - All Rights Reserved
   -
-  - Last modified by "IDMarinas" on 26/01/2025, 22:22
+  - Last modified by "IDMarinas" on 26/01/2025, 22:39
   -
   - @project IDMarinas Common Bundle
   - @see https://github.com/idmarinas/common-bundle
@@ -28,9 +28,9 @@
 >
 
 	<section-starting-page>
-		<title>List of commands</title>
+		<title>List of Symfony Commands</title>
 		<description>
-			Useful commands that can help you avoid having to write them over and over again for each project.
+			Useful Symfony Commands that can help you avoid having to write them over and over again for each project.
 		</description>
 
 		<!--    Add up to 2 topics that you want to promote. Use the "type" attribute to select an icon.    -->
