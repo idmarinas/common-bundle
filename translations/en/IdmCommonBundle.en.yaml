@@ -27,7 +27,7 @@ admin:
   crud:
     contact:
       id: Identifier
-      name: Number
+      name: Name
       last_name: Last name
       email: E-mail address
       comment: Comments
