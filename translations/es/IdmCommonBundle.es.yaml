@@ -19,6 +19,22 @@ form:
     button:
       submit: Enviar comentarios/preguntas
 
+admin:
+  label:
+    contact:
+      singular: Contacto
+      plural: Contactos
+  crud:
+    contact:
+      id: Identificador
+      name: Nombre
+      last_name: Apellidos
+      email: Correo electrónico
+      comment: Comentarios
+      consent: Consentimiento
+      created_at: Creado en
+      updated_at: Actualizado en
+
 flash:
   contact:
     success: 'Se han enviado tus comentarios/preguntas correctamente'

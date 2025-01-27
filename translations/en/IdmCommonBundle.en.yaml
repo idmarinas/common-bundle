@@ -19,6 +19,22 @@ form:
     button:
       submit: Send comments/questions
 
+admin:
+  label:
+    contact:
+      singular: Contact
+      plural: Contacts
+  crud:
+    contact:
+      id: Identifier
+      name: Number
+      last_name: Last name
+      email: E-mail address
+      comment: Comments
+      consent: Consent
+      created_at: Created At
+      updated_at: Updated At
+
 flash:
   contact:
     success: 'Your comments/questions have been sent successfully.'
