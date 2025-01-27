@@ -25,6 +25,17 @@
 			<toc-element topic="Contact-Controller.md" />
 			<toc-element topic="Contact-Crud-Controller.md" />
 		</toc-element>
+		<toc-element toc-title="Traits">
+			<toc-element toc-title="Entity">
+				<toc-element topic="IdTrait.md" />
+				<toc-element topic="UuidTrait.md" />
+			</toc-element>
+			<toc-element toc-title="Tool">
+				<toc-element topic="FakerTrait.md" />
+				<toc-element topic="VersionTrait.md" />
+			</toc-element>
+		</toc-element>
+		<toc-element toc-title="Validators" />
 	</toc-element>
 	<toc-element topic="Changelog.md" />
 	<toc-element topic="Reference.md" />
