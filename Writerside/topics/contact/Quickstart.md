@@ -2,7 +2,7 @@
 
 # Quickstart
 
-<secondary-label ref="3.0" />
+<secondary-label ref="3.4" />
 
 This is a quick way to start using the contact system for your project.
 {id="summary"}
@@ -19,7 +19,7 @@ composer require --dev symfony/maker-bundle
 ## Install
 
 ```console
-php bin/symfony make:idm:common:contact
+php bin/symfony idm:make:contact
 ```
 
 <procedure title="These files are installed in the default folders" id="maker">
