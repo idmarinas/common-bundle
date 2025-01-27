@@ -2,7 +2,7 @@
 /**
  * Copyright 2024-2025 (C) IDMarinas - All Rights Reserved
  *
- * Last modified by "IDMarinas" on 27/01/2025, 16:45
+ * Last modified by "IDMarinas" on 27/01/2025, 20:40
  *
  * @project IDMarinas Common Bundle
  * @see     https://github.com/idmarinas/common-bundle
@@ -149,6 +149,7 @@ final class Kernel extends BaseKernel
 		$loader->load($this->getTestPackagesConfigDir() . '/maker.php');
 		$loader->load($this->getTestPackagesConfigDir() . '/security.php');
 		$loader->load($this->getTestPackagesConfigDir() . '/stof_doctrine_extensions.php');
+		$loader->load($this->getTestPackagesConfigDir() . '/twig_component.php');
 
 		// Load service of Bundle
 		$loader->load($this->getTestConfigDir() . '/services.php');
