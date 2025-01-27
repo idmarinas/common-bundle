@@ -2,7 +2,7 @@
 /**
  * Copyright 2024-2025 (C) IDMarinas - All Rights Reserved
  *
- * Last modified by "IDMarinas" on 27/01/2025, 16:44
+ * Last modified by "IDMarinas" on 27/01/2025, 19:49
  *
  * @project IDMarinas Common Bundle
  * @see     https://github.com/idmarinas/common-bundle
@@ -27,6 +27,8 @@ use Symfony\Bundle\FrameworkBundle\FrameworkBundle;
 use Symfony\Bundle\MakerBundle\MakerBundle;
 use Symfony\Bundle\SecurityBundle\SecurityBundle;
 use Symfony\Bundle\TwigBundle\TwigBundle;
+use Symfony\UX\TwigComponent\TwigComponentBundle;
+use Twig\Extra\TwigExtraBundle\TwigExtraBundle;
 use Zenstruck\Foundry\ZenstruckFoundryBundle;
 
 return [
@@ -35,7 +37,9 @@ return [
 	IdmCommonBundle::class              => ['all' => true],
 	StofDoctrineExtensionsBundle::class => ['all' => true],
 	TwigBundle::class                   => ['all' => true],
+	TwigExtraBundle::class              => ['all' => true],
 	SecurityBundle::class               => ['all' => true],
+	TwigComponentBundle::class          => ['all' => true],
 	EasyAdminBundle::class              => ['all' => true],
 
 	// Dev-Test Bundles
