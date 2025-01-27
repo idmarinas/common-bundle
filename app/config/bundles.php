@@ -2,7 +2,7 @@
 /**
  * Copyright 2024-2025 (C) IDMarinas - All Rights Reserved
  *
- * Last modified by "IDMarinas" on 23/01/2025, 17:47
+ * Last modified by "IDMarinas" on 27/01/2025, 16:41
  *
  * @project IDMarinas Common Bundle
  * @see     https://github.com/idmarinas/common-bundle
@@ -20,6 +20,7 @@
 use DAMA\DoctrineTestBundle\DAMADoctrineTestBundle;
 use Doctrine\Bundle\DoctrineBundle\DoctrineBundle;
 use Doctrine\Bundle\FixturesBundle\DoctrineFixturesBundle;
+use EasyCorp\Bundle\EasyAdminBundle\EasyAdminBundle;
 use Idm\Bundle\Common\IdmCommonBundle;
 use Stof\DoctrineExtensionsBundle\StofDoctrineExtensionsBundle;
 use Symfony\Bundle\FrameworkBundle\FrameworkBundle;
@@ -33,6 +34,7 @@ return [
 	IdmCommonBundle::class              => ['all' => true],
 	StofDoctrineExtensionsBundle::class => ['all' => true],
 	TwigBundle::class                   => ['all' => true],
+	EasyAdminBundle::class              => ['all' => true],
 
 	// Dev-Test Bundles
 	MakerBundle::class                  => ['all' => true],
