@@ -2,7 +2,7 @@
 /**
  * Copyright 2024-2025 (C) IDMarinas - All Rights Reserved
  *
- * Last modified by "IDMarinas" on 23/01/2025, 18:36
+ * Last modified by "IDMarinas" on 27/01/2025, 19:48
  *
  * @project IDMarinas Common Bundle
  * @see     https://github.com/idmarinas/common-bundle
@@ -19,6 +19,8 @@
 
 namespace Symfony\Component\DependencyInjection\Loader\Configurator;
 
+use App\Controller\Admin\ContactCrudController;
+use App\Controller\Admin\DashboardController;
 use App\Controller\ContactController;
 use App\Repository\ContactRepository;
 use Doctrine\Persistence\ManagerRegistry;
@@ -32,14 +34,9 @@ return static function (ContainerConfigurator $container) {
 				->args([service(ManagerRegistry::class)])
 				->tag('doctrine.repository_service')
 
-			->set(ContactController::class)
-				->public()
-				->tag('controller.service_arguments')
-				->call('setContainer', [service_locator([
-					'form.factory' => service('form.factory'),
-					'twig' => service('twig'),
-					'request_stack' => service('request_stack'),
-				])])
+			->set(ContactController::class)->public()->autoconfigure()->autowire()
+			->set(DashboardController::class)->public()->autoconfigure()->autowire()
+			->set(ContactCrudController::class)->public()->autoconfigure()->autowire()
 	;
 	// @formatter:on
 };
