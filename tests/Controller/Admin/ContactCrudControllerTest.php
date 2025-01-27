@@ -2,7 +2,7 @@
 /**
  * Copyright 2025 (C) IDMarinas - All Rights Reserved
  *
- * Last modified by "IDMarinas" on 27/01/2025, 20:55
+ * Last modified by "IDMarinas" on 27/01/2025, 21:16
  *
  * @project IDMarinas Common Bundle
  * @see     https://github.com/idmarinas/common-bundle
@@ -30,8 +30,6 @@ class ContactCrudControllerTest extends AbstractCrudTestCase
 		$this->client->request('GET', $this->generateIndexUrl());
 
 		$this->assertResponseIsSuccessful();
-
-		var_dump($this->client->getResponse()->getContent());
 	}
 
 	protected function getControllerFqcn (): string
