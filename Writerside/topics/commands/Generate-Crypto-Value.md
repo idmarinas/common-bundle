@@ -3,6 +3,7 @@
 # Generate Crypto Value
 
 <secondary-label ref="1.4" />
+<secondary-label ref="3.4" />
 
 This command generates a cryptographically secure random value of 16 bytes, this updates the variable `APP_SECRET`
 variable in the `.env` file.
