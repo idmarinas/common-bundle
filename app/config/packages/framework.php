@@ -2,7 +2,7 @@
 /**
  * Copyright 2024-2025 (C) IDMarinas - All Rights Reserved
  *
- * Last modified by "IDMarinas" on 23/01/2025, 17:32
+ * Last modified by "IDMarinas" on 27/01/2025, 20:09
  *
  * @project IDMarinas Common Bundle
  * @see     https://github.com/idmarinas/common-bundle
@@ -29,5 +29,6 @@ return static function (ContainerConfigurator $container) {
 			'log' => true,
 		],
 		'form'                  => true,
+		'assets'                => true,
 	]);
 };
