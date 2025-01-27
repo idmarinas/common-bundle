@@ -5,7 +5,7 @@
 
 | **%project% <br/>Version** | **PHP <br/>Compatibility** | **Symfony <br/>Compatibility** | **Status**                 | **Docs**                                                        |
 |----------------------------|:--------------------------:|:------------------------------:|----------------------------|-----------------------------------------------------------------| 
-| `3.x`                      |      `8.2`  or higher      |        `6.4` and `7.x`         | New features and bug fixes | [Docs](https://idmarinas.github.io/common-bundle/index_md.html) |
+| `3.x`                      |      `8.2`  or higher      |        `6.4` and `^7.1`        | New features and bug fixes | [Docs](https://idmarinas.github.io/common-bundle/index_md.html) |
 
 <seealso>
   <category ref="related">
