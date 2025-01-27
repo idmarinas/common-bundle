@@ -30,12 +30,12 @@ php bin/symfony make:idm:common:contact
 	<p>Congratulation! you have installed Contact system.</p>
 </procedure>
 
-## Next steps
-
-Now that you've completed this quickstart, try these to learn more about Contact system.
-
-* [](Contact-Entity.md)
-* [](Contact-Repository.md)
-* [](Contact-Form-Type.md)
-* [](Contact-Controller.md)
-* [](Contact-Crud-Controller.md)
+<seealso style="cards">
+	<category ref="related">
+		<a href="Contact-Entity.md" />
+		<a href="Contact-Repository.md" />
+		<a href="Contact-Form-Type.md" />
+		<a href="Contact-Controller.md" />
+		<a href="Contact-Crud-Controller.md" />
+	</category>
+</seealso>
