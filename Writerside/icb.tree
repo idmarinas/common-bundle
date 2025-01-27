@@ -19,9 +19,12 @@
 		</toc-element>
 		<toc-element topic="Contact.topic">
 			<toc-element topic="Quickstart.md" />
+			<toc-element topic="Contact-Entity.md" />
+			<toc-element topic="Contact-Repository.md" />
+			<toc-element topic="Contact-Form-Type.md" />
+			<toc-element topic="Contact-Controller.md" />
 		</toc-element>
 	</toc-element>
 	<toc-element topic="Changelog.md" />
 	<toc-element topic="Reference.md" />
-	<toc-element topic="Overview.md" />
 </instance-profile>
