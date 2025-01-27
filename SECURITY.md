@@ -1,0 +1,24 @@
+# Security Policy
+
+## Supported Versions
+
+Not all branches of this project are supported, to know which branches are supported and which are not, see the table
+below.
+
+| Branch | Supported          |
+|--------|--------------------|
+| 3.x    | :white_check_mark: |
+
+## Reporting a Vulnerability
+
+1) This project relies on [Symfony components][1] for most of its features. If you suspect that the security issue
+   is caused by Symfony component/s, please report the issue to them as explained in [symfony.com/security][2]
+
+2) If you find security issues you can report them in this repository using the tool provided by GitHub in
+   [Security > Advisories][3].
+
+[1]: https://symfony.com/components
+
+[2]: https://symfony.com/security
+
+[3]: https://github.com/idmarinas/common-bundle/security/advisories
