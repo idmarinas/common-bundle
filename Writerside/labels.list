@@ -28,5 +28,6 @@
 	<secondary-label id="1.0" name="1.0" color="red">New in version 1.0</secondary-label>
 	<secondary-label id="1.4" name="1.4" color="red">New in version 1.4</secondary-label>
 	<secondary-label id="2.2" name="2.2" color="red">New in version 2.2</secondary-label>
+	<secondary-label id="3.0" name="3.0" color="red">New in version 3.0</secondary-label>
 	<secondary-label id="3.4" name="3.4" color="blue">New in version 3.4</secondary-label>
 </labels>
