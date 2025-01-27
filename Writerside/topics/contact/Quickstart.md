@@ -1,0 +1,41 @@
+<card-summary rel="summary" />
+
+# Quickstart
+
+<secondary-label ref="3.0" />
+
+This is a quick way to start using the contact system for your project.
+{id="summary"}
+
+## Before you start
+
+> You need to have `Symfony maker` installed to be able to use the following commands.
+> {style="warning"}
+
+```console
+composer require --dev symfony/maker-bundle
+```
+
+## Install
+
+```console
+php bin/symfony make:idm:common:contact
+```
+
+<procedure title="These files are installed in the default folders" id="maker">
+	<step>The Doctrine entity</step>
+	<step>The form type</step>
+	<step>The controller to be able to send the contact messages</step>
+	<step>The administration controllers for EasyCorp EasyAdmin</step>
+	<p>Congratulation! you have installed Contact system.</p>
+</procedure>
+
+## Next steps
+
+Now that you've completed this quickstart, try these to learn more about Contact system.
+
+* [](Contact-Entity.md)
+* [](Contact-Repository.md)
+* [](Contact-Form-Type.md)
+* [](Contact-Controller.md)
+* [](Contact-Crud-Controller.md)
