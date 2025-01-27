@@ -2,7 +2,7 @@
 /**
  * Copyright 2025 (C) IDMarinas - All Rights Reserved
  *
- * Last modified by "IDMarinas" on 27/01/2025, 20:49
+ * Last modified by "IDMarinas" on 27/01/2025, 21:01
  *
  * @project IDMarinas Common Bundle
  * @see     https://github.com/idmarinas/common-bundle
@@ -30,7 +30,7 @@ class DashboardController extends AbstractDashboardController
 	#[Route('/admin', name: 'dashboard')]
 	public function index (): Response
 	{
-		return $this->render('@IdmCommon/dashboard.html.twig');
+		return parent::index();
 	}
 
 	public function configureDashboard (): Dashboard
