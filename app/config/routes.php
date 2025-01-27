@@ -2,7 +2,7 @@
 /**
  * Copyright 2025 (C) IDMarinas - All Rights Reserved
  *
- * Last modified by "IDMarinas" on 23/01/2025, 17:08
+ * Last modified by "IDMarinas" on 27/01/2025, 20:51
  *
  * @project IDMarinas Common Bundle
  * @see     https://github.com/idmarinas/common-bundle
@@ -17,14 +17,19 @@
  * @since   3.4.0
  */
 
+use App\Controller\Admin\DashboardController;
 use App\Controller\ContactController;
 use Symfony\Component\Routing\Loader\Configurator\RoutingConfigurator;
 
 return function (RoutingConfigurator $routes) {
 	// @formatter:off
 	$routes
-		->import(resource: ContactController::class, type: 'attribute')
-		->namePrefix('idm_common_')
+		->import(ContactController::class, 'attribute')
+			->namePrefix('idm_common_')
+	;
+	$routes
+		->import(DashboardController::class, 'attribute')
+			->namePrefix('idm_admin_')
 	;
 	// @formatter:on
 };
