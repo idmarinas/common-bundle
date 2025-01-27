@@ -30,7 +30,7 @@ php bin/symfony make:idm:common:contact
 	<p>Congratulation! you have installed Contact system.</p>
 </procedure>
 
-<seealso style="cards">
+<seealso>
 	<category ref="related">
 		<a href="Contact-Entity.md" />
 		<a href="Contact-Repository.md" />
