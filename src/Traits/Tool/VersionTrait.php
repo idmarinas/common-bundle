@@ -2,7 +2,7 @@
 /**
  * Copyright 2023-2025 (C) IDMarinas - All Rights Reserved
  *
- * Last modified by "IDMarinas" on 23/01/2025, 21:34
+ * Last modified by "IDMarinas" on 28/01/2025, 19:13
  *
  * @project IDMarinas Common Bundle
  * @see     https://github.com/idmarinas/common-bundle
@@ -21,7 +21,7 @@ namespace Idm\Bundle\Common\Traits\Tool;
 
 trait VersionTrait
 {
-	/** Conver int version like 100000000 to 1.0.0 */
+	/** Convert int version like 100000000 to 1.0.0 */
 	public function convertVersionToString (int $version): string
 	{
 		$version = (string)$version;
