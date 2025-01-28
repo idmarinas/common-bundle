@@ -35,7 +35,10 @@
 				<toc-element topic="VersionTrait.md" />
 			</toc-element>
 		</toc-element>
-		<toc-element toc-title="Validators" />
+		<toc-element toc-title="Validators">
+			<toc-element topic="IsEven.md" />
+			<toc-element topic="IsOdd.md" />
+		</toc-element>
 	</toc-element>
 	<toc-element topic="Changelog.md" />
 	<toc-element topic="Reference.md" />
