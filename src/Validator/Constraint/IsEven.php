@@ -3,7 +3,7 @@
 /**
  * Copyright 2022-2025 (C) IDMarinas - All Rights Reserved
  *
- * Last modified by "IDMarinas" on 22/01/2025, 19:09
+ * Last modified by "IDMarinas" on 28/01/2025, 19:35
  *
  * @project IDMarinas Common Bundle
  * @see     https://github.com/idmarinas/common-bundle
@@ -25,8 +25,6 @@ use Symfony\Component\Validator\Constraint;
 
 /**
  * Check if the value is even.
- *
- * @Annotation
  */
 #[Attribute]
 class IsEven extends Constraint
