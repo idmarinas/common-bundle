@@ -41,6 +41,5 @@
 		</toc-element>
 	</toc-element>
 	<toc-element topic="Changelog.md" />
-	<toc-element topic="Reference.md" />
 	<toc-element topic="SECURITY.md" />
 </instance-profile>
