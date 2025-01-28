@@ -2,7 +2,7 @@
 /**
  * Copyright 2023-2025 (C) IDMarinas - All Rights Reserved
  *
- * Last modified by "IDMarinas" on 28/01/2025, 19:13
+ * Last modified by "IDMarinas" on 28/01/2025, 19:23
  *
  * @project IDMarinas Common Bundle
  * @see     https://github.com/idmarinas/common-bundle
@@ -47,6 +47,13 @@ trait VersionTrait
 		return (int)($major . $minor . $patch);
 	}
 
+	/**
+	 * Convert a string version in an array of details.
+	 *
+	 * @param string $version Version string like "1.0.0"
+	 *
+	 * @return array <code>['major', 'minor', 'patch', 'prerelease', 'buildmetadata']</code>
+	 */
 	public function versionDetails (string $version): array
 	{
 		$re = '^(?P<major>0|[1-9]\d*)\.(?P<minor>0|[1-9]\d*)\.(?P<patch>0|[1-9]\d*)(?:-(?P<prerelease>(?:0|[1-9]\d*|\d*[a-zA-Z-][0-9a-zA-Z-]*)(?:\.(?:0|[1-9]\d*|\d*[a-zA-Z-][0-9a-zA-Z-]*))*))?(?:\+(?P<buildmetadata>[0-9a-zA-Z-]+(?:\.[0-9a-zA-Z-]+)*))?$';
