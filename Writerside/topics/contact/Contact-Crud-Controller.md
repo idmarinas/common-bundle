@@ -11,8 +11,4 @@ Provide some background and context, explain choices and alternatives.
 
 ## Abstract Contact Crud Controller Class
 
-```php
-```
-
-{src="../../../src/Model/Controller/Admin/AbstractContactCrudController.php"
-include-symbol="AbstractContactCrudController"}
+<include from="contact_lib.topic" element-id="abstract-contact-crud-controller" />

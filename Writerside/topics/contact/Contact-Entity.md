@@ -6,7 +6,4 @@ Entity Contact with all the necessary fields for visitors to leave their comment
 
 ## Abstract Entity Class
 
-```php
-```
-
-{src="../../../src/Model/Entity/AbstractContact.php" include-symbol="AbstractContact"}
+<include from="contact_lib.topic" element-id="abstract-contact-entity" />

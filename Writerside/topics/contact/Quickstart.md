@@ -36,7 +36,7 @@ php bin/symfony make:idm:common:contact
 		<a href="Contact-Entity.md" />
 		<a href="Contact-Repository.md" />
 		<a href="Contact-Form-Type.md" />
-		<a href="Contact-Controller.topic" />
+		<a href="Contact-Controller.md" />
 		<a href="Contact-Crud-Controller.md" />
 	</category>
 </seealso>

@@ -6,7 +6,4 @@ Contact Form Type with fields and some extra validations.
 
 ## Abstract Contact Form Type Class
 
-```php
-```
-
-{src="../../../src/Model/Form/AbstractContactFormType.php" include-symbol="AbstractContactFormType"}
+<include from="contact_lib.topic" element-id="abstract-contact-form-type" />
