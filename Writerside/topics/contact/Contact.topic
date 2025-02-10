@@ -3,7 +3,7 @@
 <!---
   - Copyright 2025 (C) IDMarinas - All Rights Reserved
   -
-  - Last modified by "IDMarinas" on 26/01/2025, 23:53
+  - Last modified by "IDMarinas" on 10/02/2025, 18:10
   -
   - @project IDMarinas Common Bundle
   - @see https://github.com/idmarinas/common-bundle
@@ -32,7 +32,7 @@
 	<section-starting-page>
 		<title>Contact section</title>
 		<description id="summary">
-			A simple contact system that you can use on your website. With form and controller.
+			A simple contact system that you can use on your website. Comes with form, controller and administration panel.
 		</description>
 
 		<!--    Add up to 2 topics that you want to promote. Use the "type" attribute to select an icon.    -->
