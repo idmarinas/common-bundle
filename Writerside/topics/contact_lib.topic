@@ -1,0 +1,261 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!---
+  - Copyright 2025 (C) IDMarinas - All Rights Reserved
+  -
+  - Last modified by "IDMarinas" on 10/02/2025, 19:10
+  -
+  - @project IDMarinas Common Bundle
+  - @see https://github.com/idmarinas/common-bundle
+  -
+  - @file contact_lib.topic
+  - @date 10/02/2025
+  - @time 18:53
+  -
+  - @author Iván Diaz Marinas (IDMarinas)
+  - @license BSD 3-Clause License
+  -
+  - @since 3.4.0
+  -->
+
+<!DOCTYPE topic SYSTEM "https://resources.jetbrains.com/writerside/1.0/html-entities.dtd">
+<topic
+	id="contact_lib"
+	is-library="true"
+	title="Contact Lib"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:noNamespaceSchemaLocation="https://resources.jetbrains.com/writerside/1.0/topic.v2.xsd"
+>
+	<code-block id="abstract-contact-controller" lang="php">
+			abstract class AbstractContactController extends AbstractController
+			{
+				#[Route(path: '/contact', name: 'contact', methods: ['GET', 'POST'])]
+				public function index (Request $request, EntityManagerInterface $entityManager): Response {
+					$form = $this->getContactForm();
+					$formEmpty = clone $form;
+					$form->handleRequest($request);
+
+					if ($form->isSubmitted() &amp;&amp; $form->isValid()) {
+						$entity = $form->getData();
+
+						$entityManager->persist($entity);
+						$entityManager->flush();
+
+						$this->addFlash('success', t('flash.contact.success', [], 'IdmCommonBundle'));
+
+						$form = $formEmpty;
+					}
+
+					return $this->render('@IdmCommon/contact/index.html.twig', [
+						'form' => $form,
+					]);
+				}
+
+				/**
+				 * Create a Contact form.
+				 */
+				abstract protected function getContactForm (): FormInterface;
+			}
+    </code-block>
+
+	<code-block id="abstract-contact-crud-controller" lang="php">
+			abstract class AbstractContactCrudController extends AbstractCrudController
+			{
+				public function configureFields (string $pageName): iterable {
+					$t = fn($message) => t($message, [], 'IdmCommonBundle');
+
+					yield IdField::new('id', $t('admin.crud.contact.id'))
+						->onlyOnDetail()
+					;
+
+					yield TextField::new('name', $t('admin.crud.contact.name'));
+					yield TextField::new('lastName', $t('admin.crud.contact.last_name'));
+					yield TextField::new('email', $t('admin.crud.contact.email'));
+
+					yield TextareaField::new('comment', $t('admin.crud.contact.comment'))
+						->onlyOnDetail()
+					;
+					yield BooleanField::new('consent', $t('admin.crud.contact.consent'))
+						->renderAsSwitch(false)
+					;
+
+					yield DateTimeField::new('createdAt', $t('admin.crud.contact.created_at'));
+					yield DateTimeField::new('updatedAt', $t('admin.crud.contact.updated_at'))
+						->onlyOnDetail()
+					;
+				}
+
+				public function configureActions (Actions $actions): Actions {
+					return parent::configureActions($actions)
+						->disable(Action::EDIT, Action::NEW)
+					;
+				}
+
+				public function configureCrud (Crud $crud): Crud {
+					$t = fn($message) => t($message, [], 'IdmCommonBundle');
+
+					return parent::configureCrud($crud)
+						->setEntityLabelInSingular($t('admin.label.contact.singular'))
+						->setEntityLabelInPlural($t('admin.label.contact.plural'))
+						->setSearchFields(['name', 'lastName', 'email'])
+						->setSearchMode(SearchMode::ANY_TERMS)
+						->setDefaultSort(['createdAt' => 'ASC'])
+					;
+				}
+
+				public function configureFilters (Filters $filters): Filters {
+					return parent::configureFilters($filters)
+						->add('name')
+						->add('lastName')
+						->add('email')
+						->add('consent')
+					;
+				}
+			}
+	</code-block>
+
+	<code-block id="abstract-contact-entity" lang="PHP">
+		#[ORM\MappedSuperclass]
+		abstract class AbstractContact
+		{
+			use UuidTrait;
+			use TimestampableEntity;
+
+			// -- Contact name.
+			#[ORM\Column(type: Types::STRING, length: 255)]
+			#[Assert\Length(min: 3, max: 255)]
+			protected ?string $name = null;
+
+			// -- Surname of contact.
+			#[ORM\Column(type: Types::STRING, length: 255)]
+			#[Assert\Length(min: 3, max: 255)]
+			protected ?string $lastName = null;
+
+			// -- Contact email.
+			#[ORM\Column(type: Types::STRING, length: 150, nullable: true)]
+			#[Assert\Email]
+			protected ?string $email = null;
+
+			// -- Comments/Questions.
+			#[ORM\Column(type: Types::TEXT)]
+			#[Assert\Length(min: 50, max: 65535)]
+			protected string $comment = '';
+
+			#[ORM\Column(type: Types::BOOLEAN)]
+			protected bool $consent = false;
+
+			public function getName (): ?string
+			{
+				return $this->name;
+			}
+
+			public function setName (string $name): static {
+				$this->name = $name;
+
+				return $this;
+			}
+
+			public function getLastName (): ?string
+			{
+				return $this->lastName;
+			}
+
+			public function setLastName (string $lastName): static {
+				$this->lastName = $lastName;
+
+				return $this;
+			}
+
+			public function getEmail (): ?string
+			{
+				return $this->email;
+			}
+
+			public function setEmail (string $email): static {
+				$this->email = $email;
+
+				return $this;
+			}
+
+			public function getComment (): string
+			{
+				return $this->comment;
+			}
+
+			public function setComment (string $comment): static {
+				$this->comment = $comment;
+
+				return $this;
+			}
+
+			public function isConsent (): bool
+			{
+				return $this->consent;
+			}
+
+			public function setConsent (bool $consent): static {
+				$this->consent = $consent;
+
+				return $this;
+			}
+		}
+	</code-block>
+
+	<code-block id="abstract-contact-form-type" lang="PHP">
+		abstract class AbstractContactFormType extends AbstractType
+		{
+			public function buildForm (FormBuilderInterface $builder, array $options): void {
+				$builder
+					->add('name', TextType::class, [
+						'label'       => 'form.contact.name',
+						'constraints' => [
+							new NoSuspiciousCharacters(),
+						],
+					])
+					->add('lastName', TextType::class, [
+							'label'       => 'form.contact.last_name',
+							'constraints' => [
+								new NoSuspiciousCharacters(),
+							],
+						]
+					)
+					->add('email', EmailType::class, [
+						'label' => 'form.contact.email.label',
+						'help'  => 'form.contact.email.help',
+					])
+					->add('comment', TextareaType::class, ['label' => 'form.contact.comment',])
+					->add('consent', CheckboxType::class, [
+						'label'       => 'form.contact.consent',
+						'constraints' => [
+							new IsTrue(),
+						],
+					])
+					->add('buttonSubmit', SubmitType::class, ['label' => 'form.contact.button.submit'])
+				;
+			}
+
+			public function configureOptions (OptionsResolver $resolver): void {
+				$resolver->setDefaults([
+					'translation_domain' => 'IdmCommonBundle',
+				]);
+			}
+		}
+	</code-block>
+
+	<code-block id="abstract-contact-repository" lang="PHP">
+		abstract class AbstractContactRepository extends ServiceEntityRepository
+		{
+			/** Count the number of records that do not have an email address. */
+			public function countEmptyEmail (): int
+			{
+				$query = $this->createQueryBuilder('u');
+				$query
+					->select('COUNT(u) as count')->where($query->expr()->isNull('u.email'))->orWhere(
+						$query->expr()->eq('u.email', "''")
+					)
+				;
+
+				return (int)$query->getQuery()->getSingleScalarResult();
+			}
+		}
+	</code-block>
+</topic>
