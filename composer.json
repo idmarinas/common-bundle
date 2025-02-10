@@ -1,5 +1,6 @@
 {
 	"name": "idmarinas/common-bundle",
+	"description": "This bundle is intended to group common and often repeated things when creating an APP with Symfony.",
 	"type": "symfony-bundle",
 	"license": "BSD-3-Clause",
 	"keywords": [
@@ -48,19 +49,6 @@
 		"symfony/uid": "^6.4 | ^7.1",
 		"zenstruck/foundry": "^2.3"
 	},
-	"config": {
-		"allow-plugins": {
-			"composer/package-versions-deprecated": true,
-			"idmarinas/composer-plugin": false,
-			"symfony/flex": true,
-			"symfony/runtime": true
-		},
-		"optimize-autoloader": false,
-		"preferred-install": {
-			"*": "dist"
-		},
-		"sort-packages": true
-	},
 	"autoload": {
 		"psr-4": {
 			"Idm\\Bundle\\Common\\": "src/"
@@ -85,6 +73,19 @@
 			"php bin/console doctrine:schema:update --env=dev --force --ansi",
 			"php bin/console doctrine:fixtures:load --env=dev -n --ansi"
 		]
+	},
+	"config": {
+		"allow-plugins": {
+			"composer/package-versions-deprecated": true,
+			"idmarinas/composer-plugin": false,
+			"symfony/flex": true,
+			"symfony/runtime": true
+		},
+		"optimize-autoloader": false,
+		"preferred-install": {
+			"*": "dist"
+		},
+		"sort-packages": true
 	},
 	"funding": [
 		{
