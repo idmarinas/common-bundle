@@ -9,17 +9,18 @@ This is a quick way to start using the contact system for your project.
 
 ## Before you start
 
-> You need to have `Symfony maker` installed to be able to use the following commands.
+> You need to have `Symfony maker` and `IDMarinas maker` installed to be able to use the following commands.
 > {style="warning"}
 
 ```console
 composer require --dev symfony/maker-bundle
+composer require --dev idmarinas/maker-bundle
 ```
 
 ## Install
 
 ```console
-php bin/symfony idm:make:contact
+php bin/symfony make:idm:common:contact
 ```
 
 <procedure title="These files are installed in the default folders" id="maker">
