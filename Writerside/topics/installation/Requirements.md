@@ -3,9 +3,9 @@
 > %project% needs your web server to meet the following requirements.
 > {style='note'}
 
-| **%project% <br/>Version** | **PHP <br/>Compatibility** | **Symfony <br/>Compatibility** | **Docs** |
-|:--------------------------:|:--------------------------:|:------------------------------:|:--------:|
-|           `3.x`            |      `8.2`  or higher      |   `6.4` and           `^7.1`   |  [Docs]  |
+| **%project%** | **PHP Version**  |    **Symfony Version**     |
+|:-------------:|:----------------:|:--------------------------:|
+|     `3.x`     | `8.2`  or higher | `6.4` and           `^7.1` |
 
 <seealso>
   <category ref="related">
