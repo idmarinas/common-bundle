@@ -2,7 +2,7 @@
 /**
  * Copyright 2024-2025 (C) IDMarinas - All Rights Reserved
  *
- * Last modified by "IDMarinas" on 23/01/2025, 19:21
+ * Last modified by "IDMarinas" on 24/02/2025, 18:14
  *
  * @project IDMarinas Common Bundle
  * @see     https://github.com/idmarinas/common-bundle
@@ -49,8 +49,9 @@ abstract class AbstractContactFormType extends AbstractType
 				]
 			)
 			->add('email', EmailType::class, [
-				'label' => 'form.contact.email.label',
-				'help'  => 'form.contact.email.help',
+				'label'    => 'form.contact.email.label',
+				'help'     => 'form.contact.email.help',
+				'required' => false,
 			])
 			->add('comment', TextareaType::class, ['label' => 'form.contact.comment',])
 			->add('consent', CheckboxType::class, [
