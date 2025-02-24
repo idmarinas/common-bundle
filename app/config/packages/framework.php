@@ -2,7 +2,7 @@
 /**
  * Copyright 2024-2025 (C) IDMarinas - All Rights Reserved
  *
- * Last modified by "IDMarinas" on 24/02/2025, 18:28
+ * Last modified by "IDMarinas" on 24/02/2025, 18:38
  *
  * @project IDMarinas Common Bundle
  * @see     https://github.com/idmarinas/common-bundle
@@ -28,6 +28,7 @@ return static function (ContainerConfigurator $container) {
 		'php_errors'            => [
 			'log' => true,
 		],
+		'csrf_protection'       => true,
 		'form'                  => true,
 		'assets'                => true,
 	]);
