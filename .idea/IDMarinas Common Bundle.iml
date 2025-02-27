@@ -82,7 +82,6 @@
       <excludeFolder url="file://$MODULE_DIR$/vendor/php-mock/php-mock-integration" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/php-mock/php-mock-phpunit" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/behat/transliterator" />
-      <excludeFolder url="file://$MODULE_DIR$/vendor/doctrine/common" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/gedmo/doctrine-extensions" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/psr/clock" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/stof/doctrine-extensions-bundle" />
