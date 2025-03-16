@@ -33,6 +33,7 @@
 			<toc-element toc-title="Tool">
 				<toc-element topic="FakerTrait.md" />
 				<toc-element topic="VersionTrait.md" />
+				<toc-element topic="EnumToArrayTrait.md" />
 			</toc-element>
 		</toc-element>
 		<toc-element toc-title="Validators">
