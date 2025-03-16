@@ -1,5 +1,14 @@
 # Changelog
 
+## 3.5.0 - 2025-03-XX
+
+### Added {id="added_3.5.0"}
+
+#### Traits {id="traits_3.5.0"}
+
+* **EnumToArrayTrait** [Read Docs](EnumToArrayTrait.md)
+	* _Added_ ``
+
 ## 3.4.1 - 2025-02-24
 
 ### Fixed
@@ -8,7 +17,7 @@
 
 ## 3.4.0 - 2025-02-10
 
-## Release highlights
+### Release highlights
 
 * **Contact Form**: Contact Form for get feedback of users.
 
