@@ -2,7 +2,7 @@
 /**
  * Copyright 2025 (C) IDMarinas - All Rights Reserved
  *
- * Last modified by "IDMarinas" on 22/01/2025, 12:23
+ * Last modified by "IDMarinas" on 16/03/2025, 18:04
  *
  * @project IDMarinas Common Bundle
  * @see     https://github.com/idmarinas/common-bundle
@@ -15,17 +15,6 @@
  * @license BSD 3-Clause License
  *
  * @since   3.4.0
- */
-
-/**
- * This file is part of Bundle "IDM Advertising Bundle".
- *
- * @see     https://github.com/idmarinas/advertising-bundle
- *
- * @license https://github.com/idmarinas/advertising-bundle/blob/master/LICENSE.txt
- * @author  IDMarinas
- *
- * @since   0.1.0
  */
 
 namespace Idm\Bundle\Common\Tests;
@@ -53,18 +42,4 @@ class BundleInitializationTest extends KernelTestCase
 
 		$this->assertTrue(true);
 	}
-
-	// public function testBundleWithDifferentConfiguration(): void
-	// {
-	//     // Boot the kernel with a config closure, the handleOptions call in createKernel is important for that to work
-	//     $kernel = self::bootKernel(['config' => static function(TestKernel $kernel){
-	//         // Add some other bundles we depend on
-	//         $kernel->addTestBundle(OtherBundle::class);
-
-	//         // Add some configuration
-	//         $kernel->addTestConfig(__DIR__.'/config.yml');
-	//     }]);
-
-	//     // ...
-	// }
 }
