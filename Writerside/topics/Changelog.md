@@ -1,13 +1,18 @@
 # Changelog
 
-## 3.5.0 - 2025-03-XX
+## 3.5.1 - 2025-11-04
+
+### Fixed {id="fixed_1"}
+
+* Moved `symfony/uid` to `require` packages.
+
+## 3.5.0 - 2025-03-16
 
 ### Added {id="added_3.5.0"}
 
 #### Traits {id="traits_3.5.0"}
 
-* **EnumToArrayTrait** [Read Docs](EnumToArrayTrait.md)
-	* _Added_ ``
+* _Added_ **EnumToArrayTrait** [Read Docs](EnumToArrayTrait.md)
 
 ## 3.4.1 - 2025-02-24
 
