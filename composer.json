@@ -29,6 +29,7 @@
 		"symfony/framework-bundle": "^6.4 | ^7.1",
 		"symfony/translation": "^6.4 | ^7.1",
 		"symfony/validator": "^6.4 | ^7.1",
+		"symfony/uid": "^6.4 | ^7.1",
 		"symfony/yaml": "^6.4 | ^7.1"
 	},
 	"require-dev": {
@@ -46,7 +47,6 @@
 		"symfony/runtime": "^6.4 | ^7.1",
 		"symfony/security-bundle": "^6.4 | ^7.1",
 		"symfony/twig-bundle": "^6.4 | ^7.1",
-		"symfony/uid": "^6.4 | ^7.1",
 		"zenstruck/foundry": "^2.3"
 	},
 	"autoload": {
