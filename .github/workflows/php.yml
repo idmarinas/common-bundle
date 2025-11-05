@@ -31,7 +31,7 @@ jobs:
       matrix:
         operating-system: [ ubuntu-latest ]
         php: [ '8.2', '8.3', '8.4' ]
-        symfony: [ '6.4.*', '7.1.*', '7.2.*' ]
+        symfony: [ '6.4.*', '7.1.*', '7.2.*', '7.3' ]
 
     steps:
       - uses: actions/checkout@master
@@ -57,7 +57,7 @@ jobs:
 
       - name: SonarCloud Scan
         if: matrix.php == '8.2' && matrix.symfony == '6.4.*'
-        uses: SonarSource/sonarqube-scan-action@v4
+        uses: SonarSource/sonarqube-scan-action@v6
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}  # Needed to get PR information, if any
           SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
