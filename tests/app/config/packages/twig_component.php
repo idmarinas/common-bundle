@@ -1,8 +1,8 @@
 <?php
 /**
- * Copyright 2025 (C) IDMarinas - All Rights Reserved
+ * Copyright 2025-2026 (C) IDMarinas - All Rights Reserved
  *
- * Last modified by "IDMarinas" on 27/01/2025, 20:13
+ * Last modified by "IDMarinas" on 06/01/2026, 19:24
  *
  * @project IDMarinas Common Bundle
  * @see     https://github.com/idmarinas/common-bundle
@@ -21,7 +21,7 @@ namespace Symfony\Component\DependencyInjection\Loader\Configurator;
 
 return static function (ContainerConfigurator $container) {
 	$container->extension('twig_component', [
-		'anonymous_template_directory' => 'components/',
+		'anonymous_template_directory' => dirname(__DIR__, 2) . '/components/',
 		'defaults'                     => [
 			# Namespace & directory for components
 			'App\\Twig\\Components\\' => 'components/',
