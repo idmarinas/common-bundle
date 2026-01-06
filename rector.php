@@ -1,8 +1,8 @@
 <?php
 /**
- * Copyright 2024-2025 (C) IDMarinas - All Rights Reserved
+ * Copyright 2024-2026 (C) IDMarinas - All Rights Reserved
  *
- * Last modified by "IDMarinas" on 08/02/2025, 13:02
+ * Last modified by "IDMarinas" on 06/01/2026, 18:38
  *
  * @project IDMarinas Common Bundle
  * @see     https://github.com/idmarinas/common-bundle
@@ -30,7 +30,7 @@ return RectorConfig::configure()
 		__DIR__ . '/src',
 		__DIR__ . '/tests',
 	])
-	->withPhpSets(php82: true)
+	->withPhpSets(php83: true)
 	->withPreparedSets(
 		deadCode           : true,
 		codeQuality        : true,
