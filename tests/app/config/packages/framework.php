@@ -2,7 +2,7 @@
 /**
  * Copyright 2024-2026 (C) IDMarinas - All Rights Reserved
  *
- * Last modified by "IDMarinas" on 06/01/2026, 19:27
+ * Last modified by "IDMarinas" on 06/01/2026, 19:47
  *
  * @project IDMarinas Common Bundle
  * @see     https://github.com/idmarinas/common-bundle
@@ -47,7 +47,7 @@ return static function (ContainerConfigurator $container) {
 			'utf8'    => true,
 		],
 		'session'               => [
-			'enabled'         => false,
+			'enabled'         => true,
 			'handler_id'      => null,
 			'cookie_secure'   => true,
 			'cookie_samesite' => 'lax',
@@ -63,7 +63,7 @@ return static function (ContainerConfigurator $container) {
 			],
 		],
 		'property_access'       => [
-			'enabled' => false,
+			'enabled' => true,
 		],
 		'php_errors'            => [
 			'log' => true,
