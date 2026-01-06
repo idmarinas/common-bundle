@@ -2,21 +2,17 @@ name: IDMarinas Common Bundle Test Suite
 
 on:
   pull_request:
-    branches: [ '3.x' ]
+    branches: [ 3.x ]
     types: [ opened, synchronize, reopened ]
     tags-ignore: [ dependencies, documentation, meta, 'docker configuration', 'deployer configuration' ]
   push:
-    branches: [ '3.x' ]
+    branches: [ 3.x ]
     paths-ignore:
-      - '.deployer/**'
-      - '.docker/**'
+      - '.idea/**'
       - 'migrations/**'
       - '**/docs/**'
       - '**/Writerside/**'
-      - '**/README.md'
-      - '**/COMMANDS.md'
-      - '**/TIPS.md'
-      - '**/TODO.md'
+      - '**/*.md'
       - '**/LICENSE'
       - rector.php
       - .editorconfig
@@ -25,21 +21,21 @@ on:
 
 jobs:
   build:
-    runs-on: ${{ matrix.operating-system }}
+    runs-on: ubuntu-latest
     name: PHP ${{ matrix.php }} and Symfony ${{ matrix.symfony }}
     strategy:
       matrix:
-        operating-system: [ ubuntu-latest ]
         php: [ '8.3', '8.4', '8.5' ]
-        symfony: [ '6.4.*', '7.1.*', '7.2.*', '7.3', '7.4.*', '8.0.*' ]
+        symfony: [ '6.4.*', '7.1.*', '7.2.*', '7.3.*', '7.4.*', '8.0.*' ]
 
         exclude:
           - php: '8.3'
             symfony: '8.0.*'
+
     steps:
-      - uses: actions/checkout@master
+      - uses: actions/checkout@v4
         with:
-          fetch-depth: ${{ (matrix.php == '8.2' && matrix.symfony == '6.4.*') && '0' || '1' }}
+          fetch-depth: ${{ (matrix.php == '8.3' && matrix.symfony == '6.4.*') && '0' || '1' }}
 
       - name: Setup PHP ${{ matrix.php }}
         uses: shivammathur/setup-php@v2
@@ -53,14 +49,14 @@ jobs:
           COMPOSER_NO_SECURITY_BLOCKING: 1
         uses: ramsey/composer-install@v3
 
-      - name: Create SQLite Database
+      - name: Create Database SQLite
         run: 'php bin/console doctrine:schema:create --env=test && php bin/console doctrine:fixtures:load --env=test -n'
 
       - name: Run test suite on PHP ${{ matrix.php }} and Symfony ${{ matrix.symfony }}
         run: ./vendor/bin/phpunit --exclude-group ignore --exclude-group legacy
 
       - name: SonarCloud Scan
-        if: matrix.php == '8.2' && matrix.symfony == '6.4.*'
+        if: matrix.php == '8.3' && matrix.symfony == '6.4.*'
         uses: SonarSource/sonarqube-scan-action@v6
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}  # Needed to get PR information, if any
