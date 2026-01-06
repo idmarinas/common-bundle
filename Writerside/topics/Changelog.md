@@ -1,5 +1,15 @@
 # Changelog
 
+## 3.5.2 - 2026-01-06
+
+### Changed {id="changed_1"}
+
+* _Changed_ a PHP min version to `8.3`
+
+### Added {id="added_1"}
+
+* _Added_ Symfony `8.0` compatibility
+
 ## 3.5.1 - 2025-11-04
 
 ### Fixed {id="fixed_1"}
@@ -18,7 +28,7 @@
 
 ### Fixed
 
-* Fixed error in Contact Form, now email is optional
+* Fixed the error in Contact Form, now email is optional
 
 ## 3.4.0 - 2025-02-10
 
