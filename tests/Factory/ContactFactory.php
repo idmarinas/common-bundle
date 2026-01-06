@@ -2,7 +2,7 @@
 /**
  * Copyright 2025-2026 (C) IDMarinas - All Rights Reserved
  *
- * Last modified by "IDMarinas" on 06/01/2026, 19:12
+ * Last modified by "IDMarinas" on 06/01/2026, 19:37
  *
  * @project IDMarinas Common Bundle
  * @see     https://github.com/idmarinas/common-bundle
@@ -20,12 +20,12 @@
 namespace Factory;
 
 use App\Entity\Contact;
-use Zenstruck\Foundry\Persistence\PersistentProxyObjectFactory;
+use Zenstruck\Foundry\Persistence\PersistentObjectFactory;
 
 /**
- * @extends PersistentProxyObjectFactory<Contact>
+ * @extends PersistentObjectFactory<Contact>
  */
-final class ContactFactory extends PersistentProxyObjectFactory
+final class ContactFactory extends PersistentObjectFactory
 {
 	public static function class (): string
 	{
