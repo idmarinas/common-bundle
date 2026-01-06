@@ -1,8 +1,8 @@
 <?php
 /**
- * Copyright 2024-2025 (C) IDMarinas - All Rights Reserved
+ * Copyright 2024-2026 (C) IDMarinas - All Rights Reserved
  *
- * Last modified by "IDMarinas" on 27/01/2025, 19:49
+ * Last modified by "IDMarinas" on 06/01/2026, 19:32
  *
  * @project IDMarinas Common Bundle
  * @see     https://github.com/idmarinas/common-bundle
@@ -34,7 +34,6 @@ use Zenstruck\Foundry\ZenstruckFoundryBundle;
 return [
 	FrameworkBundle::class              => ['all' => true],
 	DoctrineBundle::class               => ['all' => true],
-	IdmCommonBundle::class              => ['all' => true],
 	StofDoctrineExtensionsBundle::class => ['all' => true],
 	TwigBundle::class                   => ['all' => true],
 	TwigExtraBundle::class              => ['all' => true],
@@ -47,4 +46,7 @@ return [
 	DoctrineFixturesBundle::class       => ['all' => true],
 	DAMADoctrineTestBundle::class       => ['all' => true],
 	ZenstruckFoundryBundle::class       => ['all' => true],
+
+	// This Bundle
+	IdmCommonBundle::class              => ['all' => true],
 ];
