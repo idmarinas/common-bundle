@@ -1,8 +1,9 @@
 <?php
+
 /**
- * Copyright 2025 (C) IDMarinas - All Rights Reserved
+ * Copyright 2025-2026 (C) IDMarinas - All Rights Reserved
  *
- * Last modified by "IDMarinas" on 16/03/2025, 18:04
+ * Last modified by "IDMarinas" on 06/01/2026, 19:11
  *
  * @project IDMarinas Common Bundle
  * @see     https://github.com/idmarinas/common-bundle
@@ -21,25 +22,23 @@ namespace Idm\Bundle\Common\Tests;
 
 use App\Kernel;
 use Symfony\Bundle\FrameworkBundle\Test\KernelTestCase;
-use Symfony\Component\HttpKernel\KernelInterface;
 
-class BundleInitializationTest extends KernelTestCase
+final class BundleInitializationTest extends KernelTestCase
 {
-
-	protected static function createKernel (array $options = []): KernelInterface
-	{
-		/** @var Kernel $kernel */
-		$kernel = parent::createKernel($options);
-		$kernel->handleOptions($options);
-
-		return $kernel;
-	}
+	use CreateKernelCaseTrait;
 
 	public function testInitBundle (): void
 	{
 		// Boot the kernel.
-		self::bootKernel();
+		$kernel = self::bootKernel([
+			'config' => static function (Kernel $kernel) {
+//				$kernel->addExtraBundle(BundleName::class);
+//				$kernel->addExtraConfig('path/to/file.php');
+//				$kernel->addExtraConfig(['extension_name' => ['key_1' => 'value_1']);
+//				$kernel->addExtraRoutesFile('path/to/file.php');
+			},
+		]);
 
-		$this->assertTrue(true);
+		$this->assertTrue($kernel->getContainer()->has('kernel'));
 	}
 }

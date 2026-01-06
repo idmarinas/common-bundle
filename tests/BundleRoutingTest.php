@@ -1,8 +1,8 @@
 <?php
 /**
- * Copyright 2025 (C) IDMarinas - All Rights Reserved
+ * Copyright 2025-2026 (C) IDMarinas - All Rights Reserved
  *
- * Last modified by "IDMarinas" on 27/01/2025, 20:54
+ * Last modified by "IDMarinas" on 06/01/2026, 19:11
  *
  * @project IDMarinas Common Bundle
  * @see     https://github.com/idmarinas/common-bundle
@@ -19,23 +19,12 @@
 
 namespace Idm\Bundle\Common\Tests;
 
-use App\Kernel;
 use Symfony\Bundle\FrameworkBundle\Test\KernelTestCase;
-use Symfony\Component\HttpKernel\KernelInterface;
 use Symfony\Component\Routing\RouterInterface;
 
 class BundleRoutingTest extends KernelTestCase
 {
-	protected static function createKernel (array $options = []): KernelInterface
-	{
-		/**
-		 * @var Kernel $kernel
-		 */
-		$kernel = parent::createKernel($options);
-		$kernel->handleOptions($options);
-
-		return $kernel;
-	}
+	use CreateKernelCaseTrait;
 
 	public function testAddRoutingFile (): void
 	{
