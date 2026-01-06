@@ -1,8 +1,8 @@
 <?php
 /**
- * Copyright 2024-2025 (C) IDMarinas - All Rights Reserved
+ * Copyright 2024-2026 (C) IDMarinas - All Rights Reserved
  *
- * Last modified by "IDMarinas" on 27/01/2025, 19:48
+ * Last modified by "IDMarinas" on 06/01/2026, 19:34
  *
  * @project IDMarinas Common Bundle
  * @see     https://github.com/idmarinas/common-bundle
@@ -27,16 +27,15 @@ use Doctrine\Persistence\ManagerRegistry;
 
 return static function (ContainerConfigurator $container) {
 	// @formatter:off
-	$container
-		->services()
-			->set(ContactRepository::class)
-				->public()
-				->args([service(ManagerRegistry::class)])
-				->tag('doctrine.repository_service')
+	$container->services()
+		->set(ContactRepository::class)
+			->public()
+			->args([service(ManagerRegistry::class)])
+			->tag('doctrine.repository_service')
 
-			->set(ContactController::class)->public()->autoconfigure()->autowire()
-			->set(DashboardController::class)->public()->autoconfigure()->autowire()
-			->set(ContactCrudController::class)->public()->autoconfigure()->autowire()
+		->set(ContactController::class)->public()->autoconfigure()->autowire()
+		->set(DashboardController::class)->public()->autoconfigure()->autowire()
+		->set(ContactCrudController::class)->public()->autoconfigure()->autowire()
 	;
 	// @formatter:on
 };
