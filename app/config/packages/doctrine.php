@@ -1,8 +1,8 @@
 <?php
 /**
- * Copyright 2024-2025 (C) IDMarinas - All Rights Reserved
+ * Copyright 2024-2026 (C) IDMarinas - All Rights Reserved
  *
- * Last modified by "IDMarinas" on 22/01/2025, 13:25
+ * Last modified by "IDMarinas" on 06/01/2026, 18:50
  *
  * @project IDMarinas Common Bundle
  * @see     https://github.com/idmarinas/common-bundle
@@ -42,18 +42,15 @@ return static function (ContainerConfigurator $container) {
 
 	$container->extension('doctrine', [
 		'dbal' => [
-			'driver'         => 'pdo_sqlite',
-			'url'            => sprintf('sqlite:///%s/%s_%s.sqlite', $getDatabaseCache(), $dbName, $container->env()),
-			'use_savepoints' => true,
+			'driver' => 'pdo_sqlite',
+			'url'    => sprintf('sqlite:///%s/%s_%s.sqlite', $getDatabaseCache(), $dbName, $container->env()),
 		],
 		'orm'  => [
-			'enable_lazy_ghost_objects'   => true,
-			'auto_generate_proxy_classes' => true,
-			'auto_mapping'                => false,
-			'controller_resolver'         => [
+			'auto_mapping'        => false,
+			'controller_resolver' => [
 				'auto_mapping' => false,
 			],
-			'mappings'                    => [
+			'mappings'            => [
 				'Tests' => [
 					'is_bundle' => false,
 					'mapping'   => true,
