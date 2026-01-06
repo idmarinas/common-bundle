@@ -1,8 +1,8 @@
 <?php
 /**
- * Copyright 2025 (C) IDMarinas - All Rights Reserved
+ * Copyright 2025-2026 (C) IDMarinas - All Rights Reserved
  *
- * Last modified by "IDMarinas" on 24/02/2025, 18:42
+ * Last modified by "IDMarinas" on 06/01/2026, 19:29
  *
  * @project IDMarinas Common Bundle
  * @see     https://github.com/idmarinas/common-bundle
