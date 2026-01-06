@@ -1,8 +1,8 @@
 <?php
 /**
- * Copyright 2025 (C) IDMarinas - All Rights Reserved
+ * Copyright 2025-2026 (C) IDMarinas - All Rights Reserved
  *
- * Last modified by "IDMarinas" on 27/01/2025, 20:51
+ * Last modified by "IDMarinas" on 06/01/2026, 19:33
  *
  * @project IDMarinas Common Bundle
  * @see     https://github.com/idmarinas/common-bundle
@@ -19,17 +19,30 @@
 
 use App\Controller\Admin\DashboardController;
 use App\Controller\ContactController;
+use Symfony\Bundle\FrameworkBundle\Controller\TemplateController;
 use Symfony\Component\Routing\Loader\Configurator\RoutingConfigurator;
 
 return function (RoutingConfigurator $routes) {
 	// @formatter:off
+//	$routes->import('routes/web_profiler.php');
+
+	//$routes->import('security.route_loader.logout', 'service')->methods(['GET']);
+
 	$routes
 		->import(ContactController::class, 'attribute')
-			->namePrefix('idm_common_')
+		->namePrefix('idm_common_')
 	;
 	$routes
 		->import(DashboardController::class, 'attribute')
-			->namePrefix('idm_admin_')
+		->namePrefix('idm_admin_')
+	;
+	$routes->add('app_home', '/')
+		->controller(TemplateController::class)
+		->methods(['GET'])
+		->defaults(['template' => 'pages/home.html.twig'])
+		->options([
+			'seo' => true
+		])
 	;
 	// @formatter:on
 };
