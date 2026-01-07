@@ -1,8 +1,8 @@
 <?php
 /**
- * Copyright 2025 (C) IDMarinas - All Rights Reserved
+ * Copyright 2025-2026 (C) IDMarinas - All Rights Reserved
  *
- * Last modified by "IDMarinas" on 27/01/2025, 17:42
+ * Last modified by "IDMarinas" on 07/01/2026, 16:34
  *
  * @project IDMarinas Common Bundle
  * @see     https://github.com/idmarinas/common-bundle
@@ -30,10 +30,12 @@ use EasyCorp\Bundle\EasyAdminBundle\Field\DateTimeField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\IdField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\TextareaField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\TextField;
+use Override;
 use function Symfony\Component\Translation\t;
 
 abstract class AbstractContactCrudController extends AbstractCrudController
 {
+	#[Override]
 	public function configureFields (string $pageName): iterable
 	{
 		$t = fn($message) => t($message, [], 'IdmCommonBundle');
@@ -59,6 +61,7 @@ abstract class AbstractContactCrudController extends AbstractCrudController
 		;
 	}
 
+	#[Override]
 	public function configureActions (Actions $actions): Actions
 	{
 		return parent::configureActions($actions)
@@ -66,6 +69,7 @@ abstract class AbstractContactCrudController extends AbstractCrudController
 		;
 	}
 
+	#[Override]
 	public function configureCrud (Crud $crud): Crud
 	{
 		$t = fn($message) => t($message, [], 'IdmCommonBundle');
@@ -79,6 +83,7 @@ abstract class AbstractContactCrudController extends AbstractCrudController
 		;
 	}
 
+	#[Override]
 	public function configureFilters (Filters $filters): Filters
 	{
 		return parent::configureFilters($filters)
