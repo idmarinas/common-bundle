@@ -2,7 +2,7 @@
 /**
  * Copyright 2024-2026 (C) IDMarinas - All Rights Reserved
  *
- * Last modified by "IDMarinas" on 06/01/2026, 19:15
+ * Last modified by "IDMarinas" on 07/01/2026, 16:41
  *
  * @project IDMarinas Common Bundle
  * @see     https://github.com/idmarinas/common-bundle
@@ -20,6 +20,7 @@
 namespace App;
 
 use Exception;
+use Override;
 use Symfony\Bundle\FrameworkBundle\Kernel\MicroKernelTrait;
 use Symfony\Component\Config\Loader\LoaderInterface;
 use Symfony\Component\DependencyInjection\ContainerBuilder;
@@ -94,11 +95,13 @@ final class Kernel extends BaseKernel
 		}
 	}
 
+	#[Override]
 	public function getCacheDir (): string
 	{
 		return parent::getCacheDir() . $this->testCachePrefix;
 	}
 
+	#[Override]
 	public function shutdown (): void
 	{
 		parent::shutdown();
