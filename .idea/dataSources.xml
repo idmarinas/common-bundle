@@ -8,5 +8,12 @@
       <jdbc-url>jdbc:sqlite:F:\Bundles\common-bundle\var\cache\database\idm_common_bundle_test.sqlite</jdbc-url>
       <working-dir>$ProjectFileDir$</working-dir>
     </data-source>
+    <data-source source="LOCAL" name="Docs" uuid="6487f3ec-a28b-4b67-9a89-a0627e7f80c9">
+      <driver-ref>sqlite.xerial</driver-ref>
+      <synchronize>true</synchronize>
+      <jdbc-driver>org.sqlite.JDBC</jdbc-driver>
+      <jdbc-url>jdbc:sqlite:$PROJECT_DIR$/docs/.data/content/contents.sqlite</jdbc-url>
+      <working-dir>$ProjectFileDir$</working-dir>
+    </data-source>
   </component>
 </project>
