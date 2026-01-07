@@ -2,7 +2,7 @@
 /**
  * Copyright 2025-2026 (C) IDMarinas - All Rights Reserved
  *
- * Last modified by "IDMarinas" on 06/01/2026, 19:37
+ * Last modified by "IDMarinas" on 07/01/2026, 16:41
  *
  * @project IDMarinas Common Bundle
  * @see     https://github.com/idmarinas/common-bundle
@@ -20,6 +20,7 @@
 namespace Factory;
 
 use App\Entity\Contact;
+use Override;
 use Zenstruck\Foundry\Persistence\PersistentObjectFactory;
 
 /**
@@ -54,6 +55,7 @@ final class ContactFactory extends PersistentObjectFactory
 	/**
 	 * @see https://symfony.com/bundles/ZenstruckFoundryBundle/current/index.html#initialization
 	 */
+	#[Override]
 	protected function initialize (): static
 	{
 		return $this// ->afterInstantiate(function(Contact $contact): void {})
