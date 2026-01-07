@@ -1,8 +1,8 @@
 <?php
 /**
- * Copyright 2025 (C) IDMarinas - All Rights Reserved
+ * Copyright 2025-2026 (C) IDMarinas - All Rights Reserved
  *
- * Last modified by "IDMarinas" on 23/01/2025, 20:07
+ * Last modified by "IDMarinas" on 07/01/2026, 16:27
  *
  * @project IDMarinas Common Bundle
  * @see     https://github.com/idmarinas/common-bundle
@@ -19,16 +19,18 @@
 
 namespace Idm\Bundle\Common\Tests\Controller;
 
+use Idm\Bundle\Common\Tests\CreateKernelCaseTrait;
 use Symfony\Bundle\FrameworkBundle\Test\WebTestCase;
 use Symfony\Component\HttpFoundation\Request;
 use function Zenstruck\Foundry\faker;
 
 class ContactControllerTest extends WebTestCase
 {
+	use CreateKernelCaseTrait;
 
 	public function testIndex ()
 	{
-		$client = static::createClient();
+		$client = static::createClient(['environment' => 'contact']);
 		$client->request(Request::METHOD_GET, '/contact');
 
 		$this->assertResponseIsSuccessful();
@@ -39,7 +41,7 @@ class ContactControllerTest extends WebTestCase
 
 	public function testSubmit ()
 	{
-		$client = static::createClient();
+		$client = static::createClient(['environment' => 'contact']);
 		$client->request(Request::METHOD_POST, '/contact');
 
 		$client->submitForm('contact_form_buttonSubmit', [
@@ -57,7 +59,7 @@ class ContactControllerTest extends WebTestCase
 
 	public function testSubmitNotEmail ()
 	{
-		$client = static::createClient();
+		$client = static::createClient(['environment' => 'contact']);
 		$client->request(Request::METHOD_POST, '/contact');
 
 		$client->submitForm('contact_form_buttonSubmit', [
@@ -74,7 +76,7 @@ class ContactControllerTest extends WebTestCase
 
 	public function testSubmitInvalid ()
 	{
-		$client = static::createClient();
+		$client = static::createClient(['environment' => 'contact']);
 		$client->request(Request::METHOD_POST, '/contact');
 
 		$client->submitForm('contact_form_buttonSubmit', [
