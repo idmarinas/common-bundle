@@ -1,8 +1,8 @@
 <?php
 /**
- * Copyright 2025 (C) IDMarinas - All Rights Reserved
+ * Copyright 2025-2026 (C) IDMarinas - All Rights Reserved
  *
- * Last modified by "IDMarinas" on 20/01/2025, 12:51
+ * Last modified by "IDMarinas" on 07/01/2026, 16:39
  *
  * @project IDMarinas Common Bundle
  * @see     https://github.com/idmarinas/common-bundle
@@ -13,16 +13,6 @@
  *
  * @author  Iván Diaz Marinas (IDMarinas)
  * @license BSD 3-Clause License
- *
- * @since   3.4.0
- */
-
-/**
- * This file is part of Bundle "IdmCommonBundle".
- *
- * @see     https://github.com/idmarinas/common-bundle/
- *
- * @license https://github.com/idmarinas/common-bundle/blob/master/LICENSE.txt
  *
  * @since   1.4.0
  */
