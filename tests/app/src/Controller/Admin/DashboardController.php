@@ -1,8 +1,8 @@
 <?php
 /**
- * Copyright 2025 (C) IDMarinas - All Rights Reserved
+ * Copyright 2025-2026 (C) IDMarinas - All Rights Reserved
  *
- * Last modified by "IDMarinas" on 27/01/2025, 21:01
+ * Last modified by "IDMarinas" on 07/01/2026, 16:40
  *
  * @project IDMarinas Common Bundle
  * @see     https://github.com/idmarinas/common-bundle
@@ -22,17 +22,20 @@ namespace App\Controller\Admin;
 use EasyCorp\Bundle\EasyAdminBundle\Config\Dashboard;
 use EasyCorp\Bundle\EasyAdminBundle\Config\MenuItem;
 use EasyCorp\Bundle\EasyAdminBundle\Controller\AbstractDashboardController;
+use Override;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Attribute\Route;
 
 class DashboardController extends AbstractDashboardController
 {
 	#[Route('/admin', name: 'dashboard')]
+	#[Override]
 	public function index (): Response
 	{
 		return parent::index();
 	}
 
+	#[Override]
 	public function configureDashboard (): Dashboard
 	{
 		return Dashboard::new()
@@ -40,6 +43,7 @@ class DashboardController extends AbstractDashboardController
 		;
 	}
 
+	#[Override]
 	public function configureMenuItems (): iterable
 	{
 		yield MenuItem::linkToDashboard('Dashboard', 'fa fa-home');
