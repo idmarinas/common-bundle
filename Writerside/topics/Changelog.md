@@ -5,6 +5,7 @@
 ### Changed {id="changed_1"}
 
 * _Changed_ a PHP min version to `8.3`
+* _Changed_ PHPUnit version to `12.5`
 
 ### Added {id="added_1"}
 
