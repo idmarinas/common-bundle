@@ -1,8 +1,8 @@
 <?php
 /**
- * Copyright 2025 (C) IDMarinas - All Rights Reserved
+ * Copyright 2025-2026 (C) IDMarinas - All Rights Reserved
  *
- * Last modified by "IDMarinas" on 27/01/2025, 21:16
+ * Last modified by "IDMarinas" on 08/01/2026, 19:40
  *
  * @project IDMarinas Common Bundle
  * @see     https://github.com/idmarinas/common-bundle
@@ -22,14 +22,13 @@ namespace Idm\Bundle\Common\Tests\Controller\Admin;
 use App\Controller\Admin\ContactCrudController;
 use App\Controller\Admin\DashboardController;
 use EasyCorp\Bundle\EasyAdminBundle\Test\AbstractCrudTestCase;
+use Symfony\Bundle\FrameworkBundle\KernelBrowser;
 
 class ContactCrudControllerTest extends AbstractCrudTestCase
 {
-	public function testIndexPage ()
+	protected static function createClient (array $options = [], array $server = []): KernelBrowser
 	{
-		$this->client->request('GET', $this->generateIndexUrl());
-
-		$this->assertResponseIsSuccessful();
+		return parent::createClient(array_merge($options, ['environment' => 'crud']), $server);
 	}
 
 	protected function getControllerFqcn (): string
@@ -40,5 +39,12 @@ class ContactCrudControllerTest extends AbstractCrudTestCase
 	protected function getDashboardFqcn (): string
 	{
 		return DashboardController::class;
+	}
+
+	public function testIndexPage ()
+	{
+		$this->client->request('GET', $this->generateIndexUrl());
+
+		$this->assertResponseIsSuccessful();
 	}
 }
