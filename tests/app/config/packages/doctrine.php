@@ -2,7 +2,7 @@
 /**
  * Copyright 2024-2026 (C) IDMarinas - All Rights Reserved
  *
- * Last modified by "IDMarinas" on 06/01/2026, 19:21
+ * Last modified by "IDMarinas" on 09/01/2026, 19:44
  *
  * @project IDMarinas Common Bundle
  * @see     https://github.com/idmarinas/common-bundle
@@ -37,6 +37,7 @@ return static function (ContainerConfigurator $container, ContainerBuilder $buil
 
 		$dbName = (new ReflectionClass(IdmCommonBundle::class))->getShortName();
 		$dbName = u($dbName)->snake()->toString();
+		$env = 'dev' === $env ? 'dev' : 'test'; // Always dev or test
 
 		return sprintf('sqlite:///%s/%s_%s.sqlite', $dir, $dbName, $env);
 	};
