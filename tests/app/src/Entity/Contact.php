@@ -2,7 +2,7 @@
 /**
  * Copyright 2025-2026 (C) IDMarinas - All Rights Reserved
  *
- * Last modified by "IDMarinas" on 06/01/2026, 19:29
+ * Last modified by "IDMarinas" on 08/01/2026, 20:41
  *
  * @project IDMarinas Common Bundle
  * @see     https://github.com/idmarinas/common-bundle
@@ -24,6 +24,7 @@ use DateTime;
 use Doctrine\ORM\Mapping as ORM;
 use Idm\Bundle\Common\Model\Entity\AbstractContact;
 
+#[ORM\Table(name: 'idm_common_contact')]
 #[ORM\Entity(repositoryClass: ContactRepository::class)]
 class Contact extends AbstractContact
 {
