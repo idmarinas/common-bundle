@@ -2,7 +2,7 @@
 /**
  * Copyright 2024-2026 (C) IDMarinas - All Rights Reserved
  *
- * Last modified by "IDMarinas" on 06/01/2026, 19:34
+ * Last modified by "IDMarinas" on 08/01/2026, 20:59
  *
  * @project IDMarinas Common Bundle
  * @see     https://github.com/idmarinas/common-bundle
@@ -19,23 +19,12 @@
 
 namespace Symfony\Component\DependencyInjection\Loader\Configurator;
 
-use App\Controller\Admin\ContactCrudController;
-use App\Controller\Admin\DashboardController;
-use App\Controller\ContactController;
-use App\Repository\ContactRepository;
-use Doctrine\Persistence\ManagerRegistry;
-
 return static function (ContainerConfigurator $container) {
 	// @formatter:off
-	$container->services()
-		->set(ContactRepository::class)
-			->public()
-			->args([service(ManagerRegistry::class)])
-			->tag('doctrine.repository_service')
-
-		->set(ContactController::class)->public()->autoconfigure()->autowire()
-		->set(DashboardController::class)->public()->autoconfigure()->autowire()
-		->set(ContactCrudController::class)->public()->autoconfigure()->autowire()
+	$container
+		->services()
+			->defaults()->autowire()->autoconfigure()
+			->load('App\\', '../src')
 	;
 	// @formatter:on
 };
