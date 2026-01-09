@@ -2,7 +2,7 @@
 /**
  * Copyright 2024-2026 (C) IDMarinas - All Rights Reserved
  *
- * Last modified by "IDMarinas" on 06/01/2026, 19:47
+ * Last modified by "IDMarinas" on 09/01/2026, 19:00
  *
  * @project IDMarinas Common Bundle
  * @see     https://github.com/idmarinas/common-bundle
@@ -25,9 +25,7 @@ return static function (ContainerConfigurator $container) {
 		'http_method_override'  => false,
 		'test'                  => true,
 		'default_locale'        => 'en',
-		'enabled_locales'       => [
-			0 => 'en',
-		],
+		'enabled_locales'       => ['en'],
 		'handle_all_throwables' => true,
 		'csrf_protection'       => [
 			'enabled' => true,
@@ -72,9 +70,7 @@ return static function (ContainerConfigurator $container) {
 			'enabled'    => false,
 			'routing'    => [
 				'Symfony\Component\Mailer\Messenger\SendEmailMessage' => [
-					'senders' => [
-						0 => 'sync',
-					],
+					'senders' => ['sync',],
 				],
 			],
 			'transports' => [
