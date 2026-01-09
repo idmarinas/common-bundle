@@ -2,7 +2,7 @@
 /**
  * Copyright 2025-2026 (C) IDMarinas - All Rights Reserved
  *
- * Last modified by "IDMarinas" on 06/01/2026, 19:11
+ * Last modified by "IDMarinas" on 09/01/2026, 19:05
  *
  * @project IDMarinas Common Bundle
  * @see     https://github.com/idmarinas/common-bundle
@@ -39,7 +39,7 @@ class BundleRoutingTest extends KernelTestCase
 		$routeCollection = $router->getRouteCollection();
 		$routes = $routeCollection->all();
 
-		$this->assertCount(3, $routes);
+		$this->assertCount(11, $routes);
 		$this->assertNotNull($routeCollection->get('app_home'));
 		$this->assertNotNull($routeCollection->get('idm_common_contact'));
 	}
