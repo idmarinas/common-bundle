@@ -1,10 +1,11 @@
 ###> idmarinas/common-bundle ###
 **/*.dist
+/config/reference.php
 /build/
 /vendor/
 /var/
 /phpunit.xml
 !/phpunit.xml.dist
-/.phpunit.cache
+/.phpunit.cache/
 /composer.lock
 ###< idmarinas/common-bundle ###
