@@ -1,8 +1,8 @@
 <?php
 /**
- * Copyright 2024-2026 (C) IDMarinas - All Rights Reserved
+ * Copyright $originalComment.match("Copyright (\d+)", 1, "-",$today.year)2026 (C) IDMarinas - All Rights Reserved
  *
- * Last modified by "IDMarinas" on 06/01/2026, 19:14
+ * Last modified by "IDMarinas" on 03/05/2026, 23:15
  *
  * @project IDMarinas Common Bundle
  * @see     https://github.com/idmarinas/common-bundle
@@ -17,14 +17,16 @@
  * @since   3.4.0
  */
 
+use Idm\Bundle\Common\IdmCommonBundle;
 use Symfony\Component\DependencyInjection\ContainerBuilder;
 use Symfony\Component\DependencyInjection\Loader\Configurator\ContainerConfigurator;
 
 return static function (ContainerConfigurator $container, ContainerBuilder $builder) {
+	$namespace = (new ReflectionClass(IdmCommonBundle::class))->getNamespaceName();
 	// @formatter:off
 	$container
 		->services()
-			->load('DataFixtures\\', $builder->getParameter('kernel.project_dir') . '/tests/DataFixtures')
+			->load($namespace.'\\DataFixtures\\', $builder->getParameter('kernel.project_dir') . '/tests/DataFixtures')
 			->public()
 			->autowire()
 			->autoconfigure()
