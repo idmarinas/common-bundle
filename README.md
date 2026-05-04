@@ -5,6 +5,7 @@
 
 ![GitHub release](https://img.shields.io/github/release/idmarinas/common-bundle.svg?style=for-the-badge)
 ![GitHub Release Date](https://img.shields.io/github/release-date/idmarinas/common-bundle.svg?style=for-the-badge)
+[![Documentation](https://img.shields.io/badge/Documentation-blue?style=for-the-badge&logo=readme&logoColor=white)](https://idmarinas.github.io/common-bundle/)
 
 </div>
 
