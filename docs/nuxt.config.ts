@@ -6,4 +6,12 @@ export default defineNuxtConfig({
 			domain: 'https://idmarinas.github.io/common-bundle'
 		}
 	},
+	vite: {
+		optimizeDeps: {
+			include: [
+				'@vue/devtools-core',
+				'@vue/devtools-kit',
+			]
+		}
+	}
 })
