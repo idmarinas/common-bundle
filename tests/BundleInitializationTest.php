@@ -3,7 +3,7 @@
 /**
  * Copyright 2026 (C) IDMarinas - All Rights Reserved
  *
- * Last modified by "IDMarinas" on 05/05/2026, 15:42
+ * Last modified by "IDMarinas" on 05/05/2026, 18:00
  *
  * @project IDMarinas Common Bundle
  * @see     https://github.com/idmarinas/common-bundle
@@ -23,7 +23,9 @@ declare(strict_types=1);
 namespace Idm\Bundle\Common\Tests;
 
 use App\Kernel;
+use Idm\Bundle\Common\Decorator\Twig\AppVariable;
 use Symfony\Bundle\FrameworkBundle\Test\KernelTestCase;
+use Symfony\Component\HttpFoundation\Session\Session;
 
 final class BundleInitializationTest extends KernelTestCase
 {
@@ -42,5 +44,23 @@ final class BundleInitializationTest extends KernelTestCase
 		]);
 
 		$this->assertTrue($kernel->getContainer()->has('kernel'));
+	}
+
+	public function testInitBundleWithNotifications(): void
+	{
+		$kernel = self::bootKernel([
+			'config' => static function (Kernel $kernel): void {
+				$kernel->addExtraConfig([
+					'idm_common' => [
+						'notifications_bag' => true,
+					],
+				]);
+			},
+		]);
+
+		$removedIds = self::getContainer()->getRemovedIds();
+
+		$this->assertTrue(in_array(Session::class, $removedIds));
+		$this->assertTrue(in_array(AppVariable::class, $removedIds));
 	}
 }
