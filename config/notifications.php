@@ -2,7 +2,7 @@
 /**
  * Copyright 2026 (C) IDMarinas - All Rights Reserved
  *
- * Last modified by "IDMarinas" on 05/05/2026, 15:45
+ * Last modified by "IDMarinas" on 05/05/2026, 17:52
  *
  * @project IDMarinas Common Bundle
  * @see     https://github.com/idmarinas/common-bundle
@@ -25,10 +25,10 @@ use Idm\Bundle\Common\Decorator\Twig\AppVariable;
 return function (ContainerConfigurator $container): void {
 	// @formatter:off
 	$container->services()
-		->set('idm_common.notifications.factory', SessionFactory::class)
+		->set(SessionFactory::class)
 			->decorate('session.factory')
 			->args([service('.inner')])
-		->set('idm_common.notifications.twig.factory', AppVariable::class)
+		->set(AppVariable::class)
 			->decorate('twig.app_variable')
 			->args([service('.inner')])
 	;
