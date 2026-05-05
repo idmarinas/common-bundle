@@ -2,7 +2,7 @@
 /**
  * Copyright $originalComment.match("Copyright (\d+)", 1, "-",$today.year)2026 (C) IDMarinas - All Rights Reserved
  *
- * Last modified by "IDMarinas" on 03/05/2026, 23:15
+ * Last modified by "IDMarinas" on 05/05/2026, 10:22
  *
  * @project IDMarinas Common Bundle
  * @see     https://github.com/idmarinas/common-bundle
@@ -26,7 +26,7 @@ return static function (ContainerConfigurator $container, ContainerBuilder $buil
 	// @formatter:off
 	$container
 		->services()
-			->load($namespace.'\\Factory\\', $builder->getParameter('kernel.project_dir'). '/tests/Factory')
+			->load($namespace.'\\Tests\\Factory\\', $builder->getParameter('kernel.project_dir'). '/tests/Factory')
 			->public()
 			->autowire()
 			->autoconfigure()

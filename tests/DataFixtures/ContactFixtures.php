@@ -1,8 +1,8 @@
 <?php
 /**
- * Copyright 2025-2026 (C) IDMarinas - All Rights Reserved
+ * Copyright $originalComment.match("Copyright (\d+)", 1, "-",$today.year)2026 (C) IDMarinas - All Rights Reserved
  *
- * Last modified by "IDMarinas" on 06/01/2026, 19:12
+ * Last modified by "IDMarinas" on 05/05/2026, 10:21
  *
  * @project IDMarinas Common Bundle
  * @see     https://github.com/idmarinas/common-bundle
@@ -17,15 +17,15 @@
  * @since   3.4.0
  */
 
-namespace DataFixtures;
+namespace Idm\Bundle\Common\Tests\DataFixtures;
 
 use Doctrine\Bundle\FixturesBundle\Fixture;
 use Doctrine\Persistence\ObjectManager;
-use Factory\ContactFactory;
+use Idm\Bundle\Common\Tests\Factory\ContactFactory;
 
 class ContactFixtures extends Fixture
 {
-	public function load (ObjectManager $manager): void
+	public function load(ObjectManager $manager): void
 	{
 		ContactFactory::createMany(50, ['email' => '']);
 		ContactFactory::createMany(50);

@@ -49,6 +49,15 @@
 		"symfony/twig-bundle": "^6.4 | ^7.1 | ^8.0",
 		"zenstruck/foundry": "^2.3"
 	},
+	"replace": {
+		"symfony/polyfill-php72": "*",
+		"symfony/polyfill-php73": "*",
+		"symfony/polyfill-php74": "*",
+		"symfony/polyfill-php80": "*",
+		"symfony/polyfill-php81": "*",
+		"symfony/polyfill-php82": "*",
+		"symfony/polyfill-php83": "*"
+	},
 	"autoload": {
 		"psr-4": {
 			"Idm\\Bundle\\Common\\": "src/"
@@ -57,9 +66,7 @@
 	"autoload-dev": {
 		"psr-4": {
 			"App\\": "tests/app/src/",
-			"Idm\\Bundle\\Common\\Tests\\": "tests/",
-			"DataFixtures\\": "tests/DataFixtures/",
-			"Factory\\": "tests/Factory/"
+			"Idm\\Bundle\\Common\\Tests\\": "tests/"
 		}
 	},
 	"scripts": {

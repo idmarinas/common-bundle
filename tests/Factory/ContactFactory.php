@@ -1,8 +1,8 @@
 <?php
 /**
- * Copyright 2025-2026 (C) IDMarinas - All Rights Reserved
+ * Copyright $originalComment.match("Copyright (\d+)", 1, "-",$today.year)2026 (C) IDMarinas - All Rights Reserved
  *
- * Last modified by "IDMarinas" on 07/01/2026, 16:41
+ * Last modified by "IDMarinas" on 05/05/2026, 10:21
  *
  * @project IDMarinas Common Bundle
  * @see     https://github.com/idmarinas/common-bundle
@@ -17,7 +17,7 @@
  * @since   3.4.0
  */
 
-namespace Factory;
+namespace Idm\Bundle\Common\Tests\Factory;
 
 use App\Entity\Contact;
 use Override;
@@ -28,7 +28,7 @@ use Zenstruck\Foundry\Persistence\PersistentObjectFactory;
  */
 final class ContactFactory extends PersistentObjectFactory
 {
-	public static function class (): string
+	public static function class(): string
 	{
 		return Contact::class;
 	}
@@ -36,7 +36,7 @@ final class ContactFactory extends PersistentObjectFactory
 	/**
 	 * @see  https://symfony.com/bundles/ZenstruckFoundryBundle/current/index.html#model-factories
 	 */
-	protected function defaults (): array|callable
+	protected function defaults(): array|callable
 	{
 		$createdAt = self::faker()->dateTime('-1 year');
 		$updatedAt = self::faker()->dateTimeBetween($createdAt, '-1 day');
@@ -56,7 +56,7 @@ final class ContactFactory extends PersistentObjectFactory
 	 * @see https://symfony.com/bundles/ZenstruckFoundryBundle/current/index.html#initialization
 	 */
 	#[Override]
-	protected function initialize (): static
+	protected function initialize(): static
 	{
 		return $this// ->afterInstantiate(function(Contact $contact): void {})
 			;
