@@ -3,12 +3,14 @@
 declare(strict_types=1);
 
 use Rector\Config\RectorConfig;
+use Rector\Symfony\Configs\Rector\Closure\ServiceSetStringNameToClassNameRector;
+use Rector\Symfony\Configs\Rector\Closure\ServiceTagsToDefaultsAutoconfigureRector;
 
 return RectorConfig::configure()
 	->withPaths([
-		__DIR__ . '/config',
-		__DIR__ . '/src',
-		__DIR__ . '/tests',
+		__DIR__.'/config',
+		__DIR__.'/src',
+		__DIR__.'/tests',
 	])
 	->withPhpSets(php83: true)
 	->withPreparedSets(
@@ -22,8 +24,10 @@ return RectorConfig::configure()
 	->withCodeQualityLevel(0)
 	->withImportNames(importDocBlockNames: false, removeUnusedImports: true)
 	->withComposerBased(twig: true, doctrine: true, symfony: true)
-	->withSymfonyContainerXml(__DIR__ . '/var/cache/dev/App_KernelDevDebugContainer.xml')
+	->withSymfonyContainerXml(__DIR__.'/var/cache/dev/App_KernelDevDebugContainer.xml')
 	->withSkip([
-		__DIR__ . '/tests/app/config/bundles.php',
+		ServiceSetStringNameToClassNameRector::class,
+		ServiceTagsToDefaultsAutoconfigureRector::class,
+		__DIR__.'/tests/app/config/bundles.php',
 	])
 ;
