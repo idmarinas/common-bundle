@@ -1,5 +1,25 @@
 <?php
 /**
+ * Copyright 2026 (C) IDMarinas - All Rights Reserved
+ *
+ * Last modified by "IDMarinas" on 05/05/2026, 15:20
+ *
+ * @project IDMarinas Common Bundle
+ * @see     https://github.com/idmarinas/common-bundle
+ *
+ * @file    ContactControllerTest.php
+ * @date    05/05/2026
+ * @time    15:26
+ *
+ * @author  Iván Diaz Marinas (IDMarinas)
+ * @license BSD 3-Clause License
+ *
+ * @since   3.7.0
+ */
+
+declare(strict_types=1);
+
+/**
  * Copyright 2025-2026 (C) IDMarinas - All Rights Reserved
  *
  * Last modified by "IDMarinas" on 07/01/2026, 16:27
@@ -24,11 +44,11 @@ use Symfony\Bundle\FrameworkBundle\Test\WebTestCase;
 use Symfony\Component\HttpFoundation\Request;
 use function Zenstruck\Foundry\faker;
 
-class ContactControllerTest extends WebTestCase
+final class ContactControllerTest extends WebTestCase
 {
 	use CreateKernelCaseTrait;
 
-	public function testIndex ()
+	public function testIndex()
 	{
 		$client = static::createClient(['environment' => 'contact']);
 		$client->request(Request::METHOD_GET, '/contact');
@@ -39,7 +59,7 @@ class ContactControllerTest extends WebTestCase
 		$this->assertSelectorTextContains('h2', 'Your information');
 	}
 
-	public function testSubmit ()
+	public function testSubmit()
 	{
 		$client = static::createClient(['environment' => 'contact']);
 		$client->request(Request::METHOD_POST, '/contact');
@@ -57,7 +77,7 @@ class ContactControllerTest extends WebTestCase
 		$this->assertSelectorTextContains('.flash-success', 'Your comments/questions have been sent successfully.');
 	}
 
-	public function testSubmitNotEmail ()
+	public function testSubmitNotEmail()
 	{
 		$client = static::createClient(['environment' => 'contact']);
 		$client->request(Request::METHOD_POST, '/contact');
@@ -74,7 +94,7 @@ class ContactControllerTest extends WebTestCase
 		$this->assertSelectorTextContains('.flash-success', 'Your comments/questions have been sent successfully.');
 	}
 
-	public function testSubmitInvalid ()
+	public function testSubmitInvalid()
 	{
 		$client = static::createClient(['environment' => 'contact']);
 		$client->request(Request::METHOD_POST, '/contact');

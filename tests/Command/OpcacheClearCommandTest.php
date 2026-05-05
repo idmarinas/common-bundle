@@ -1,5 +1,25 @@
 <?php
 /**
+ * Copyright 2026 (C) IDMarinas - All Rights Reserved
+ *
+ * Last modified by "IDMarinas" on 05/05/2026, 15:19
+ *
+ * @project IDMarinas Common Bundle
+ * @see     https://github.com/idmarinas/common-bundle
+ *
+ * @file    OpcacheClearCommandTest.php
+ * @date    05/05/2026
+ * @time    15:26
+ *
+ * @author  Iván Diaz Marinas (IDMarinas)
+ * @license BSD 3-Clause License
+ *
+ * @since   3.7.0
+ */
+
+declare(strict_types=1);
+
+/**
  * Copyright 2024 (C) IDMarinas - All Rights Reserved
  *
  * Last modified by "IDMarinas" on 28/11/24, 18:41
@@ -25,60 +45,60 @@ use PHPUnit\Framework\TestCase;
 use ReflectionClass;
 use Symfony\Component\Console\Tester\CommandTester;
 
-class OpcacheClearCommandTest extends TestCase
+final class OpcacheClearCommandTest extends TestCase
 {
-    use PHPMock;
+	use PHPMock;
 
-    public function testOpcacheFunctionNotExists (): void
-    {
-        $mock = $this->getFunctionMock($this->getNameSpaceCommand(), 'function_exists');
-        $mock->expects($this->once())->willReturn(false);
+	public function testOpcacheFunctionNotExists(): void
+	{
+		$mock = $this->getFunctionMock($this->getNameSpaceCommand(), 'function_exists');
+		$mock->expects($this->once())->willReturn(false);
 
-        $commandTester = new CommandTester(new OpcacheClearCommand());
-        $commandTester->execute([]);
+		$commandTester = new CommandTester(new OpcacheClearCommand());
+		$commandTester->execute([]);
 
-        $output = $commandTester->getDisplay();
+		$output = $commandTester->getDisplay();
 
-        $commandTester->assertCommandIsSuccessful();
-        $this->assertStringContainsString('Function "opcache_reset" not exist.', $output);
-    }
+		$commandTester->assertCommandIsSuccessful();
+		$this->assertStringContainsString('Function "opcache_reset" not exist.', $output);
+	}
 
-    public function testOpcacheFunctionExists (): void
-    {
-        $mock = $this->getFunctionMock($this->getNameSpaceCommand(), 'function_exists');
-        $mock->expects($this->once())->willReturn(true);
+	public function testOpcacheFunctionExists(): void
+	{
+		$mock = $this->getFunctionMock($this->getNameSpaceCommand(), 'function_exists');
+		$mock->expects($this->once())->willReturn(true);
 
-        $mock = $this->getFunctionMock($this->getNameSpaceCommand(), 'opcache_reset');
-        $mock->expects($this->once())->willReturn(true);
+		$mock = $this->getFunctionMock($this->getNameSpaceCommand(), 'opcache_reset');
+		$mock->expects($this->once())->willReturn(true);
 
-        $commandTester = new CommandTester(new OpcacheClearCommand());
-        $commandTester->execute([]);
+		$commandTester = new CommandTester(new OpcacheClearCommand());
+		$commandTester->execute([]);
 
-        $output = $commandTester->getDisplay();
+		$output = $commandTester->getDisplay();
 
-        $commandTester->assertCommandIsSuccessful();
-        $this->assertStringContainsString('OPcache has been reset.', $output);
-    }
+		$commandTester->assertCommandIsSuccessful();
+		$this->assertStringContainsString('OPcache has been reset.', $output);
+	}
 
-    public function testOpcacheFail (): void
-    {
-        $mock = $this->getFunctionMock($this->getNameSpaceCommand(), 'function_exists');
-        $mock->expects($this->once())->willReturn(true);
+	public function testOpcacheFail(): void
+	{
+		$mock = $this->getFunctionMock($this->getNameSpaceCommand(), 'function_exists');
+		$mock->expects($this->once())->willReturn(true);
 
-        $mock = $this->getFunctionMock($this->getNameSpaceCommand(), 'opcache_reset');
-        $mock->expects($this->once())->willReturn(false);
+		$mock = $this->getFunctionMock($this->getNameSpaceCommand(), 'opcache_reset');
+		$mock->expects($this->once())->willReturn(false);
 
-        $commandTester = new CommandTester(new OpcacheClearCommand());
-        $commandTester->execute([]);
+		$commandTester = new CommandTester(new OpcacheClearCommand());
+		$commandTester->execute([]);
 
-        $output = $commandTester->getDisplay();
+		$output = $commandTester->getDisplay();
 
-        $commandTester->assertCommandIsSuccessful();
-        $this->assertStringContainsString('Failed to reset OPcache.', $output);
-    }
+		$commandTester->assertCommandIsSuccessful();
+		$this->assertStringContainsString('Failed to reset OPcache.', $output);
+	}
 
-    private function getNameSpaceCommand (): string
-    {
-        return (new ReflectionClass(OpcacheClearCommand::class))->getNamespaceName();
-    }
+	private function getNameSpaceCommand(): string
+	{
+		return (new ReflectionClass(OpcacheClearCommand::class))->getNamespaceName();
+	}
 }

@@ -1,8 +1,8 @@
 <?php
 /**
- * Copyright 2023-2025 (C) IDMarinas - All Rights Reserved
+ * Copyright 2026 (C) IDMarinas - All Rights Reserved
  *
- * Last modified by "IDMarinas" on 28/01/2025, 19:23
+ * Last modified by "IDMarinas" on 05/05/2026, 15:18
  *
  * @project IDMarinas Common Bundle
  * @see     https://github.com/idmarinas/common-bundle
@@ -22,7 +22,7 @@ namespace Idm\Bundle\Common\Traits\Tool;
 trait VersionTrait
 {
 	/** Convert int version like 100000000 to 1.0.0 */
-	public function convertVersionToString (int $version): string
+	public function convertVersionToString(int $version): string
 	{
 		$version = (string)$version;
 
@@ -36,15 +36,15 @@ trait VersionTrait
 	}
 
 	/** Convert string version like 1.0.0 to 100000000 */
-	public function convertVersionToInt (string $version): int
+	public function convertVersionToInt(string $version): int
 	{
 		$matches = $this->versionDetails($version);
 
-		$major = str_pad($matches['major'], 4, 0, STR_PAD_LEFT);
-		$minor = str_pad($matches['minor'], 4, 0, STR_PAD_LEFT);
-		$patch = str_pad($matches['patch'], 4, 0, STR_PAD_LEFT);
+		$major = str_pad((string)$matches['major'], 4, 0, STR_PAD_LEFT);
+		$minor = str_pad((string)$matches['minor'], 4, 0, STR_PAD_LEFT);
+		$patch = str_pad((string)$matches['patch'], 4, 0, STR_PAD_LEFT);
 
-		return (int)($major . $minor . $patch);
+		return (int)($major.$minor.$patch);
 	}
 
 	/**
@@ -54,7 +54,7 @@ trait VersionTrait
 	 *
 	 * @return array <code>['major', 'minor', 'patch', 'prerelease', 'buildmetadata']</code>
 	 */
-	public function versionDetails (string $version): array
+	public function versionDetails(string $version): array
 	{
 		$re = '^(?P<major>0|[1-9]\d*)\.(?P<minor>0|[1-9]\d*)\.(?P<patch>0|[1-9]\d*)(?:-(?P<prerelease>(?:0|[1-9]\d*|\d*[a-zA-Z-][0-9a-zA-Z-]*)(?:\.(?:0|[1-9]\d*|\d*[a-zA-Z-][0-9a-zA-Z-]*))*))?(?:\+(?P<buildmetadata>[0-9a-zA-Z-]+(?:\.[0-9a-zA-Z-]+)*))?$';
 

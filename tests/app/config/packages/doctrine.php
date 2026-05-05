@@ -1,8 +1,8 @@
 <?php
 /**
- * Copyright 2024-2026 (C) IDMarinas - All Rights Reserved
+ * Copyright 2026 (C) IDMarinas - All Rights Reserved
  *
- * Last modified by "IDMarinas" on 09/01/2026, 19:44
+ * Last modified by "IDMarinas" on 05/05/2026, 15:19
  *
  * @project IDMarinas Common Bundle
  * @see     https://github.com/idmarinas/common-bundle
@@ -25,9 +25,9 @@ use Symfony\Component\DependencyInjection\ContainerBuilder;
 use Symfony\Component\Filesystem\Filesystem;
 use function Symfony\Component\String\u;
 
-return static function (ContainerConfigurator $container, ContainerBuilder $builder) {
+return static function (ContainerConfigurator $container, ContainerBuilder $builder): void {
 	$getDatabaseCache = function (string $projectDir, string $env): string {
-		$dir = $projectDir . '/var/cache/database';
+		$dir = $projectDir.'/var/cache/database';
 
 		$filesystem = new Filesystem();
 
@@ -57,7 +57,7 @@ return static function (ContainerConfigurator $container, ContainerBuilder $buil
 					'is_bundle' => false,
 					'mapping'   => true,
 					'type'      => 'attribute',
-					'dir'       => dirname(__DIR__, 2) . '/src/Entity',
+					'dir'       => dirname(__DIR__, 2).'/src/Entity',
 					'prefix'    => 'App\Entity',
 				],
 			],

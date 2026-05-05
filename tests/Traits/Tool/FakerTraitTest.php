@@ -1,5 +1,25 @@
 <?php
 /**
+ * Copyright 2026 (C) IDMarinas - All Rights Reserved
+ *
+ * Last modified by "IDMarinas" on 05/05/2026, 15:20
+ *
+ * @project IDMarinas Common Bundle
+ * @see     https://github.com/idmarinas/common-bundle
+ *
+ * @file    FakerTraitTest.php
+ * @date    05/05/2026
+ * @time    15:26
+ *
+ * @author  Iván Diaz Marinas (IDMarinas)
+ * @license BSD 3-Clause License
+ *
+ * @since   3.7.0
+ */
+
+declare(strict_types=1);
+
+/**
  * Copyright 2024-2025 (C) IDMarinas - All Rights Reserved
  *
  * Last modified by "IDMarinas" on 23/01/2025, 21:40
@@ -28,11 +48,11 @@ use phpmock\phpunit\PHPMock;
 use PHPUnit\Framework\TestCase;
 use ReflectionClass;
 
-class FakerTraitTest extends TestCase
+final class FakerTraitTest extends TestCase
 {
 	use PHPMock;
 
-	public function testFakerNotInstalled (): void
+	public function testFakerNotInstalled(): void
 	{
 		$this->expectException(LogicException::class);
 
@@ -43,7 +63,7 @@ class FakerTraitTest extends TestCase
 		(new FakerCheck())->faker();
 	}
 
-	public function testFakerPopulateEntity ()
+	public function testFakerPopulateEntity()
 	{
 		$this->assertNotEmpty((new FakerCheck())->populateEntity(new Contact()));
 	}

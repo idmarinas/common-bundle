@@ -1,8 +1,8 @@
 <?php
 /**
- * Copyright 2025-2026 (C) IDMarinas - All Rights Reserved
+ * Copyright 2026 (C) IDMarinas - All Rights Reserved
  *
- * Last modified by "IDMarinas" on 06/01/2026, 19:23
+ * Last modified by "IDMarinas" on 05/05/2026, 15:19
  *
  * @project IDMarinas Common Bundle
  * @see     https://github.com/idmarinas/common-bundle
@@ -22,7 +22,7 @@ namespace Symfony\Component\DependencyInjection\Loader\Configurator;
 use Idm\Bundle\Common\IdmCommonBundle;
 use ReflectionClass;
 
-return static function (ContainerConfigurator $container) {
+return static function (ContainerConfigurator $container): void {
 	$container->extension('maker', [
 		'root_namespace' => (new ReflectionClass(IdmCommonBundle::class))->getNamespaceName(),
 	]);

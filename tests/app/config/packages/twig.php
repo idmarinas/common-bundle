@@ -1,8 +1,8 @@
 <?php
 /**
- * Copyright 2025-2026 (C) IDMarinas - All Rights Reserved
+ * Copyright 2026 (C) IDMarinas - All Rights Reserved
  *
- * Last modified by "IDMarinas" on 06/01/2026, 19:23
+ * Last modified by "IDMarinas" on 05/05/2026, 15:19
  *
  * @project IDMarinas Common Bundle
  * @see     https://github.com/idmarinas/common-bundle
@@ -19,9 +19,9 @@
 
 use Symfony\Component\DependencyInjection\Loader\Configurator\ContainerConfigurator;
 
-return static function (ContainerConfigurator $container) {
+return static function (ContainerConfigurator $container): void {
 	$container->extension('twig', [
-		'default_path'      => dirname(__DIR__, 2) . '/templates',
+		'default_path'      => dirname(__DIR__, 2).'/templates',
 		'file_name_pattern' => '*.twig',
 	]);
 };

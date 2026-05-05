@@ -1,8 +1,8 @@
 <?php
 /**
- * Copyright 2025-2026 (C) IDMarinas - All Rights Reserved
+ * Copyright 2026 (C) IDMarinas - All Rights Reserved
  *
- * Last modified by "IDMarinas" on 09/01/2026, 19:45
+ * Last modified by "IDMarinas" on 05/05/2026, 15:19
  *
  * @project IDMarinas Common Bundle
  * @see     https://github.com/idmarinas/common-bundle
@@ -34,12 +34,13 @@ use Symfony\Component\HttpFoundation\Response;
 final class DashboardController extends AbstractDashboardController
 {
 	#[Override]
-	public function index (): Response
+	public function index(): Response
 	{
 		return $this->render('pages/dashboard.html.twig');
 	}
 
-	public function configureDashboard (): Dashboard
+	#[Override]
+	public function configureDashboard(): Dashboard
 	{
 		return Dashboard::new()
 			->setTitle('Html')
@@ -47,12 +48,13 @@ final class DashboardController extends AbstractDashboardController
 	}
 
 	#[Override]
-	public function configureActions (): Actions
+	public function configureActions(): Actions
 	{
 		return parent::configureActions()->add(Crud::PAGE_INDEX, Action::DETAIL);
 	}
 
-	public function configureMenuItems (): iterable
+	#[Override]
+	public function configureMenuItems(): iterable
 	{
 		yield MenuItem::linkToDashboard('Dashboard', 'fa fa-home');
 		yield MenuItem::linkToCrud('Contact', 'fas fa-list', Contact::class);

@@ -1,5 +1,25 @@
 <?php
 /**
+ * Copyright 2026 (C) IDMarinas - All Rights Reserved
+ *
+ * Last modified by "IDMarinas" on 05/05/2026, 15:20
+ *
+ * @project IDMarinas Common Bundle
+ * @see     https://github.com/idmarinas/common-bundle
+ *
+ * @file    UuidTraitTest.php
+ * @date    05/05/2026
+ * @time    15:26
+ *
+ * @author  Iván Diaz Marinas (IDMarinas)
+ * @license BSD 3-Clause License
+ *
+ * @since   3.7.0
+ */
+
+declare(strict_types=1);
+
+/**
  * Copyright 2024 (C) IDMarinas - All Rights Reserved
  *
  * Last modified by "IDMarinas" on 28/11/24, 19:52
@@ -23,20 +43,20 @@ use Idm\Bundle\Common\Traits\Entity\UuidTrait;
 use PHPUnit\Framework\TestCase;
 use Symfony\Component\Uid\Uuid;
 
-class UuidTraitTest extends TestCase
+final class UuidTraitTest extends TestCase
 {
-    public function testUuid (): void
-    {
-        $entity = new UuidTraitCheck();
+	public function testUuid(): void
+	{
+		$entity = new UuidTraitCheck();
 
-        $uuid = Uuid::v4();
-        $entity->setId($uuid);
+		$uuid = Uuid::v4();
+		$entity->setId($uuid);
 
-        $this->assertEquals($uuid, $entity->getId());
-    }
+		$this->assertEquals($uuid, $entity->getId());
+	}
 }
 
 class UuidTraitCheck
 {
-    use UuidTrait;
+	use UuidTrait;
 }

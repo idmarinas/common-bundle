@@ -2,7 +2,7 @@
 /**
  * Copyright 2026 (C) IDMarinas - All Rights Reserved
  *
- * Last modified by "IDMarinas" on 05/05/2026, 15:13
+ * Last modified by "IDMarinas" on 05/05/2026, 15:24
  *
  * @project IDMarinas Common Bundle
  * @see     https://github.com/idmarinas/common-bundle
@@ -22,7 +22,7 @@ namespace Symfony\Component\DependencyInjection\Loader\Configurator;
 use Idm\Bundle\Common\Decorator\Session\SessionFactory;
 use Idm\Bundle\Common\Decorator\Twig\AppVariable;
 
-return function (ContainerConfigurator $container) {
+return function (ContainerConfigurator $container): void {
 	// @formatter:off
 	$container->services()
 		->set('idm_common.notifications.factory', SessionFactory::class)

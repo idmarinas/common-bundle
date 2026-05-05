@@ -1,8 +1,8 @@
 <?php
 /**
- * Copyright 2023-2024 (C) IDMarinas - All Rights Reserved
+ * Copyright 2026 (C) IDMarinas - All Rights Reserved
  *
- * Last modified by "IDMarinas" on 05/12/2024, 14:19
+ * Last modified by "IDMarinas" on 05/05/2026, 15:18
  *
  * @project IDMarinas Common Bundle
  * @see     https://github.com/idmarinas/common-bundle
@@ -32,7 +32,7 @@ trait FakerTrait
 {
 	private ?Generator $faker = null;
 
-	public function faker (): Generator
+	public function faker(): Generator
 	{
 		if (!class_exists(Factory::class)) {
 			throw new LogicException('Faker PHP missing. Try running "composer require --dev fakerphp/faker".');
@@ -48,7 +48,7 @@ trait FakerTrait
 	/**
 	 * @throws ReflectionException
 	 */
-	public function populateEntity (object $entity): object
+	public function populateEntity(object $entity): object
 	{
 		$reflectionClass = new ReflectionClass($entity);
 		$properties = $reflectionClass->getProperties();
@@ -66,7 +66,7 @@ trait FakerTrait
 	/**
 	 * @throws ReflectionException
 	 */
-	private function fakerValueFromProperty (ReflectionProperty $property): mixed
+	private function fakerValueFromProperty(ReflectionProperty $property): mixed
 	{
 		return match ($property->getName()) {
 			'email'       => $this->faker()->email(),
@@ -83,7 +83,7 @@ trait FakerTrait
 	/**
 	 * @throws ReflectionException
 	 */
-	private function fakerValueForType (ReflectionProperty $property): mixed
+	private function fakerValueForType(ReflectionProperty $property): mixed
 	{
 		$attribute = $property->getAttributes(Column::class)[0] ?? null;
 		$arguments = $attribute?->getArguments();
@@ -92,7 +92,7 @@ trait FakerTrait
 		$length = ($arguments['length'] ?? 10) - 0.9;
 
 		// Check if is a namespace
-		if (str_contains($type, '\\')) {
+		if (str_contains((string)$type, '\\')) {
 			$ref = new ReflectionClass($type);
 			$type = $ref->isAbstract() ? 'continue' : 'object';
 			$object = $ref->isAbstract() ?: $ref->newInstance();

@@ -1,4 +1,23 @@
 <?php
+/**
+ * Copyright 2026 (C) IDMarinas - All Rights Reserved
+ *
+ * Last modified by "IDMarinas" on 05/05/2026, 15:20
+ *
+ * @project IDMarinas Common Bundle
+ * @see     https://github.com/idmarinas/common-bundle
+ *
+ * @file    ContainsIsEvenValidatorTest.php
+ * @date    05/05/2026
+ * @time    15:26
+ *
+ * @author  Iván Diaz Marinas (IDMarinas)
+ * @license BSD 3-Clause License
+ *
+ * @since   3.7.0
+ */
+
+declare(strict_types=1);
 
 /**
  * Copyright 2022-2025 (C) IDMarinas - All Rights Reserved
@@ -27,23 +46,23 @@ use Symfony\Component\Validator\ConstraintValidatorInterface;
 use Symfony\Component\Validator\Test\ConstraintValidatorTestCase;
 use Throwable;
 
-class ContainsIsEvenValidatorTest extends ConstraintValidatorTestCase
+final class ContainsIsEvenValidatorTest extends ConstraintValidatorTestCase
 {
-	public function testNullIsValid (): void
+	public function testNullIsValid(): void
 	{
 		$this->validator->validate(null, new IsEven());
 
 		$this->assertNoViolation();
 	}
 
-	public function testEmptyIsValid (): void
+	public function testEmptyIsValid(): void
 	{
 		$this->validator->validate('', new IsEven());
 
 		$this->assertNoViolation();
 	}
 
-	public function testConstraintInvalid (): void
+	public function testConstraintInvalid(): void
 	{
 		try {
 			$this->validator->validate(5, new IsOdd());
@@ -54,7 +73,7 @@ class ContainsIsEvenValidatorTest extends ConstraintValidatorTestCase
 		}
 	}
 
-	public function testNotValidNumber (): void
+	public function testNotValidNumber(): void
 	{
 		try {
 			$this->validator->validate('rr', new IsEven());
@@ -65,23 +84,23 @@ class ContainsIsEvenValidatorTest extends ConstraintValidatorTestCase
 		}
 	}
 
-	public function testIsInvalid (): void
+	public function testIsInvalid(): void
 	{
 		$this->validator->validate(5, new IsEven());
 
 		$this
-			->buildViolation('idm_common_bundle.is_even')->setParameter('{{ number }}', 5)->assertRaised()
+			->buildViolation('idm_common_bundle.is_even')->setParameter('{{ number }}', '5')->assertRaised()
 		;
 	}
 
-	public function testIsValid (): void
+	public function testIsValid(): void
 	{
 		$this->validator->validate(6, new IsEven());
 
 		$this->assertNoViolation();
 	}
 
-	protected function createValidator (): ConstraintValidatorInterface
+	protected function createValidator(): ConstraintValidatorInterface
 	{
 		return new IsEvenValidator();
 	}

@@ -1,5 +1,25 @@
 <?php
 /**
+ * Copyright 2026 (C) IDMarinas - All Rights Reserved
+ *
+ * Last modified by "IDMarinas" on 05/05/2026, 15:19
+ *
+ * @project IDMarinas Common Bundle
+ * @see     https://github.com/idmarinas/common-bundle
+ *
+ * @file    GenerateCryptoValueCommandTest.php
+ * @date    05/05/2026
+ * @time    15:26
+ *
+ * @author  Iván Diaz Marinas (IDMarinas)
+ * @license BSD 3-Clause License
+ *
+ * @since   3.7.0
+ */
+
+declare(strict_types=1);
+
+/**
  * Copyright 2025-2026 (C) IDMarinas - All Rights Reserved
  *
  * Last modified by "IDMarinas" on 07/01/2026, 16:39
@@ -24,12 +44,13 @@ use Symfony\Bundle\FrameworkBundle\Test\KernelTestCase;
 use Symfony\Component\Console\Tester\CommandTester;
 use Symfony\Component\Filesystem\Filesystem;
 
-class GenerateCryptoValueCommandTest extends KernelTestCase
+final class GenerateCryptoValueCommandTest extends KernelTestCase
 {
 	private string $cFile = '.env';
-	private string $cKey  = 'APP_SECRET';
 
-	public function testExecuteShow (): void
+	private string $cKey = 'APP_SECRET';
+
+	public function testExecuteShow(): void
 	{
 		$commandTester = new CommandTester(new GenerateCryptoValueCommand());
 		$commandTester->execute([
@@ -50,7 +71,7 @@ class GenerateCryptoValueCommandTest extends KernelTestCase
 		// ...
 	}
 
-	public function testNotFile (): void
+	public function testNotFile(): void
 	{
 		$commandTester = new CommandTester(new GenerateCryptoValueCommand());
 		$commandTester->execute([
@@ -62,7 +83,7 @@ class GenerateCryptoValueCommandTest extends KernelTestCase
 		$this->assertStringContainsString('Not find file ".env" or not is readable or writable.', $output);
 	}
 
-	public function testNotSecret (): void
+	public function testNotSecret(): void
 	{
 		$fs = new Filesystem();
 		$commandTester = new CommandTester(new GenerateCryptoValueCommand());
@@ -80,7 +101,7 @@ class GenerateCryptoValueCommandTest extends KernelTestCase
 		$fs->remove($this->cFile);
 	}
 
-	public function testSecret (): void
+	public function testSecret(): void
 	{
 		$fs = new Filesystem();
 		$commandTester = new CommandTester(new GenerateCryptoValueCommand());

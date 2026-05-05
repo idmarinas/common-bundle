@@ -1,4 +1,23 @@
 <?php
+/**
+ * Copyright 2026 (C) IDMarinas - All Rights Reserved
+ *
+ * Last modified by "IDMarinas" on 05/05/2026, 15:20
+ *
+ * @project IDMarinas Common Bundle
+ * @see     https://github.com/idmarinas/common-bundle
+ *
+ * @file    BundleInitializationTest.php
+ * @date    05/05/2026
+ * @time    15:26
+ *
+ * @author  Iván Diaz Marinas (IDMarinas)
+ * @license BSD 3-Clause License
+ *
+ * @since   3.7.0
+ */
+
+declare(strict_types=1);
 
 /**
  * Copyright 2025-2026 (C) IDMarinas - All Rights Reserved
@@ -27,11 +46,11 @@ final class BundleInitializationTest extends KernelTestCase
 {
 	use CreateKernelCaseTrait;
 
-	public function testInitBundle (): void
+	public function testInitBundle(): void
 	{
 		// Boot the kernel.
 		$kernel = self::bootKernel([
-			'config' => static function (Kernel $kernel) {
+			'config' => static function (Kernel $kernel): void {
 //				$kernel->addExtraBundle(BundleName::class);
 //				$kernel->addExtraConfig('path/to/file.php');
 //				$kernel->addExtraConfig(['extension_name' => ['key_1' => 'value_1']);

@@ -1,5 +1,25 @@
 <?php
 /**
+ * Copyright 2026 (C) IDMarinas - All Rights Reserved
+ *
+ * Last modified by "IDMarinas" on 05/05/2026, 15:20
+ *
+ * @project IDMarinas Common Bundle
+ * @see     https://github.com/idmarinas/common-bundle
+ *
+ * @file    EnumToArrayTraitTest.php
+ * @date    05/05/2026
+ * @time    15:26
+ *
+ * @author  Iván Diaz Marinas (IDMarinas)
+ * @license BSD 3-Clause License
+ *
+ * @since   3.7.0
+ */
+
+declare(strict_types=1);
+
+/**
  * Copyright 2025 (C) IDMarinas - All Rights Reserved
  *
  * Last modified by "IDMarinas" on 16/03/2025, 17:59
@@ -22,16 +42,16 @@ namespace Idm\Bundle\Common\Tests\Traits\Enums;
 use App\Enums\TestEnum;
 use PHPUnit\Framework\TestCase;
 
-class EnumToArrayTraitTest extends TestCase
+final class EnumToArrayTraitTest extends TestCase
 {
-	public function testEnumTrait ()
+	public function testEnumTrait()
 	{
 		$values = TestEnum::values();
 		$names = TestEnum::names();
 		$array = TestEnum::asArray();
 
-		$this->assertEquals(['uno', 'dos', 'tres', 'cuatro'], $values);
-		$this->assertEquals(['UNO', 'DOS', 'TRES', 'CUATRO'], $names);
-		$this->assertEquals(['UNO' => 'uno', 'DOS' => 'dos', 'TRES' => 'tres', 'CUATRO' => 'cuatro'], $array);
+		$this->assertSame(['uno', 'dos', 'tres', 'cuatro'], $values);
+		$this->assertSame(['UNO', 'DOS', 'TRES', 'CUATRO'], $names);
+		$this->assertSame(['UNO' => 'uno', 'DOS' => 'dos', 'TRES' => 'tres', 'CUATRO' => 'cuatro'], $array);
 	}
 }
