@@ -2,7 +2,7 @@
 /**
  * Copyright 2026 (C) IDMarinas - All Rights Reserved
  *
- * Last modified by "IDMarinas" on 05/05/2026, 15:24
+ * Last modified by "IDMarinas" on 05/05/2026, 15:45
  *
  * @project IDMarinas Common Bundle
  * @see     https://github.com/idmarinas/common-bundle
@@ -28,8 +28,8 @@ return function (ContainerConfigurator $container): void {
 		->set('idm_common.notifications.factory', SessionFactory::class)
 			->decorate('session.factory')
 			->args([service('.inner')])
-		->set('idm_common.notifications.twig.factory', AppVariable::class
+		->set('idm_common.notifications.twig.factory', AppVariable::class)
 			->decorate('twig.app_variable')
-			->args([service('.inner')]))
+			->args([service('.inner')])
 	;
 };
