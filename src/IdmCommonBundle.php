@@ -1,8 +1,8 @@
 <?php
 /**
- * Copyright $originalComment.match("Copyright (\d+)", 1, "-",$today.year)2026 (C) IDMarinas - All Rights Reserved
+ * Copyright 2026 (C) IDMarinas - All Rights Reserved
  *
- * Last modified by "IDMarinas" on 04/05/2026, 20:55
+ * Last modified by "IDMarinas" on 05/05/2026, 12:58
  *
  * @project IDMarinas Common Bundle
  * @see     https://github.com/idmarinas/common-bundle
@@ -29,6 +29,10 @@ final class IdmCommonBundle extends AbstractBundle
 	public function loadExtension(array $config, ContainerConfigurator $container, ContainerBuilder $builder): void
 	{
 		$container->import(dirname(__DIR__).'/config/services.php');
+
+		if ($config['notifications_bag']) {
+			$container->import(dirname(__DIR__).'/config/notifications.php');
+		}
 	}
 
 	public function configure(DefinitionConfigurator $definition): void
