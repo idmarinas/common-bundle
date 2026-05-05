@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="{{ app.request.locale }}">
+<head>
+	<title>{% block title %}{% endblock %} IDMarinas Common Bundle</title></head>
+<body>
+	{# read and display all notification messages #}
+	{% for label, messages in app.notifications %}
+		{% for message in messages %}
+			<div class="notification-{{ label }}">
+				{{ message|trans }}
+			</div>
+		{% endfor %}
+	{% endfor %}
+
+	{% block body %}{% endblock %}
+</body>
+</html>
