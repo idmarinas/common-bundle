@@ -3,7 +3,7 @@
 /**
  * Copyright 2026 (C) IDMarinas - All Rights Reserved
  *
- * Last modified by "IDMarinas" on 05/05/2026, 18:00
+ * Last modified by "IDMarinas" on 05/05/2026, 18:25
  *
  * @project IDMarinas Common Bundle
  * @see     https://github.com/idmarinas/common-bundle
@@ -23,9 +23,9 @@ declare(strict_types=1);
 namespace Idm\Bundle\Common\Tests;
 
 use App\Kernel;
+use Idm\Bundle\Common\Decorator\Session\SessionFactory;
 use Idm\Bundle\Common\Decorator\Twig\AppVariable;
 use Symfony\Bundle\FrameworkBundle\Test\KernelTestCase;
-use Symfony\Component\HttpFoundation\Session\Session;
 
 final class BundleInitializationTest extends KernelTestCase
 {
@@ -44,6 +44,11 @@ final class BundleInitializationTest extends KernelTestCase
 		]);
 
 		$this->assertTrue($kernel->getContainer()->has('kernel'));
+
+		$removedIds = $kernel->getContainer()->getRemovedIds();
+
+		$this->assertFalse(isset($removedIds[SessionFactory::class]));
+		$this->assertFalse(isset($removedIds[AppVariable::class]));
 	}
 
 	public function testInitBundleWithNotifications(): void
@@ -58,9 +63,9 @@ final class BundleInitializationTest extends KernelTestCase
 			},
 		]);
 
-		$removedIds = self::getContainer()->getRemovedIds();
+		$removedIds = $kernel->getContainer()->getRemovedIds();
 
-		$this->assertTrue(in_array(Session::class, $removedIds));
-		$this->assertTrue(in_array(AppVariable::class, $removedIds));
+		$this->assertTrue(isset($removedIds[SessionFactory::class]));
+		$this->assertTrue(isset($removedIds[AppVariable::class]));
 	}
 }
