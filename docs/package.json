@@ -2,7 +2,8 @@
 	"description": "This bundle is intended to group common and often repeated things when creating an APP with Symfony.",
 	"scripts": {
 		"dev": "nuxi dev",
-		"build": "nuxi build"
+		"build": "nuxi build",
+		"postinstall": "nuxi prepare"
 	},
 	"dependencies": {
 		"@takumi-rs/core": "^1.1.2",
